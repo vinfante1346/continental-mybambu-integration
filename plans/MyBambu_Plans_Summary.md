@@ -36,6 +36,535 @@ Four-tier assistance program for remittance services providing benefits to both 
 
 ---
 
+## User Flow & Journey
+
+### Complete User Experience from Discovery to Service Usage
+
+This section outlines the end-to-end user journey for MyBambu assistance plan subscribers.
+
+---
+
+### 1. Discovery & Education Flow
+
+**Touchpoint**: MyBambu App / Website
+
+```
+User opens MyBambu App
+    ↓
+Discovers "Assistance Plans" section
+    ↓
+Views plan comparison (Basic, Intermediate, Advanced, Advanced+)
+    ↓
+Reviews benefits for sender (USA) and recipient (origin country)
+    ↓
+Calculates value for their family situation
+```
+
+**User Actions**:
+- Browse plan tiers and pricing
+- Compare benefits side-by-side
+- View detailed benefit explanations
+- Access FAQ about coverage
+
+**Key Decision Points**:
+- Do I need telehealth access?
+- Do family members in origin country need support?
+- What level of funeral coverage do I need?
+- Is the price within my budget?
+
+---
+
+### 2. Plan Selection Flow
+
+**Decision Tree**:
+
+```
+START: Which benefits matter most?
+    │
+    ├─→ [Only basic protection needed]
+    │   └─→ BASIC ($5.99)
+    │       ✓ Funeral repatriation
+    │       ✓ Rx discounts
+    │
+    ├─→ [Want telehealth access]
+    │   └─→ INTERMEDIATE ($7.99)
+    │       ✓ Previous benefits
+    │       ✓ Telehealth for sender & recipient
+    │
+    ├─→ [Need comprehensive family support]
+    │   └─→ ADVANCED ($9.99)
+    │       ✓ Previous benefits
+    │       ✓ $2K funeral assistance
+    │       ✓ Family remittance support
+    │       ✓ Nutrition & psychology teleassistance
+    │
+    └─→ [Want maximum funeral coverage]
+        └─→ ADVANCED+ ($14.99)
+            ✓ All Advanced benefits
+            ✓ $10K funeral assistance
+```
+
+**User Interface Elements**:
+- Interactive plan cards with hover details
+- "Recommended for you" suggestions based on profile
+- Price calculator showing monthly/annual costs
+- Benefit comparison toggles
+
+---
+
+### 3. Enrollment & Purchase Flow
+
+**Step-by-Step Process**:
+
+#### Step 3.1: Select Plan
+```
+User clicks "Select Plan" button
+    ↓
+Plan tier confirmed (Basic/Intermediate/Advanced/Advanced+)
+    ↓
+Monthly price displayed ($5.99 - $14.99)
+```
+
+#### Step 3.2: Enter Subscriber Information
+```
+Required Fields:
+├─ Personal Information
+│  ├─ Full name
+│  ├─ Date of birth (verify age 18-75)
+│  ├─ Email address
+│  └─ Phone number (USA)
+│
+├─ Address Information
+│  ├─ Street address
+│  ├─ City, State, ZIP
+│  └─ Country (USA)
+│
+└─ Recipient Information (if applicable)
+   ├─ Recipient name
+   ├─ Relationship
+   ├─ Country of residence
+   └─ Contact number
+```
+
+#### Step 3.3: Review & Confirm
+```
+Order Summary displayed:
+├─ Selected plan name and tier
+├─ Monthly price
+├─ Benefits included
+├─ Billing date (auto-renewal notice)
+└─ Terms & conditions checkbox
+```
+
+#### Step 3.4: Payment Setup
+```
+Payment method selection:
+├─ Link existing MyBambu account balance
+├─ Add credit/debit card
+└─ Set up auto-pay preference
+
+System validates payment
+    ↓
+Enrollment confirmation
+    ↓
+Program number generated
+    ↓
+Welcome email sent with:
+    - Program number
+    - Validity dates
+    - Emergency contact: +1 305 722 5824
+    - Benefits summary
+```
+
+**Timeline**:
+- Enrollment: Immediate
+- Waiting period activation:
+  - Violent/suspicious death: 24 hours
+  - Natural death: 121 days
+  - Catastrophic illness: 181 days
+
+---
+
+### 4. Active Membership Experience
+
+#### 4.1: Accessing Benefits
+
+**Telehealth Services Flow** (Intermediate/Advanced/Advanced+):
+
+```
+User needs medical consultation
+    ↓
+Opens MyBambu app → "My Benefits"
+    ↓
+Selects "Telehealth Session"
+    ↓
+Verifies eligibility:
+    - Sender: 1 per enrollment period
+    - Recipient: 1 per month
+    ↓
+Books appointment (24-hour advance for nutrition)
+    ↓
+Receives confirmation with:
+    - Session date/time
+    - Access link (voice or video)
+    - Duration: Up to 60 minutes
+    ↓
+Completes session with general practitioner
+    ↓
+Receives session summary (no prescription)
+```
+
+**Prescription Discount Flow** (All Plans):
+
+```
+User needs prescription filled
+    ↓
+Opens RxLess network access in app
+    ↓
+Searches for medication
+    ↓
+Compares pharmacy prices nearby
+    ↓
+Generates discount card
+    ↓
+Shows card at pharmacy
+    ↓
+Receives discounted pricing
+```
+
+---
+
+#### 4.2: Emergency Assistance Flow
+
+**Funeral/Repatriation Services** (All Plans):
+
+```
+⚠️ CRITICAL: Must contact within 72 hours or lose coverage
+
+Death occurs
+    ↓
+Family contacts Emergency Assistance Center
+    │
+    ├─ Phone: +1 [NUMBER]
+    ├─ WhatsApp: +1 305 722 5824
+    └─ Email: [EMAIL]
+    ↓
+Provide required information:
+    ├─ Member name
+    ├─ Program number
+    ├─ Validity dates
+    ├─ Location of death
+    ├─ Contact phone
+    └─ Circumstances
+    ↓
+Continental Assistance Center reviews:
+    ├─ Eligibility verification
+    ├─ Waiting period status
+    └─ Coverage applicability
+    ↓
+    │
+    ├─→ [Funeral Repatriation] (All Plans - $10K)
+    │   ├─ Coordinate body transport
+    │   ├─ Simple casket provided
+    │   ├─ Administrative procedures
+    │   ├─ Transportation to origin country
+    │   └─ Delivered to first entry point
+    │
+    └─→ [Funeral Assistance] (Advanced/Advanced+ only)
+        ├─ Option A: Direct coordination (up to $2K/$10K)
+        │   └─ Continental arranges all services
+        │
+        └─ Option B: Reimbursement (up to $2K/$10K)
+            ├─ Family arranges services
+            ├─ Submit documentation within 72 hours:
+            │   ├─ Valid passport/ID copy
+            │   ├─ Death certificate
+            │   ├─ Funeral invoice
+            │   ├─ Payment proof
+            │   └─ Bank details
+            └─ Reimbursement processed
+```
+
+**Family Remittance Support** (Advanced/Advanced+ only):
+
+```
+Member death occurs
+    ↓
+Funeral assistance claim approved
+    ↓
+Automatic activation of remittance support
+    ↓
+$300/month disbursed for 3 consecutive months
+    ↓
+Total family support: $900
+```
+
+---
+
+#### 4.3: Ongoing Teleassistance (Advanced/Advanced+)
+
+**Nutritional Teleassistance Flow**:
+
+```
+Recipient needs nutritional guidance
+    ↓
+Schedules session 24 hours in advance
+    ↓
+Available: Mon-Sat, 9 AM - 5 PM
+    ↓
+Session topics:
+    ├─ Eating habit improvements
+    ├─ Supplement recommendations
+    └─ Body fat/composition guidance
+    ↓
+60-minute consultation via phone/video
+    ↓
+Receives personalized nutrition plan
+```
+
+**Psychological Teleassistance Flow**:
+
+```
+Recipient needs emotional support
+    ↓
+Requests session (1 per event)
+    ↓
+Session topics available:
+    ├─ Anxiety and stress
+    ├─ Parenting challenges
+    ├─ Relationship issues
+    ├─ Grief counseling
+    └─ Sleep disorders
+    ↓
+60-minute guidance session
+    ↓
+Receives coping strategies (not comprehensive treatment)
+```
+
+---
+
+### 5. Account Management Flow
+
+#### 5.1: Viewing Account Status
+
+```
+User opens MyBambu app
+    ↓
+Navigates to "Assistance Plans"
+    ↓
+Dashboard displays:
+    ├─ Current plan tier
+    ├─ Monthly price
+    ├─ Next billing date
+    ├─ Program number
+    ├─ Validity dates
+    ├─ Benefits used this period
+    │   ├─ Telehealth sessions remaining
+    │   ├─ Rx discounts accessed
+    │   └─ Teleassistance sessions available
+    └─ Emergency contact information
+```
+
+#### 5.2: Upgrading Plan
+
+```
+User wants more benefits
+    ↓
+Selects "Upgrade Plan"
+    ↓
+Views available higher tiers
+    ↓
+Sees price difference (prorated)
+    ↓
+Confirms upgrade
+    ↓
+Immediate access to new benefits
+    ↓
+Next billing reflects new price
+```
+
+#### 5.3: Billing & Renewal Flow
+
+```
+30 days after enrollment
+    ↓
+Auto-renewal triggered
+    ↓
+Payment attempted on file
+    ↓
+    │
+    ├─→ [SUCCESS]
+    │   ├─ Payment processed
+    │   ├─ New 30-day period starts
+    │   ├─ Confirmation email sent
+    │   └─ Benefits continue uninterrupted
+    │
+    └─→ [FAILURE]
+        ├─ 7-day grace period activated
+        ├─ User notified via email/SMS
+        ├─ Benefits continue during grace period
+        ├─ User can update payment method
+        │   ↓
+        │   ├─→ [Payment updated in grace period]
+        │   │   └─ Membership continues
+        │   │
+        │   └─→ [No payment after 7 days]
+        │       ├─ Membership becomes inactive
+        │       ├─ Benefits suspended
+        │       └─ Can reactivate anytime
+```
+
+---
+
+### 6. Cancellation Flow
+
+```
+User decides to cancel
+    ↓
+Opens MyBambu app → "Account Settings"
+    ↓
+Selects "Cancel Assistance Plan"
+    ↓
+System displays:
+    ├─ Current benefits
+    ├─ Access end date (end of billing period)
+    ├─ Unused benefits warning
+    └─ Confirmation prompt
+    ↓
+User confirms cancellation
+    ↓
+Auto-renewal disabled
+    ↓
+Access continues through current period
+    ↓
+Period ends → benefits terminate
+    ↓
+Can reactivate anytime (new waiting periods apply)
+```
+
+---
+
+### 7. Support & Help Flow
+
+```
+User needs assistance
+    ↓
+Multiple access points:
+    │
+    ├─→ [In-App Support]
+    │   ├─ FAQ section
+    │   ├─ Live chat
+    │   └─ Submit ticket
+    │
+    ├─→ [Emergency Assistance]
+    │   ├─ WhatsApp: +1 305 722 5824
+    │   ├─ Phone: +1 [NUMBER]
+    │   └─ Available 24/7 for emergencies
+    │
+    └─→ [Benefit Questions]
+        ├─ Telehealth booking
+        ├─ Rx discount support
+        └─ Claim status inquiries
+```
+
+---
+
+### 8. User Experience Touchpoints Summary
+
+| Stage | Primary Touchpoint | Key Actions | Success Metrics |
+|-------|-------------------|-------------|-----------------|
+| **Discovery** | MyBambu App Home | View plans, compare benefits | Plan views, comparison tool usage |
+| **Selection** | Plan Comparison Page | Select tier, see pricing | Plan selected |
+| **Enrollment** | Checkout Flow | Enter info, set payment | Enrollment completion rate |
+| **Onboarding** | Welcome Email + App | Review program number, save contacts | Email open rate, contact saves |
+| **Active Use** | Benefits Dashboard | Book telehealth, access Rx discount | Service utilization rate |
+| **Emergency** | Assistance Center | Contact within 72 hours | Response time, claim approval |
+| **Renewal** | Auto-billing | Successful payment | Renewal success rate, churn rate |
+| **Support** | In-App + WhatsApp | Get help, resolve issues | CSAT score, resolution time |
+
+---
+
+### 9. Critical User Requirements & Obligations
+
+**Users MUST**:
+- ✅ Contact Emergency Center **within 72 hours** of any emergency event
+- ✅ Provide accurate enrollment information (age 18-75)
+- ✅ Keep payment method current for auto-renewal
+- ✅ Request authorization BEFORE incurring expenses (except life-threatening)
+- ✅ Submit complete documentation for reimbursement claims
+- ✅ Understand waiting periods for death benefits
+- ✅ Follow Assistance Center recommendations
+
+**Users CANNOT**:
+- ❌ Use services for pre-existing conditions
+- ❌ Expect prescription or medical certificate from telehealth
+- ❌ Claim reimbursement without pre-authorization
+- ❌ Access benefits after cancellation (once period ends)
+- ❌ Transfer membership to others
+
+---
+
+### 10. Mobile App User Interface Recommendations
+
+**Dashboard Elements**:
+```
+┌─────────────────────────────────────┐
+│  My Assistance Plan                  │
+├─────────────────────────────────────┤
+│  Plan: ADVANCED                      │
+│  $9.99/month • Renews Feb 28, 2025  │
+│                                      │
+│  Program #: CA-2025-123456          │
+│  Valid until: Feb 28, 2025          │
+├─────────────────────────────────────┤
+│  Quick Actions                       │
+│  [Book Telehealth] [Rx Discounts]  │
+│  [Emergency Contact] [View Benefits]│
+├─────────────────────────────────────┤
+│  Benefits This Month                 │
+│  • Telehealth: 1 session remaining   │
+│  • Nutrition: Available (recipient)  │
+│  • Psychology: Available (recipient) │
+│  • Rx Discounts: Unlimited          │
+├─────────────────────────────────────┤
+│  Emergency: +1 305 722 5824         │
+│  📞 Save Contact                     │
+└─────────────────────────────────────┘
+```
+
+---
+
+### 11. Integration with Continental API
+
+**Backend Flow for MyBambu Platform**:
+
+```
+MyBambu App/Web
+    ↓
+    ├─→ Plan Selection
+    │   └─ API: consulta_categorias
+    │       └─ Returns: Available plans for MyBambu
+    │
+    ├─→ Enrollment/Purchase
+    │   └─ API: comprar
+    │       ├─ Input: User data, plan tier, payment info
+    │       └─ Returns: Program number, validity dates
+    │
+    ├─→ Telehealth Booking
+    │   └─ Internal: Continental scheduling system
+    │       └─ Appointment confirmation
+    │
+    ├─→ Emergency Claim
+    │   └─ API/Phone: Emergency Assistance Center
+    │       └─ Case number, coordinator assigned
+    │
+    └─→ Voucher/Confirmation
+        └─ API: consulta_voucher
+            └─ Returns: Membership details, benefits
+```
+
+---
+
 ## Plan 1: BASIC PROGRAM
 
 **Price**: $5.99/month
