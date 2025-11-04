@@ -256,6 +256,8 @@ const response = await fetch(`${BASE_URL}/consulta_categorias`, {
 | **API Technical Docs** | Complete API reference with examples | [View →](./docs/Continental_Assist_API_Technical_Documentation.md) |
 | **Plans Summary** | All 4 My Bambu assistance plans | [View →](./plans/MyBambu_Plans_Summary.md) |
 | **Launch Plan** | Go-to-market strategy & timeline | [View →](./LAUNCH_PLAN.md) |
+| **Revenue Forecast** | Projections based on 115K active customers | [View →](./docs/MyBambu_Revenue_Forecast.md) |
+| **Marketing Strategy** | Complete 12-month marketing playbook | [View →](./docs/Marketing_Strategy.md) |
 | **Launch Forecast** | 12-month projections with 7-day trial | [View →](./docs/Launch_Forecast_Model.md) |
 | **Integration Guide** | Step-by-step integration | [View →](./docs/Integration_Guide.md) |
 | **Examples** | Code samples in multiple languages | [View →](./examples/) |
