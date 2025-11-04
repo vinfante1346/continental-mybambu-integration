@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continental Assist API - Integration Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+
+        h1 {
+            text-align: center;
+            color: #2d3748;
+            font-size: 36px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            font-size: 18px;
+            margin-bottom: 50px;
+        }
+
+        .flow-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            position: relative;
+        }
+
+        .flow-step {
+            display: grid;
+            grid-template-columns: 80px 1fr;
+            gap: 30px;
+            align-items: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 32px;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+            position: relative;
+            z-index: 2;
+        }
+
+        .flow-step:not(:last-child) .step-number::after {
+            content: '';
+            position: absolute;
+            top: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 3px;
+            height: 30px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .step-content {
+            background: #f7fafc;
+            border-radius: 15px;
+            padding: 30px;
+            border-left: 5px solid #667eea;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .step-content:hover {
+            transform: translateX(5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .step-title {
+            font-size: 24px;
+            color: #2d3748;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .step-endpoint {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .step-description {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 16px;
+            margin-bottom: 15px;
+        }
+
+        .step-details {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .detail-box {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .detail-label {
+            font-size: 12px;
+            color: #718096;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .detail-value {
+            color: #2d3748;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+
+        .optional-badge {
+            display: inline-block;
+            background: #fbd38d;
+            color: #744210;
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-left: 10px;
+        }
+
+        .auth-section {
+            background: #edf2f7;
+            border-radius: 15px;
+            padding: 30px;
+            margin-top: 50px;
+            border: 2px dashed #cbd5e0;
+        }
+
+        .auth-title {
+            font-size: 20px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-title::before {
+            content: '🔐';
+            font-size: 24px;
+        }
+
+        .auth-info {
+            color: #4a5568;
+            line-height: 1.7;
+            font-size: 15px;
+        }
+
+        .code {
+            background: #2d3748;
+            color: #68d391;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-family: 'Monaco', 'Courier New', monospace;
+            font-size: 13px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Continental Assist API Integration Flow</h1>
+        <p class="subtitle">Complete 8-Step Purchase & Query Workflow</p>
+
+        <div class="flow-container">
+            <div class="flow-step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h3 class="step-title">Get Categories</h3>
+                    <div class="step-endpoint">consulta_categorias</div>
+                    <p class="step-description">
+                        Retrieve all plan categories assigned to your agency account. Categories determine the types of travel assistance plans available.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">Purpose</div>
+                            <div class="detail-value">Initial step to discover available plan categories</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">List of category IDs and names</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h3 class="step-title">Get Origins</h3>
+                    <div class="step-endpoint">consulta_origenes</div>
+                    <div class="step-endpoint">consulta_origenes_x_iso</div>
+                    <p class="step-description">
+                        Query available origin countries where travelers will depart from. Use ISO-based endpoint for country code lookups.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">User Action</div>
+                            <div class="detail-value">Customer selects departure country</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">Available origin countries with codes</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h3 class="step-title">Get Destinations</h3>
+                    <div class="step-endpoint">consulta_destinos</div>
+                    <p class="step-description">
+                        Obtain destination countries or regional groupings available for travel coverage.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">User Action</div>
+                            <div class="detail-value">Customer selects destination country/region</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">Destination countries and regional groups</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h3 class="step-title">Get Plans & Prices</h3>
+                    <div class="step-endpoint">consulta_planes_grupal</div>
+                    <p class="step-description">
+                        Calculate and retrieve available plans with pricing based on trip duration, traveler ages, selected category, and destination.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">Required Input</div>
+                            <div class="detail-value">Trip dates, traveler ages, category, destination</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">Available plans with pricing details</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Calculation</div>
+                            <div class="detail-value">System calculates trip duration from dates</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h3 class="step-title">Get Benefits <span class="optional-badge">Optional</span></h3>
+                    <div class="step-endpoint">consulta_beneficios_adicionales</div>
+                    <div class="step-endpoint">consulta_beneficios_planes_costos</div>
+                    <p class="step-description">
+                        Review detailed plan benefits and coverage details to help customers make informed decisions.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">Purpose</div>
+                            <div class="detail-value">Display comprehensive benefit information</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">Coverage details, limits, and benefits</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">6</div>
+                <div class="step-content">
+                    <h3 class="step-title">Validate Coupon <span class="optional-badge">Optional</span></h3>
+                    <div class="step-endpoint">consulta_cupon</div>
+                    <p class="step-description">
+                        Apply and validate discount codes to calculate final pricing with promotional discounts.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">User Action</div>
+                            <div class="detail-value">Customer enters promo/discount code</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">Validated discount amount or error</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">7</div>
+                <div class="step-content">
+                    <h3 class="step-title">Purchase</h3>
+                    <div class="step-endpoint">comprar</div>
+                    <p class="step-description">
+                        Execute the purchase transaction with complete traveler information and trip details to generate vouchers.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">Required Data</div>
+                            <div class="detail-value">Full traveler details, payment info, trip data</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">Voucher numbers and confirmation</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Result</div>
+                            <div class="detail-value">Travel assistance plan activated</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-step">
+                <div class="step-number">8</div>
+                <div class="step-content">
+                    <h3 class="step-title">Retrieve Voucher</h3>
+                    <div class="step-endpoint">consulta_voucher</div>
+                    <div class="step-endpoint">consulta_beneficios_voucher</div>
+                    <p class="step-description">
+                        Fetch voucher confirmation details and benefits for customer records and travel documentation.
+                    </p>
+                    <div class="step-details">
+                        <div class="detail-box">
+                            <div class="detail-label">Purpose</div>
+                            <div class="detail-value">Confirmation and documentation retrieval</div>
+                        </div>
+                        <div class="detail-box">
+                            <div class="detail-label">Returns</div>
+                            <div class="detail-value">Complete voucher details and coverage info</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="auth-section">
+            <h3 class="auth-title">Authentication Requirements</h3>
+            <div class="auth-info">
+                <p><strong>Protocol:</strong> All endpoints require HTTPS POST with TLS 1.2 minimum</p>
+                <p style="margin-top: 10px;"><strong>Headers:</strong></p>
+                <ul style="margin-top: 8px; margin-left: 20px; line-height: 1.8;">
+                    <li><span class="code">PHP-AUTH-USER</span> for legacy clients (pre-January 13, 2025)</li>
+                    <li><span class="code">EVA-AUTH-USER</span> for clients onboarded after January 13, 2025</li>
+                </ul>
+                <p style="margin-top: 15px;"><strong>Response Format:</strong></p>
+                <ul style="margin-top: 8px; margin-left: 20px; line-height: 1.8;">
+                    <li>Success: <span class="code">error: false</span> with <span class="code">resultado</span> array</li>
+                    <li>Failure: Error codes (401 unauthorized) with descriptive messages</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
