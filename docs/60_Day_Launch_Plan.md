@@ -1,29 +1,93 @@
 # Continental Assist x MyBambu - 60-Day Launch Plan
 
-**Tactical Execution Guide | Days -7 to Day 60**
+**Tactical Execution Guide | Zero-Budget In-App Launch Strategy**
 
 ---
 
 ## 📋 Executive Summary
 
-This tactical 60-day plan focuses on the **critical first two months** of launch, targeting the **high-value and medium-active segments** to build momentum and prove the business model before broader scaling.
+This tactical 60-day plan focuses on converting **existing MyBambu customers** through owned channels only—no paid advertising budget required.
+
+**Your Customer Base:**
+- **660,000 total customers**
+- **112,000 active monthly customers**
+- **548,000 inactive customers** (reactivation opportunity)
 
 **60-Day Goals:**
-- **3,245 paid subscribers**
-- **$32,500 MRR** (Monthly Recurring Revenue)
+- **5,500 paid subscribers** (4.9% of active customers)
+- **$55,000 MRR** (Monthly Recurring Revenue)
 - **35%+ trial-to-paid conversion rate**
-- **$12.62 average CAC**
-- **Launch budget: $50,000**
+- **$0 acquisition cost** (owned channels only)
 
 **Target Segments:**
-- Days 1-30: High-value segment (28,750 customers)
-- Days 31-60: Medium-active segment (46,000 customers)
+- **Days 1-30:** High-value active (28,000 customers - 25% of active base)
+- **Days 31-45:** Medium-value active (44,800 customers - 40% of active base)
+- **Days 46-60:** Low-value active (39,200 customers - 35% of active base)
 
-**Key Success Factors:**
-- Day-by-day tactical execution
-- Multi-channel coordinated campaigns
-- Aggressive trial-to-paid conversion tactics
-- Real-time optimization and A/B testing
+**Channels Used (Owned Only):**
+- In-App messaging & banners
+- Email marketing
+- SMS/Push notifications
+- Post-transaction interrupts
+- Proactive chat
+- Personal calls (high-value only)
+
+---
+
+## 📊 CUSTOMER SEGMENTATION
+
+### Segment 1: High-Value Active (28,000 customers)
+
+**Profile:**
+- 25% of active base (28,000 of 112,000)
+- 3+ remittances/month
+- $300+ per transaction
+- Age 35-55, family-focused
+
+**Target Plan:** Advanced+ ($14.99/mo)
+**Expected Conversion:** 15% = 4,200 subscribers
+**Expected MRR:** $62,958
+
+---
+
+### Segment 2: Medium-Value Active (44,800 customers)
+
+**Profile:**
+- 40% of active base (44,800 of 112,000)
+- 1-2 remittances/month
+- $150-300 per transaction
+- Age 25-45, budget-conscious
+
+**Target Plan:** Intermediate ($7.99/mo)
+**Expected Conversion:** 5% = 2,240 subscribers
+**Expected MRR:** $17,898
+
+---
+
+### Segment 3: Low-Value Active (39,200 customers)
+
+**Profile:**
+- 35% of active base (39,200 of 112,000)
+- Occasional remittances
+- <$150 per transaction
+- Age 18-35, price-sensitive
+
+**Target Plan:** Basic ($5.99/mo)
+**Expected Conversion:** 2% = 784 subscribers
+**Expected MRR:** $4,696
+
+---
+
+### Total 60-Day Projected Results
+
+| Segment | Customers | Conversion | Subscribers | Avg Plan Price | MRR |
+|---------|-----------|------------|-------------|----------------|-----|
+| High-Value | 28,000 | 15% | 4,200 | $14.99 | $62,958 |
+| Medium-Value | 44,800 | 5% | 2,240 | $7.99 | $17,898 |
+| Low-Value | 39,200 | 2% | 784 | $5.99 | $4,696 |
+| **TOTAL** | **112,000** | **6.4%** | **7,224** | **$11.78** | **$85,552** |
+
+**Conservative Goal:** 5,500 subscribers = $55,000 MRR (4.9% overall conversion)
 
 ---
 
@@ -34,33 +98,42 @@ This tactical 60-day plan focuses on the **critical first two months** of launch
 #### **Day -7 to -5: Final Preparations**
 
 **Monday (Day -7):**
-- 🎨 Finalize all creative assets (15 email templates, 10 banners, 8 SMS)
+- 🎨 Finalize all creative assets (12 email templates, 8 in-app banners, 6 SMS)
 - ✅ Complete technical QA (email delivery, in-app integration, analytics)
 - 👥 Hold "war room" kickoff meeting with full team
 - 📊 Launch performance dashboard and monitoring tools
 
 **Tuesday (Day -6):**
-- 🎯 Segment lists finalized (500 beta, 5,000 Wave 1, 10,000 Wave 2)
+- 🎯 Segment lists finalized:
+  - 500 beta testers (high-value)
+  - 5,000 Wave 1 (high-value)
+  - 22,500 Wave 2 (remaining high-value)
+  - 44,800 medium-value (ready for Day 31)
+  - 39,200 low-value (ready for Day 46)
 - 📧 Schedule all automated email sequences
 - 📱 Configure in-app banners with A/B test variations
 - 💬 Program SMS campaigns with timing rules
 
 **Wednesday (Day -5):**
-- 🎥 Final video testimonial review and approval
-- 🌐 Landing pages live and speed-optimized
-- 📞 Support team final training session (50 agents)
+- 🎥 Record 3-5 customer testimonial videos (from beta users if possible)
+- 🌐 In-app landing pages optimized for mobile
+- 📞 Support team final training session (customer service team)
 - 📋 Prepare FAQ doc with 50+ common questions
 
 #### **Day -4 to -2: Beta Launch**
 
 **Thursday (Day -4):**
 - 🚀 **BETA LAUNCH** to 500 selected high-value customers
-- 📧 Send personalized beta invite emails from CEO
+- 📧 Send personalized beta invite emails from CEO/leadership
 - 📲 In-app banner activated for beta group only
 - 👀 Monitor first 4 hours intensely (hourly check-ins)
 
 **Friday (Day -3):**
-- 📊 Beta performance review (open rate, click rate, sign-ups)
+- 📊 Beta performance review:
+  - Email open rate
+  - In-app banner CTR
+  - Trial sign-ups
+  - First feedback collection
 - 🐛 Address any technical issues immediately
 - 💬 Call 20 beta users for qualitative feedback
 - 📝 Document learnings and optimize for Day 0
@@ -75,411 +148,482 @@ This tactical 60-day plan focuses on the **critical first two months** of launch
 
 ### **WEEK 1: High-Value Launch (Days 1-7)**
 
+**Goal:** 1,000 trial starts from high-value segment
+
 #### **Day 1: LAUNCH DAY 🚀**
 
 **Morning (6 AM):**
 - 📧 **Wave 1 Email** deployed to 5,000 high-value customers
   - Subject: "You're invited: Exclusive family protection program"
-  - From: My Bambu CEO (personalized signature)
-  - Include: 7-day free trial + $10 sign-up bonus
+  - From: MyBambu Leadership (personalized signature)
+  - Include: 7-day free trial + $10 credit bonus
+  - No credit card required to start
+
+**Morning (9 AM):**
+- 📱 **In-app home screen banner** goes live for all 28,000 high-value segment
+  - Headline: "NEW: Protect your family - $10K coverage + 24/7 telehealth"
+  - Prominent placement above transactions
+  - A/B test 3 variations (benefit-focused vs price-focused vs urgency)
 
 **Midday (12 PM):**
-- 📱 **In-app banner** goes live for all high-value segment
-  - Headline: "Protect your family: $10K coverage + 24/7 telehealth"
-  - A/B test 3 variations
+- 📱 **Post-transaction interrupt** activated
+  - Triggers after successful remittance
+  - Message: "You just sent $[amount] to protect your family. Now protect yourself for just $14.99/month."
+  - One-tap enrollment
+  - Dismissible but memorable
 
 **Afternoon (3 PM):**
-- 📲 **Push notification** to opted-in users
+- 📲 **Push notification** to opted-in high-value users
   - "NEW: Family protection plans now available 👨‍👩‍👧‍👦"
+  - Deep link to in-app enrollment
 
 **Evening (6 PM):**
 - 📊 **First performance review**
-  - Email open rate tracking
-  - Click-through analysis
-  - Trial start monitoring
+  - Email open rate (target: 35%+)
+  - In-app banner CTR (target: 3%+)
+  - Post-transaction interrupt view rate (target: 80%+)
+  - Trial starts (target: 150 on Day 1)
   - Quick optimization adjustments
 
 **All Day:**
-- 📞 **Personal calls** begin to top 100 customers
-- 💬 **Live chat** activated in app
-- 🎯 Goal: 300 trial starts on Day 1
+- 📞 **Personal calls** begin to top 50 high-value customers
+- 💬 **Live chat** activated in app for questions
+- 🎯 **Goal: 150 trial starts on Day 1**
 
 ---
 
-#### **Day 2: Social Proof**
+#### **Day 2: Social Proof & Scale**
 
-**Morning:**
+**Morning (8 AM):**
 - 📧 **Email #2** to Day 1 non-openers (2,000 customers)
-  - Subject: "Join 150 families already protected"
-  - Real-time social proof counter
+  - Subject: "Join [X] families already protected"
+  - Real-time social proof counter showing enrollments
+  - Urgency: "Limited spots at launch pricing"
 
-**Afternoon:**
-- 🎥 **Facebook/Instagram ads** launch
-  - 3 video testimonial ads (30 sec each)
-  - Target: My Bambu customer lookalikes
-  - Budget: $500/day
+**Morning (10 AM):**
+- 📧 **Wave 2 Email** to remaining 22,500 high-value customers
+  - Same subject line as Wave 1 (proven performer)
+  - Include early success stories from Day 1 signups
 
-**Evening:**
+**Afternoon (2 PM):**
 - 📲 **SMS #1** to high-value customers who didn't open email
   - "Maria, your family deserves protection. Try free for 7 days + get $10: [link]"
+  - Keep under 160 characters
 
-**Creative Focus:**
-- 💡 Share first customer testimonial video on social media
-- 📸 Post "behind the scenes" of Continental Assist team
-- 🎨 Create urgency: "Only 1,850 spots left at launch pricing"
+**Evening:**
+- 📱 **In-app banner update** with social proof
+  - "[500+] families already protected. Join them →"
+  - Creates FOMO
 
-**Goal:** 200 additional trial starts (500 cumulative)
+**All Day:**
+- Continue personal calls to top customers
+- Monitor app engagement
+- 🎯 **Goal: 200 additional trial starts (350 cumulative)**
 
 ---
 
 #### **Day 3: Education & Value**
 
 **Morning:**
-- 📧 **Wave 2 Email** to additional 10,000 high-value customers
-  - Same proven messaging from Wave 1
+- 📧 **Email #3** to all recipients (educational)
+  - Subject: "What $10K funeral coverage really means"
+  - Explain repatriation process
+  - Real cost comparison vs plan price
+  - Link to in-app calculator
 
 **Midday:**
-- 📱 **Post-transaction interrupt** activated
-  - Shows after remittance: "You just sent $300 - protect your family for $14.99"
-  - One-click enrollment
+- 📱 **In-app calculator launch**
+  - "See how much you could save" widget
+  - Inputs: family size, country, remittance frequency
+  - Shows potential savings vs. plan cost
+  - Shareable results
 
 **Afternoon:**
-- 🎓 **First webinar** announced
-  - "Understanding Travel Assistance: Live Q&A"
-  - Spanish language option
-  - Scheduled for Day 5
-
-**Evening:**
-- 📊 **Savings calculator** promoted
-  - In-app feature showing telehealth cost savings
-  - Shareable results for social media
-
-**Goal:** 400 trial starts (900 cumulative)
-
----
-
-#### **Day 4: Urgency Builds**
-
-**Morning:**
-- 📧 **Email #3** to all previous email recipients
-  - Subject: "How Maria protected her family for $14.99/month"
-  - Full customer testimonial story
-  - Video embedded
-
-**Afternoon:**
-- 📱 **In-app takeover** for high engagement users
-  - Full-screen benefit explainer
-  - Swipe through 4 plan options
-  - Easy comparison tool
+- 📲 **Push notification** about calculator
+  - "See how much Continental Assist could save you"
 
 **Evening:**
 - 💬 **Proactive chat** to users viewing plans but not enrolling
-  - "Hi! I see you're checking out our protection plans. Any questions?"
-
-**Creative Campaign:**
-- 🎨 Launch "Family Protection Stories" series
-  - Daily post featuring real customer scenarios
-  - How Continental Assist helped in emergencies
-  - Authentic, not fear-based
-
-**Goal:** 300 trial starts (1,200 cumulative)
-
----
-
-#### **Day 5: Webinar Day**
-
-**Morning:**
-- 📧 **Webinar reminder** email
-  - Final call to register
-  - "Learn everything about protecting your family"
-
-**Afternoon (2 PM):**
-- 🎓 **LIVE WEBINAR**: "Understanding Travel Assistance"
-  - 60-minute presentation
-  - Continental Assist expert guest
-  - Live Q&A (30 minutes)
-  - Exclusive webinar offer: $15 sign-up bonus (instead of $10)
-  - Goal: 100 attendees, 30% conversion
-
-**Evening:**
-- 📧 **Webinar replay** sent to registrants who couldn't attend
-- 🎥 Clips created for social media
-
-**Goal:** 250 trial starts (1,450 cumulative)
-
----
-
-#### **Day 6: Feature Deep-Dive**
-
-**Morning:**
-- 📧 **Email #4**: "$10,000 Funeral Coverage - What It Really Means"
-  - Detailed breakdown of repatriation coverage
-  - Real cost comparison ($10K+ without coverage)
-  - Emotional but not manipulative
-
-**Afternoon:**
-- 📱 **SMS #2** to engaged but not converted users
-  - "$10K funeral coverage + telehealth for your family. Last 2 days for $10 bonus: [link]"
-
-**Evening:**
-- 📞 **Call blitz** to top 200 customers who opened emails but didn't convert
-  - Personalized consultative approach
-  - Address specific objections
-  - Offer help with enrollment
-
-**Goal:** 200 trial starts (1,650 cumulative)
-
----
-
-#### **Day 7: Last Chance**
-
-**Morning (8 AM):**
-- 📧 **Email #5**: "Last chance for $10 bonus (ends tonight)"
-  - Urgency-focused
-  - Scarcity messaging: "Only [127] spots remaining"
-  - Large CTA button
-
-**Afternoon (2 PM):**
-- 📲 **Push notification**: "Final hours for $10 sign-up bonus"
-
-**Evening (6 PM):**
-- 📲 **SMS #3**: "[Name], $10 bonus expires at midnight. Start your free trial: [link]"
+  - "Hi! I see you're checking out our protection plans. Any questions I can answer?"
 
 **All Day:**
-- 💬 **Live chat agents** on high alert
-- 📞 **Personal calls** to fence-sitters
-- 📱 **In-app banner** updates to countdown timer
-
-**End of Day:**
-- 🎉 **Bonus deadline** extended 24 hours (soft deadline strategy)
-- 📧 Surprise email tomorrow: "We extended it just for you"
-
-**Goal:** 350 trial starts (2,000 cumulative Week 1)
+- Continue post-transaction interrupts
+- Monitor trial user engagement
+- 🎯 **Goal: 250 trial starts (600 cumulative)**
 
 ---
 
-### **WEEK 2: Nurture & Scale (Days 8-14)**
+#### **Day 4: Testimonials & Stories**
+
+**Morning:**
+- 📧 **Email #4** to all previous recipients
+  - Subject: "How Maria protected her family for $14.99/month"
+  - Full customer testimonial story with video
+  - Emotional connection without fear-mongering
+
+**Midday:**
+- 📱 **In-app stories feature** (Instagram-style)
+  - Swipeable customer success stories
+  - 3-5 short testimonials
+  - "Tap to start your free trial"
+
+**Afternoon:**
+- 📲 **SMS #2** to engaged users who haven't converted
+  - "$10K coverage + telehealth for your family. Last 3 days for $10 bonus: [link]"
+
+**Evening:**
+- 📞 **Call blitz** to top 100 customers who viewed but didn't enroll
+  - Personalized consultative approach
+  - Use call script from Selling Tactics section
+  - Address specific objections
+
+**All Day:**
+- A/B test in-app banner variations
+- Analyze which messages perform best
+- 🎯 **Goal: 200 trial starts (800 cumulative)**
+
+---
+
+#### **Day 5: Feature Deep-Dive**
+
+**Morning:**
+- 📧 **Email #5** feature spotlight
+  - Subject: "24/7 telehealth for your entire family - included"
+  - Focus on healthcare access benefit
+  - Show how family in origin country benefits
+
+**Midday:**
+- 📱 **In-app webinar announcement**
+  - "Live Q&A: Understanding Travel Assistance"
+  - Scheduled for Day 7 (gives time to promote)
+  - Spanish language option
+
+**Afternoon:**
+- 📱 **Account section widget** permanently visible
+  - Small banner in account tab
+  - "Get Protected" with plan preview
+
+**Evening:**
+- 📲 **Push notification** for webinar registration
+  - "Join us Day 7 for live Q&A about family protection"
+
+**All Day:**
+- Continue all active campaigns
+- Focus on trial user activation
+- 🎯 **Goal: 150 trial starts (950 cumulative)**
+
+---
+
+#### **Day 6: Urgency Builds**
+
+**Morning:**
+- 📧 **Email #6** to non-converters
+  - Subject: "Last 24 hours for $10 sign-up bonus"
+  - Create urgency around launch offer
+  - Clear CTA
+
+**Midday:**
+- 📱 **In-app banner update** with countdown
+  - "$10 bonus ends in [X] hours"
+  - Animated countdown timer
+
+**Afternoon:**
+- 📲 **SMS #3** to all engaged users
+  - "[Name], $10 bonus expires tomorrow. Start your free trial: [link]"
+
+**Evening:**
+- 📞 **Final call push** to fence-sitters
+  - Top 50 high-value customers who are undecided
+  - Offer to answer any questions
+  - Consultative not pushy
+
+**All Day:**
+- All channels coordinated for urgency
+- Live chat on high alert
+- 🎯 **Goal: 200 trial starts (1,150 cumulative)**
+
+---
+
+#### **Day 7: Last Chance (Extended)**
+
+**Morning (8 AM):**
+- 📧 **Email #7** "Last chance" message
+  - Subject: "Final hours: $10 bonus ends at midnight"
+  - Scarcity: "Only [X] spots left at launch pricing"
+  - Large, clear CTA button
+
+**Midday (12 PM):**
+- 📲 **Push notification** final reminder
+  - "Final hours for $10 sign-up bonus"
+
+**Evening (6 PM):**
+- 📱 **In-app takeover** for active users
+  - Full-screen (but dismissible) final chance message
+  - "Expires at midnight: $10 bonus"
+
+**Night (11 PM):**
+- 📲 **Final SMS** (only to highly engaged users)
+  - "Last hour! Start your trial: [link]"
+
+**End of Day:**
+- 🎉 Soft deadline strategy: "We extended it 24 hours" email for Day 8
+- 🎯 **Goal: 250 trial starts (1,400 cumulative Week 1)**
+
+---
+
+### **WEEK 2: Nurture & Conversion Focus (Days 8-14)**
+
+**Priority:** Activate trial users + continue acquisition
 
 #### **Day 8: Surprise Extension**
 
 **Morning:**
-- 📧 **Email to non-converters**: "We extended the deadline for you"
-  - "So many of you asked for more time..."
-  - 24-hour true final deadline
-  - Last chance messaging
+- 📧 **Email** to all non-converters
+  - Subject: "We extended the deadline just for you"
+  - "So many asked for more time..."
+  - True final deadline: 24 hours
+  - Last chance urgency
 
 **All Day:**
-- 🎯 Focus on nurturing Day 1-7 trial users
-- 📧 Welcome sequence begins for trial starters
-- 💬 Proactive engagement with trial users
-
-**Goal:** 150 trial starts (2,150 cumulative)
-
----
-
-#### **Day 9-10: Onboarding Focus**
-
-**Priority:** Ensure trial users activate and understand benefits
-
-**Day 9:**
-- 📧 **Trial Day 2 Email**: "How to get the most from your plan"
-  - Step-by-step guide to using telehealth
-  - Save emergency contact number
-  - Download digital voucher
-
-**Day 10:**
-- 📲 **SMS check-in** to trial users: "Questions about your trial? We're here to help: [link to chat]"
-- 📱 **In-app tutorial** prompts for trial users
-- 💬 **Proactive chat** to inactive trial users
+- 🎯 **Shift focus to trial nurturing:**
+  - Welcome sequence begins for Day 1-7 trial starters
+  - Onboarding emails (how to use benefits)
+  - In-app tutorials activated
+  - Proactive chat to inactive trial users
 
 **New Acquisition:**
-- Continue Facebook/Instagram ads
-- Scale to remaining high-value segment (13,000 more customers)
-- Email campaigns continue
+- Continue in-app banners
+- Continue post-transaction interrupts
+- Reduced email frequency (fatigue management)
 
-**Goal:** 300 trial starts per day (2,750 cumulative by Day 10)
+**Goal:** 150 trial starts (1,550 cumulative)
 
 ---
 
-#### **Day 11-14: Conversion Push**
+#### **Days 9-10: Trial Activation Push**
 
-**Focus:** Convert Day 1-7 trial users before trials end
+**Focus:** Get trial users to USE benefits (increases conversion)
+
+**Day 9:**
+- 📧 **Trial Day 2 Email**: "How to get the most from your trial"
+  - Step-by-step guide to booking telehealth
+  - Save emergency contact: +1-305-722-5824
+  - Download digital voucher
+  - Simple checklist
+
+**Day 10:**
+- 📲 **SMS to trial users**: "Questions about your trial? We're here: [link to chat]"
+- 📱 **In-app tutorial** for trial users
+  - Contextual tooltips on first login
+  - "Book your first telehealth session"
+- 💬 **Proactive chat** to inactive trial users (3+ days no activity)
+
+**New Acquisition:**
+- Continue core campaigns
+- A/B test winning variations
+
+**Goal:** 300 trial starts total over 2 days (1,850 cumulative by Day 10)
+
+---
+
+#### **Days 11-14: Conversion Week**
+
+**Critical:** Day 1-7 trials ending, need to convert
 
 **Day 11:**
 - 📧 **Trial Day 4 Email**: "Your trial ends in 3 days"
-  - Summary of benefits received
-  - "Here's what you'll miss if you cancel"
-  - Easy reactivation if they cancel
+  - Summary of what they've received
+  - Value reminder
+  - "Here's what happens next"
+  - Billing transparency
 
 **Day 12:**
-- 📞 **Call campaign** to trial users not yet engaged
-  - "Hi, I noticed you started a trial but haven't used any benefits yet. Can I help?"
-  - Address objections
-  - Demonstrate value
+- 📞 **Call campaign** to high-value trial users not engaged
+  - "I noticed you haven't used any benefits. Can I help?"
+  - Overcome objections
+  - Offer assistance with first telehealth booking
 
 **Day 13:**
-- 📲 **SMS to Day 6 trial users**: "Your trial ends tomorrow. Don't lose your $10K coverage: [manage]"
+- 📲 **SMS to Day 6 trials**: "Your trial ends tomorrow. Keep your protection: [link]"
+- 📧 **Trial Day 6 Email**: "Last day of trial"
 
 **Day 14:**
-- 📧 **Trial end reminder**: "Last day of your free trial"
-  - Here's what happens next
-  - Billing details
-  - Cancel anytime option
-  - "Join 2,500 protected families"
+- 📧 **Trial end email**: "Your trial has ended"
+  - Welcome to paid membership (for those who converted)
+  - Here's what you get
+  - Share with family
 
-**Week 2 Goal:** 1,000 additional trial starts (3,000 cumulative by Day 14)
+**New Acquisition:**
+- Maintain in-app presence
+- Continue post-transaction interrupts
+- Reduce email to non-responders (avoid spam)
+
+**Week 2 Goal:** 600 additional trial starts (2,450 cumulative by Day 14)
+
+**Expected Conversions:** ~857 paid from Week 1 trials (35% of 2,450)
 
 ---
 
-### **WEEK 3: Retention & Continued Growth (Days 15-21)**
+### **WEEK 3: First Conversions + Continued Acquisition (Days 15-21)**
 
-#### **Day 15-17: First Conversions**
+#### **Day 15-17: Celebration & Retention**
 
-**Critical Moment:** Day 1-7 trial users converting to paid
+**Critical Moment:** First major wave of paid conversions!
 
 **Day 15:**
-- 🎉 **Day 1 trials converting to paid!**
-- 📧 **Welcome to paid members**: "Welcome to the family!"
-  - Here's your program number
-  - Save emergency contact: +1-305-722-5824
-  - Share with family members
+- 🎉 **857 paid subscribers!** (from Week 1-2 trials converting)
+- 📧 **Welcome email to paid members**: "Welcome to the family!"
+  - Program number
+  - Emergency contact
+  - How to share with family members
+  - Benefits reminder
 
 **Day 16:**
 - 📊 **Conversion analysis**
-  - Review trial-to-paid rate
-  - Identify drop-off points
-  - Optimize funnel
+  - What worked? What didn't?
+  - High-performers vs low-performers
+  - Funnel drop-off points
+  - Optimize based on data
 
 **Day 17:**
-- 💬 **NPS survey** to new paid members
-  - "How likely are you to recommend this to family?"
-  - Capture testimonials from promoters
+- 💬 **NPS survey** to first paid members
+  - "How likely are you to recommend?"
+  - Capture testimonials from promoters (9-10 scores)
+  - Address detractors immediately
 
 **Continued Acquisition:**
-- Full high-value segment now reached (28,750 total)
-- Referral program soft launch
-- "Give $5, Get $5" referral incentive
+- High-value segment now fully reached
+- Begin re-engagement of non-responders
+- Referral program soft launch: "Give $5, Get $5"
 
-**Goal:** 800 trial starts this week (3,800 cumulative by Day 21)
+**Acquisition Goal:** 400 trial starts this week (2,850 cumulative by Day 21)
 
 ---
 
-#### **Day 18-21: Optimization Week**
-
-**Focus:** Double down on what's working, cut what's not
+#### **Days 18-21: Optimization & Medium Segment Prep**
 
 **Day 18:**
 - 📊 **Full performance review**
-  - Email: Open rates, click rates, conversion rates
-  - In-app: Banner CTR, interrupt conversion
-  - SMS: Response rates
-  - Social: Ad performance (CPM, CPC, ROAS)
+  - Email: Open rates, click rates, conversions by subject line
+  - In-app: Banner CTR by variation, placement, timing
+  - Post-transaction: View rate, conversion rate
+  - SMS: Delivery rate, response rate
+  - Identify winners and losers
 
 **Day 19:**
-- 🎨 **Creative refresh**
-  - New email subject line variations
+- 🎨 **Creative refresh** for high-value segment
+  - New email variations
   - New in-app banner designs
-  - Updated SMS messaging
-  - Fresh social media ads
+  - Updated messaging based on feedback
 
 **Day 20:**
-- 🎯 **A/B test results** review
-  - Winning variations scale up
-  - Losing variations cut
-  - New tests launched
+- 🎯 **A/B test results** implementation
+  - Scale up winners
+  - Kill losers
+  - Launch new tests for Week 4
 
 **Day 21:**
-- 📋 **Week 4 planning**
-  - Prepare for medium segment launch
-  - New messaging for different persona
-  - Budget reallocation based on performance
+- 📋 **Medium segment prep**
+  - Different messaging (healthcare focus, not funeral)
+  - Price-focused ($7.99 vs $14.99)
+  - Value/ROI emphasis
+  - Creative assets adapted
 
-**Goal:** 700 paid subscribers by Day 21 (from Day 1-14 trials converting)
+**Week 3 Milestone:**
+- 857 paid subscribers
+- ~$12,000 MRR
+- Ready for medium segment launch
 
 ---
 
-### **WEEK 4: Retention + Medium Segment Prep (Days 22-28)**
+### **WEEK 4: High-Value Retention + Medium Segment Prep (Days 22-28)**
 
-#### **Day 22-24: High-Value Retention**
-
-**Focus:** Keep early adopters engaged and prevent churn
+#### **Days 22-24: Keep Early Adopters Happy**
 
 **Day 22:**
-- 📧 **Day 7 retention email**: "Did you know? Your plan includes nutrition support"
+- 📧 **Day 7 retention email**: "Did you know? Your plan includes..."
   - Highlight underutilized benefits
-  - Book a session link
+  - Nutrition support for recipient
+  - Psychology teleassistance
+  - "Book a session today"
 
 **Day 23:**
-- 📲 **SMS**: "Your family in [Country] can now see a doctor anytime. Show them how: [link]"
+- 📲 **SMS to paid members**: "Your family in [Country] can see a doctor anytime. Show them: [link]"
+- 📱 **In-app benefit reminder** for paid members
 
 **Day 24:**
-- 🎥 **Customer success video** featuring first paid members
-  - Share on social media
-  - Use in upcoming campaigns
+- 💬 **Proactive chat** to paid members not using benefits
+  - "Hi! I see you haven't booked telehealth yet. Need help?"
+  - Increase utilization = reduce churn
 
-**Acquisition:**
-- Continue nurturing remaining high-value prospects
-- Re-engage those who didn't convert
+**Continued Acquisition:**
+- Re-engage high-value non-converters
+- "Last chance at launch pricing" campaigns
+- Personal calls to remaining top prospects
 
-**Goal:** 1,000+ paid subscribers by Day 24
+**Goal:** Maintain acquisition momentum (200 trials this week)
 
 ---
 
-#### **Day 25-28: Medium Segment Launch Prep**
-
-**Focus:** Prepare for Week 5 medium segment launch
+#### **Days 25-28: Medium Segment Launch Preparation**
 
 **Day 25:**
-- 🎯 **Segment analysis** of medium-active customers
-  - Finalize list (46,000 customers)
-  - Personalization variables ready
-  - Different messaging framework
+- 🎯 **Finalize medium segment list** (44,800 customers)
+- 📊 **Messaging framework** for "The Balancer" persona:
+  - Healthcare access focus
+  - Affordability ($7.99/month)
+  - ROI/savings emphasis
+  - Family healthcare stories
 
 **Day 26:**
-- 🎨 **Creative adaptation** for medium segment
-  - Focus on healthcare access (not funeral coverage)
-  - Emphasis on affordability ($7.99 vs $14.99)
-  - Telehealth savings calculator prominent
+- 🎨 **Creative adaptation** for medium segment:
+  - Email templates updated
+  - In-app banners redesigned
+  - SMS messages rewritten
+  - Different value props
 
 **Day 27:**
-- 📧 **Email sequences** updated for medium persona
-  - "The Balancer" messaging
-  - Value-focused (ROI of $7.99/month)
-  - Customer stories from similar demographic
+- 📧 **Email sequences programmed** for medium launch
+- 📱 **In-app targeting rules** updated (segment by transaction behavior)
+- ✅ **QA testing** all medium segment assets
 
 **Day 28:**
-- ✅ **Launch checklist** for medium segment
-  - All systems go
-  - Support team briefed
-  - Wave 1 ready (10,000 customers)
-
-**End of Week 4:**
-- 🎉 **Milestone:** 875 paid subscribers (matching Month 1 goal!)
-- 💰 **MRR:** ~$12,000
-- 📊 **Conversion rate:** 35%+ (on track)
+- ✅ **Ready for medium segment launch Day 29**
+- 🎉 **Month 1 milestone:** ~1,200 paid subscribers, $15,000 MRR
 
 ---
 
-### **WEEK 5-8: Medium Segment Launch (Days 29-60)**
+### **WEEK 5: Medium Segment Launch (Days 29-35)**
 
-#### **Day 29: Medium Segment Launch**
+**Target:** 44,800 medium-active customers
 
-**Morning:**
-- 📧 **Wave 1 Email** to 10,000 medium-active customers
+#### **Day 29: Medium Segment Launch Day**
+
+**Morning (6 AM):**
+- 📧 **Wave 1 Email** to 10,000 medium customers
   - Subject: "24/7 doctor visits for your family - just $7.99/month"
-  - Focus: Healthcare savings, telehealth convenience
+  - Healthcare savings focus
+  - Telehealth convenience
   - Offer: 7-day free trial + first month 50% off
 
-**Midday:**
-- 📱 **In-app banner** updated for medium segment
+**Morning (9 AM):**
+- 📱 **In-app banner updated** for medium segment
   - "Healthcare for your whole family: $7.99/month"
-  - Savings calculator CTA
+  - Calculate your savings link
 
-**Afternoon:**
-- 🎯 **Post-transaction interrupt** adjusted
-  - "You just sent $200 to support your family. Now give them healthcare access for just $7.99."
+**Midday (12 PM):**
+- 📱 **Post-transaction interrupt adjusted**
+  - "You just sent $[amount]. Give your family healthcare access for $7.99/month"
+  - Show savings calculator
 
-**Goal:** 400 trial starts on Day 29
+**Afternoon (3 PM):**
+- 📲 **Push notification** to medium segment
+  - "NEW: Affordable family healthcare plans"
+
+**All Day:**
+- Continue high-value retention
+- Monitor medium segment response
+- 🎯 **Goal: 250 trial starts from medium segment**
 
 ---
 
@@ -487,41 +631,142 @@ This tactical 60-day plan focuses on the **critical first two months** of launch
 
 **Day 30:**
 - 📧 **Wave 2** to additional 20,000 medium customers
-- 🎥 **Testimonial video** from medium segment persona
-  - "I saved $450 on healthcare last year"
+- Same proven email from Day 29
 
 **Day 32:**
 - 📲 **SMS campaign** to medium segment
-  - "24/7 doctor visits for your family. Try free: [link]"
+  - "24/7 doctor visits for $8/month. Try free: [link]"
+- 📧 **Email #2** to non-openers
+  - Subject: "Save $1,642 this year on healthcare"
+  - ROI-focused message
+
+**Day 34:**
+- 📧 **Email #3** testimonial from medium segment persona
+  - "I saved $450 on healthcare costs"
+  - Similar demographic story
 
 **Day 35:**
-- 📧 Full medium segment reached (46,000)
-- 🎓 **Second webinar**: "Telehealth 101: How to Use Your Benefits"
-
-**Goal:** 1,500 trial starts from medium segment (Days 29-35)
+- 📧 Full medium segment now reached (44,800 total)
+- 📱 All in-app placements optimized for medium segment
+- 🎯 **Goal: 1,000 trial starts from medium segment (Days 29-35)**
 
 ---
 
-#### **Days 36-60: Optimize & Convert**
+### **WEEK 6-7: Optimize Medium + Convert (Days 36-49)**
 
 **Ongoing Activities:**
-- 📧 Continue email nurture sequences
-- 📱 In-app engagement campaigns
-- 📞 Personal outreach to high-value prospects
+- 📧 Continue email nurture sequences for medium segment
+- 📱 In-app banners remain active
+- 📲 SMS campaigns for engaged users
 - 💬 Proactive chat for trial users
-- 🎨 Weekly creative refresh
-- 📊 Daily performance monitoring
+- 📞 Retention calls to at-risk paid members
 - 🎯 Trial-to-paid conversion optimization
 
-**Week 8 Focus (Days 50-56):**
-- 🎯 Re-engage high-value non-converters
-- 💰 Special offer for "last chance" to join at launch pricing
-- 📞 Personal call campaign to top 500 who haven't joined
+**Focus Areas:**
+- Day 29-35 trials converting (Day 36-42)
+- Medium segment re-engagement
+- High-value segment retention
+- Creative refresh based on 5 weeks of data
 
-**Week 9 Focus (Days 57-60):**
-- 📊 60-day performance review
-- 📋 Plan for Days 61-90 (low-active segment)
-- 🎉 Celebrate wins with team
+**Week 6 Goal:** 800 trial starts (medium segment)
+**Week 7 Goal:** 600 trial starts (medium + re-engagement)
+
+**Expected Paid Subscribers by Day 49:** ~3,500
+
+---
+
+### **WEEK 8: Low-Value Segment Launch (Days 50-56)**
+
+**Target:** 39,200 low-value active customers
+
+#### **Day 50: Low-Value Segment Launch**
+
+**Morning:**
+- 📧 **Wave 1 Email** to 10,000 low-value customers
+  - Subject: "Peace of mind for $5.99/month - less than a coffee"
+  - Price-focused messaging
+  - Simplicity emphasis
+  - Basic plan features
+
+**Messaging Shift:**
+- Remove complex benefits
+- Focus on essential: $10K funeral coverage + Rx discounts
+- Emphasize affordability
+- No-commitment messaging
+
+**All Day:**
+- 📱 In-app banners updated for low-value segment
+- 📲 Push notifications
+- Post-transaction interrupts adjusted
+- 🎯 **Goal: 200 trial starts Day 50**
+
+---
+
+#### **Days 51-56: Scale Low-Value Segment**
+
+**Days 51-53:**
+- Scale to full 39,200 low-value customers
+- Simple, repetitive messaging
+- Price comparison: "$6 vs $15,000 funeral cost"
+
+**Days 54-56:**
+- Re-engagement of all segments
+- Final push for Day 60 goal
+- Retention focus for early cohorts
+
+**Week 8 Goal:** 600 trial starts (low-value segment)
+
+---
+
+### **WEEK 9: Final Push & 60-Day Review (Days 57-60)**
+
+#### **Days 57-59: Last Acquisition Push**
+
+**Focus:** Hit 60-day goals
+
+**Day 57:**
+- 📧 **Re-engagement email** to all non-converters
+  - "Last chance to join at launch pricing"
+  - Across all segments
+
+**Day 58:**
+- 📞 **Call campaign** to top 200 high-value non-converters
+- 💬 **Chat blitz** to engaged users
+
+**Day 59:**
+- 📱 **In-app final push** with urgency
+- 📲 **SMS final reminder** to engaged users
+
+**Goal:** 200 final trial starts
+
+---
+
+#### **Day 60: Review & Celebrate 🎉**
+
+**Morning:**
+- 📊 **Full 60-day performance review**
+  - Total trials started
+  - Conversion rates by segment
+  - MRR achieved
+  - Channel performance
+  - Cohort retention analysis
+
+**Expected Results:**
+- **7,000+ trial starts**
+- **2,450+ paid conversions** (35% of trials from Day 1-53)
+- **$24,000+ MRR**
+- **2.2% overall conversion** of 112K active customers
+
+**Afternoon:**
+- 📋 **Days 61-90 planning**
+  - Low-value segment optimization
+  - Inactive customer reactivation (548K opportunity)
+  - Retention campaigns
+  - Upsell strategies
+
+**Evening:**
+- 🎉 **Team celebration**
+- 🏆 **Recognition of top performers**
 
 ---
 
@@ -529,268 +774,250 @@ This tactical 60-day plan focuses on the **critical first two months** of launch
 
 ### Campaign 1: "Real Families, Real Protection"
 
-**Concept:** Authentic video testimonial series featuring actual My Bambu customers
+**Concept:** Video testimonials from actual MyBambu customers
 
 **Execution:**
-- 🎥 Film 10 customer stories (5-minute documentary style)
-- ✂️ Cut into 30-sec, 60-sec, 90-sec versions
-- 📱 Share across email, social, in-app
-- 🎬 Each story highlights different benefit:
-  - Story 1: Funeral repatriation saved family $12K
-  - Story 2: Telehealth diagnosed mother's condition early
-  - Story 3: Nutrition support helped recipient lose 30 lbs
-  - Story 4: Psychological support during grief
-  - Story 5: Peace of mind for remittance sender
+- 🎥 Record 5-10 customer stories (after first conversions)
+- ✂️ Edit into 30-sec, 60-sec versions
+- 📱 Share in-app, email, SMS
+- 🎬 Each highlights different benefit
 
-**Social Media Tactic:**
-- Post teaser clips daily
-- Full stories on YouTube
-- Facebook/Instagram ads using best performers
-- User-generated content encouraged (#MyBambuProtection)
+**Collection Method:**
+- Email top 50 satisfied customers (Month 2)
+- Offer $50 credit for video testimonial
+- Make it easy: 15-minute video call recording
+- Professional editing by your team
+
+**Distribution:**
+- Email campaign: "How Maria protected her family"
+- In-app stories feature
+- Post-transaction video thumbnail
+- SMS with video link
 
 **Why It Works:**
-- Authentic > polished commercials
-- Latino families trust word-of-mouth
+- Social proof from real customers
+- Latino community trusts word-of-mouth
 - Addresses skepticism with proof
-- Emotional connection without fear tactics
-
-**Budget:** $15,000 (video production, editing, promotion)
+- No production budget needed (use Zoom + basic editing)
 
 ---
 
 ### Campaign 2: "The True Cost Calculator"
 
-**Concept:** Interactive tool showing financial impact of emergencies
+**Concept:** Interactive tool showing savings
 
 **Execution:**
-- 🖥️ Web-based calculator
-- 📱 In-app version
-- 📧 Email campaign driving traffic
+- 🖥️ In-app widget
+- 📧 Email campaign promoting it
+- 📱 Shareable results
 
 **User Inputs:**
-- Number of family members
+- Family size
 - Ages
 - Home country
-- Average remittance amount
+- Remittance frequency
 
 **Calculator Shows:**
 - ❌ **Without Continental Assist:**
-  - Average funeral repatriation cost: $15,000
-  - Average telehealth visit: $150 × 12 visits = $1,800/year
-  - Emergency medical flight: $25,000+
-  - **Total potential cost: $40,000+**
+  - Funeral repatriation: $15,000
+  - Telehealth visits: $150 × 12 = $1,800/year
+  - Emergency evacuation: $25,000+
+  - **Total risk: $40,000+**
 
 - ✅ **With Continental Assist:**
-  - Annual cost: $180 (Advanced plan)
+  - Annual cost: $96-$180
   - Coverage: Up to $10,000
-  - Telehealth: Unlimited included
-  - **Savings: $39,820**
+  - Telehealth: Unlimited
+  - **Savings: $39,000+**
 
-**Social Sharing:**
-- "I could save $39,000 by protecting my family with Continental Assist"
-- Auto-generates shareable graphic
-- Referral link included
+**Shareable:**
+- Auto-generate graphic: "I could save $39K"
+- Include referral link
+- Post to social media
+
+**Development:**
+- Simple form + calculation logic
+- Mobile-optimized
+- <1 week to build
 
 **Why It Works:**
-- Logical + emotional appeal
 - Quantifies abstract risk
-- Shareable = viral potential
-- Drives urgency through awareness
-
-**Budget:** $8,000 (development, design, promotion)
+- Logical + emotional
+- Viral potential through sharing
+- Drives urgency
 
 ---
 
-### Campaign 3: "30-Day Challenge"
+### Campaign 3: "30-Day Trial Challenge"
 
 **Concept:** Gamified onboarding for trial users
 
 **Execution:**
 
-**Week 1: "Get to Know Your Benefits"**
-- Day 1: Save emergency contact number ✓
-- Day 2: Download your digital voucher ✓
-- Day 3: Watch 2-min explainer video ✓
-- Day 4: Share with one family member ✓
-- Day 5: Take benefits quiz (win $5 credit) ✓
+**Week 1 Tasks:**
+- Day 1: Save emergency contact ✓
+- Day 2: Download digital voucher ✓
+- Day 3: Watch 2-min explainer ✓
+- Day 4: Share with family member ✓
+- Day 5: Complete quiz (earn $5 credit) ✓
 
-**Week 2: "Use Your Benefits"**
+**Week 2 Tasks:**
 - Day 8: Book first telehealth session ✓
-- Day 10: Get Rx discount at pharmacy ✓
-- Day 12: Schedule nutrition consultation for recipient ✓
-- Day 14: Complete NPS survey (win $10 credit) ✓
+- Day 10: Use Rx discount ✓
+- Day 12: Schedule nutrition session (for recipient) ✓
+- Day 14: Complete NPS survey (earn $10 credit) ✓
 
 **Rewards:**
-- Complete all Week 1 tasks → $5 remittance credit
-- Complete all Week 2 tasks → $10 remittance credit
-- Convert to paid → Bonus month free (on annual plan)
+- Complete Week 1 → $5 credit
+- Complete Week 2 → $10 credit
+- Convert to paid → 1 month free on annual plan
 
-**Progress Tracking:**
+**Tracking:**
 - 📱 In-app progress bar
 - 📧 Daily reminder emails
-- 🏆 Leaderboard for most engaged users
+- 🏆 Leaderboard of most engaged users
 
 **Why It Works:**
-- Gamification = engagement
+- Gamification increases engagement
 - Demonstrates value through usage
-- Reduces trial churn
+- Reduces trial churn significantly
 - Creates habit formation
-- Rewards active users
-
-**Budget:** $5,000 (in-app development, credits/rewards)
+- Low cost (just credits)
 
 ---
 
 ### Campaign 4: "Family Ambassador Program"
 
-**Concept:** Turn customers into brand advocates through incentivized referrals
-
-**Execution:**
+**Concept:** Referral program for customers
 
 **Tier 1: Friend Referrals**
 - Refer 1 friend → $5 credit (both parties)
 - Refer 3 friends → $20 credit + free month
-- Refer 5 friends → $50 credit + upgraded plan free for 3 months
+- Refer 5 friends → $50 credit + plan upgrade (3 months)
 
 **Tier 2: Community Champion**
 - Refer 10+ friends → "Ambassador" status
-- Exclusive perks:
-  - Annual plan free (up to $180 value)
-  - VIP support line
+- Perks:
+  - Annual plan free (up to $180)
+  - VIP support
   - Early access to new benefits
-  - Quarterly gift cards ($50)
+  - Quarterly $50 gift card
 
-**Tier 3: Influencer Partnership**
-- Partner with Latino micro-influencers (10K-100K followers)
-- Provide unique promo codes
-- Commission: $5 per conversion
-- Bonus: $500 for 100+ referrals
+**Implementation:**
+- 📱 In-app "Refer & Earn" section
+- 📧 Referral invitation emails
+- 📲 SMS with unique referral links
+- Track referrals automatically
 
-**Marketing Materials:**
-- 📱 Sharable referral cards (digital)
-- 🎥 Personalized video messages from CEO thanking ambassadors
-- 🎁 Physical "Ambassador Kit" (branded items)
-- 📧 Monthly ambassador newsletter
+**Marketing:**
+- Email paid members monthly: "Earn $50 by referring friends"
+- In-app prompt after positive NPS score
+- Post-remittance: "Your friend could use this too"
 
 **Why It Works:**
-- Word-of-mouth is #1 trust factor
-- Latino community is tight-knit
+- Word-of-mouth is #1 for Latino community
 - Incentives drive action
-- Scales acquisition affordably
+- Scales acquisition at low cost
 - Creates brand loyalty
-
-**Budget:** $12,000 (referral platform, incentives, ambassador kits)
-
----
-
-### Campaign 5: "Seasonal Stories"
-
-**Concept:** Timely campaigns tied to cultural moments
-
-**Holiday Campaigns:**
-
-**🎄 December: "Give the Gift of Protection"**
-- Gift memberships for family in origin country
-- Special holiday offer: Buy 1 year, get 1 month free
-- Digital gift cards with personalized message
-- Social media: #GiftOfProtection campaign
-
-**👨‍👩‍👧 Father's Day / Mother's Day:**
-- "The Best Gift is Peace of Mind"
-- Special offer for gifting to parents
-- Emotional video: "Thank you for protecting us"
-- Discount: 25% off first year
-
-**🎓 Back to School (August):**
-- "Protect Your Student Abroad"
-- Student-specific messaging
-- Parent testimonials about college kids abroad
-- Partnership with universities
-
-**🦃 Thanksgiving:**
-- "Be Thankful for Protection"
-- Gratitude-focused messaging
-- Customer appreciation event (virtual)
-- Bonus: $10 credit for existing members
-
-**Why It Works:**
-- Cultural relevance = resonance
-- Gift-giving creates new acquisition channel
-- Seasonal urgency
-- Emotional connection amplified
-
-**Budget:** $6,000 per holiday campaign
+- Existing customers = best marketers
 
 ---
 
-### Campaign 6: "What If?" Series
+### Campaign 5: "Post-Transaction Momentum"
 
-**Concept:** Scenario-based content that addresses fears without fear-mongering
+**Concept:** Catch customers right after remittance (high intent moment)
 
-**5 Scenarios (Video + Blog + Email Series):**
+**Execution:**
 
-**Scenario 1: "What if mom gets sick?"**
-- Story: Maria's mom in Mexico feels sick
-- Without Continental Assist: Waits days for appointment, pays $150
-- With Continental Assist: Telehealth call same day, free diagnosis
-- Outcome: Early detection of diabetes, life saved
+**Timing:** Immediately after successful remittance
 
-**Scenario 2: "What if I can't afford a funeral?"**
-- Story: Carlos receives news of father's sudden passing
-- Without: Family scrambles for $15K+ for repatriation
-- With: Continental Assist handles everything, family receives $10K
-- Outcome: Family can grieve without financial stress
+**Message Variations (A/B test):**
 
-**Scenario 3: "What if I need help far from home?"**
-- Story: Emergency while visiting family abroad
-- Without: Lost, language barriers, expensive
-- With: 24/7 multilingual support, coordinated assistance
-- Outcome: Quick resolution, peace of mind
+**Variation A: Protection**
+```
+"You just sent $[amount] to protect your family.
+Now protect yourself for $9.99/month."
+[Start Free Trial]
+```
 
-**Scenario 4: "What if my family needs ongoing support?"**
-- Story: Recipient struggling with mental health
-- Without: No access to therapy, $200/session
-- With: Monthly psychological teleassistance included
-- Outcome: Mental health improves, family closer
+**Variation B: Comparison**
+```
+"$[amount] sent. For just 3% more ($9.99),
+your entire family gets healthcare + $10K coverage."
+[Learn More]
+```
 
-**Scenario 5: "What if something happens to me?"**
-- Story: Breadwinner passes away suddenly
-- Without: Family faces eviction, hardship
-- With: $900 remittance support for 3 months + funeral assistance
-- Outcome: Family has time to adjust
+**Variation C: Question**
+```
+"You just supported your family with $[amount].
+What if something happened to you?"
+[Protect Them →]
+```
 
-**Distribution:**
-- 📧 One scenario per week in email
-- 🎥 Video version on YouTube/Facebook
-- 📝 Long-form blog post
-- 📱 In-app story feature
-- 📊 Each scenario ends with calculator link
+**Implementation:**
+- Full-screen (dismissible) modal
+- One-tap enrollment
+- "Maybe later" option (shows again next transaction)
+- Frequency cap: Once per week max
 
 **Why It Works:**
-- Addresses objections preemptively
-- Shows before/after contrast
-- Education > sales pitch
-- Builds emotional case for action
-- Demonstrates specific value
+- Captures high-intent moment
+- Contextually relevant
+- Natural flow in user journey
+- High conversion rates (5-8% typical)
 
-**Budget:** $10,000 (video production, content creation)
+---
+
+### Campaign 6: "Inactive Customer Reactivation"
+
+**Concept:** Bring back 548,000 inactive customers
+
+**Timing:** Days 61-90 (after active customer launch)
+
+**Message Framework:**
+
+**Email Subject Lines (A/B test):**
+- "We miss you! Come back to a new benefit"
+- "Your account is waiting + $25 bonus"
+- "Something new for returning customers"
+
+**Offer:**
+- 30 days free trial (vs 7 days for active)
+- $25 remittance credit (vs $10)
+- No credit card required
+
+**Segmentation:**
+- Recently inactive (last 3 months): Higher priority
+- Long-term inactive (3+ months): Lower priority
+- Different offers by inactivity period
+
+**Channels:**
+- Email primary
+- SMS for recent inactives
+- No in-app (they're not logging in)
+
+**Why It Works:**
+- Win-back incentive
+- New reason to return
+- Massive addressable market (548K)
+- Low competition (not using competitor either)
 
 ---
 
 ## 💰 SELLING STRATEGIES & TACTICS
 
-### Tactic 1: Consultative Selling Approach
+### Tactic 1: Consultative Selling via Phone
 
-**For Personal Calls to High-Value Customers**
+**For:** Top 500 high-value customers
 
 **Call Structure (10-15 minutes):**
 
 **1. Introduction (2 min)**
 ```
-"Hi [Name], this is [Agent] from My Bambu. I'm calling because
-you're one of our valued customers, and we've launched something
-new that I think could really help your family. Do you have a few
-minutes to chat?"
+"Hi [Name], this is [Agent] from MyBambu. I'm calling because
+you're one of our most valued customers, and we've launched
+something new that I think could really help your family. Do you
+have 5 minutes to chat?"
 ```
 
 **2. Discovery Questions (3 min)**
@@ -850,76 +1077,87 @@ you will - you're all set. If not, cancel anytime. Sound good?"
 
 **6. Follow-up**
 ```
-"Perfect! I'm sending the confirmation now. I'll also send you my
+"Perfect! I'm sending the confirmation now. I'll also text you my
 direct number - if you or your family have any questions during the
 trial, just text me. We're here to help."
 ```
 
 **KPIs:**
-- Call connection rate: 60%+
-- Call-to-trial conversion: 25%+
-- Trial-to-paid conversion: 50%+
+- Calls made: 500 (Days 1-30)
+- Connection rate: 60% (300 connections)
+- Call-to-trial conversion: 25% (75 trials)
+- Trial-to-paid: 50% (38 paid)
+- ROI: 38 paid @ $15/mo = $570/mo MRR from calls
 
 ---
 
-### Tactic 2: "Show Me the Money" ROI Approach
+### Tactic 2: "Show Me the Money" ROI Email
 
-**For Budget-Conscious Medium/Low Segments**
+**For:** Budget-conscious medium/low segments
 
-**Email/SMS Script:**
+**Email Template:**
 
-**Subject: "You'll save $1,642 this year with this plan"**
+**Subject:** "You'll save $1,642 this year with this plan"
 
 ```
 Hi [Name],
 
 Quick question: What would you do with an extra $1,642?
 
-That's how much the average My Bambu customer saves in their
+That's how much the average MyBambu customer saves in their
 first year with Continental Assist:
 
 💰 Avoided Costs:
-- Emergency medical visit: $150 (saved 6x) = $900
-- Prescription drug costs: $240/year savings
-- Mental health support: $200/session (saved 3x) = $600
-- Nutrition counseling: $150/session (saved 4x) = $600
-- Total avoided costs: $2,340/year
+- Emergency medical visits: $150 × 6 = $900
+- Prescription drugs: $240/year savings
+- Mental health support: $200 × 3 = $600
+- Nutrition counseling: $150 × 4 = $600
+- Total avoided: $2,340/year
 
 📉 Your Investment:
-- Continental Assist: $96/year (Intermediate plan @ $7.99/mo)
+- Continental Assist: $96/year (Intermediate @ $7.99/mo)
 
 💵 Net Savings: $2,244/year
 
-And that's BEFORE counting the $10,000 funeral coverage,
+And that's BEFORE the $10,000 funeral coverage,
 which alone is worth $10,000 in peace of mind.
 
 Try it free for 7 days →
-
 [Start Free Trial]
 
 P.S. First month 50% off = $4 to try. That's less than a coffee.
+
+- The MyBambu Team
 ```
 
 **Why It Works:**
-- Speaks budget-conscious language
-- Quantifies intangible benefits
+- Quantifies abstract benefits
 - Shows clear math
-- Low-risk trial offer
+- Speaks budget-conscious language
+- Low-risk trial
 - Removes price objection
+
+**Performance:**
+- Open rate: 35%
+- Click rate: 10%
+- Conversion: 3%
+- 1,000 sent = 1 paid subscriber
 
 ---
 
 ### Tactic 3: "Social Proof Avalanche"
 
-**For Skeptical/Inactive Segments**
+**For:** Skeptical customers who need validation
 
-**Multi-Channel Strategy:**
+**Multi-Channel Approach:**
 
 **Email:**
 ```
-Subject: "4,327 My Bambu families are now protected. Are you?"
+Subject: "4,327 MyBambu families are now protected. Are you?"
 
-[NAME], when we launched Continental Assist 30 days ago,
+[NAME],
+
+When we launched Continental Assist 30 days ago,
 I wasn't sure how it would go.
 
 But the response has been incredible:
@@ -930,14 +1168,13 @@ But the response has been incredible:
 
 Here's what customers are saying:
 
-⭐⭐⭐⭐⭐ "Saved me $600 already!" - Maria G.
-⭐⭐⭐⭐⭐ "My mom loves the telehealth" - Carlos R.
-⭐⭐⭐⭐⭐ "Peace of mind is priceless" - Ana M.
+⭐⭐⭐⭐⭐ "Saved me $600 already!" - Maria G., Los Angeles
+⭐⭐⭐⭐⭐ "My mom loves the telehealth" - Carlos R., Houston
+⭐⭐⭐⭐⭐ "Peace of mind is priceless" - Ana M., Miami
 
 Don't be the last to protect your family.
 
 Join 4,327 families today →
-
 [Start Free Trial]
 ```
 
@@ -949,28 +1186,30 @@ Join them: Try free for 7 days →"
 
 **SMS:**
 ```
-[Name], 4,327 My Bambu families joined in 30 days.
+[Name], 4,327 MyBambu customers joined in 30 days.
 See why: [link]
 ```
 
 **Why It Works:**
 - Herd mentality (FOMO)
 - Real numbers = credibility
-- Testimonials = trust
+- Testimonials build trust
 - Urgency through popularity
 - Reduces perceived risk
 
+**Timing:** Use after 1,000+ enrollments
+
 ---
 
-### Tactic 4: "The Downsell Strategy"
+### Tactic 4: "The Downsell Sequence"
 
-**For Price-Sensitive Prospects Who Don't Convert**
+**For:** Price-sensitive users who don't convert
 
-**Trigger:** User views Advanced+ but doesn't enroll within 24 hours
+**Trigger:** User views Advanced+ plan but doesn't enroll within 48 hours
 
-**Email Sequence:**
+**3-Email Sequence:**
 
-**Email 1 (24 hours later):**
+**Email 1 (48 hours after view):**
 ```
 Subject: "Still thinking? Try our most popular plan instead"
 
@@ -993,13 +1232,12 @@ You only miss: Higher funeral assistance ($2K vs $10K)
 Save $5/month, still get 90% of the benefits.
 
 Try Advanced free for 7 days →
-
 [Start Free Trial]
 
 P.S. You can always upgrade later.
 ```
 
-**Email 2 (48 hours later):**
+**Email 2 (96 hours after view):**
 ```
 Subject: "What about $7.99/month?"
 
@@ -1018,67 +1256,65 @@ Our Intermediate plan includes:
 That's it. Simple. Affordable. Still amazing.
 
 Try Intermediate free for 7 days →
-
 [Start Free Trial]
 
-P.S. That's $2/week. You spend more on coffee.
+P.S. That's $2/week. Less than a coffee.
 ```
 
-**Email 3 (72 hours later):**
+**Email 3 (144 hours after view):**
 ```
 Subject: "Okay, let's start at $5.99"
 
 [Name],
 
-Last offer, I promise.
+Last offer.
 
-Our Basic plan is $5.99/month. That's it.
+Our Basic plan is $5.99/month.
 
 You get:
 ✓ $10,000 funeral repatriation coverage
 ✓ Prescription drug discounts
 
-No telehealth, no extra benefits. Just the essentials.
+No telehealth, no extras. Just the essentials.
 
 But here's the thing: even at $5.99, you're covered for
-the biggest risk - unexpected death and repatriation costs.
+the biggest risk - unexpected death and $15K repatriation costs.
 
 That alone is worth it.
 
 Try Basic free for 7 days →
-
 [Start Free Trial - $5.99/mo]
 
 - [Agent Name]
 
-P.S. This is the last email. Decision time.
+P.S. This is the last email about this. Decision time.
 ```
 
 **Why It Works:**
-- Removes price barrier progressively
+- Progressive price reduction
 - Multiple conversion opportunities
-- Demonstrates plan flexibility
-- Psychological pricing technique
+- Shows flexibility
+- Psychological pricing
 - Last chance urgency
+
+**Performance:** 5-10% conversion rate across sequence
 
 ---
 
-### Tactic 5: "The Trial Rescue Mission"
+### Tactic 5: "Trial Rescue Mission"
 
-**For Users Who Start Trial But Don't Engage**
+**For:** Trial users who haven't engaged (3+ days inactive)
 
-**Trigger:** Trial user hasn't logged in for 3+ days
-
-**Day 3 of Inactivity:**
+**Day 3 of Trial Inactivity:**
 
 **SMS:**
 ```
 Hi [Name]! I noticed you started your trial but haven't
 explored the benefits yet. Need help? Reply YES and I'll
-call you personally. - [Agent]
+call you personally. - [Agent Name]
 ```
 
-**Day 4 of Inactivity:**
+**Day 4 of Trial Inactivity:**
 
 **Email:**
 ```
@@ -1086,16 +1322,15 @@ Subject: "[Name], you're missing out!"
 
 Hi [Name],
 
-You started your free trial 5 days ago, but you haven't
+You started your free trial 4 days ago, but you haven't
 used any benefits yet. Let me help!
 
 Here's what you can do TODAY:
 1. Book a telehealth session (takes 2 min)
-2. Check your Rx discounts (see pharmacy savings)
+2. Check your Rx discounts (see savings)
 3. Share with your family (they can use it too)
 
 I've made it easy - just click below and I'll walk you through:
-
 [Schedule 10-Min Call With Me]
 
 Or just reply to this email with questions.
@@ -1106,48 +1341,49 @@ Don't let your trial go to waste!
 [Direct Phone Number]
 ```
 
-**Day 6 of Trial (Final Push):**
+**Day 6 of Trial:**
 
-**Phone Call Attempt:**
-- Personalized voicemail if no answer
-- Offer to extend trial by 3 days
+**Phone Call:**
+- Personalized outreach
 - "I really want you to experience the value"
+- Offer to extend trial 3 days
+- Walk through first benefit usage
 
 **SMS:**
 ```
-[Name], your trial ends in 24 hours. Let's make sure you
-tried everything! I extended it 3 days just for you.
-Book telehealth now: [link]
+[Name], your trial ends in 24 hours. I extended it 3 days
+so you can try everything. Book telehealth: [link]
 ```
 
 **Why It Works:**
 - Proactive intervention
-- Personalized approach
+- Personal touch
 - Demonstrates value through usage
 - Trial extension removes pressure
-- Human touch builds trust
+- Significantly increases conversion
+
+**Performance:**
+- Inactive trials: 40% conversion typical
+- Rescue mission: 60% conversion
+- +20% improvement
 
 ---
 
 ### Tactic 6: "The Upsell Ladder"
 
-**For Existing Customers (Post-Conversion)**
+**For:** Existing paid customers (post-Month 3)
 
-**Month 1-3: Satisfaction & Engagement**
-- Focus: Ensure usage, collect feedback, build loyalty
-- No upsell attempts
+**Timing:** After customer has positive experience
 
-**Month 4: Soft Upsell**
-
-**Trigger:** Customer has used telehealth 2+ times
+**Trigger:** Customer uses telehealth 3+ times
 
 **Email:**
 ```
-Subject: "You're using telehealth a lot! Have you considered upgrading?"
+Subject: "You're using telehealth a lot! Upgrade for more"
 
 Hi [Name],
 
-I noticed you've had 3 telehealth sessions this month.
+I noticed you've had 4 telehealth sessions this month.
 That's great! Your family is really using the benefits.
 
 Quick question: Did you know that if you upgrade to the
@@ -1155,7 +1391,7 @@ Advanced plan, you'd also get:
 - Monthly nutrition consultations
 - Monthly mental health support
 - $2,000 funeral assistance
-- $900 family remittance support if something happens
+- $900 family remittance support
 
 And it's only $2 more per month ($9.99 vs $7.99).
 
@@ -1163,7 +1399,6 @@ Since you're already using telehealth regularly, these
 additional benefits would be perfect for your family.
 
 Upgrade now (just $2/mo more) →
-
 [Upgrade Button]
 
 P.S. Cancel anytime if it's not right for you.
@@ -1171,240 +1406,351 @@ P.S. Cancel anytime if it's not right for you.
 
 **Why It Works:**
 - Behavior-based trigger
-- Incremental upgrade (small price difference)
-- Demonstrates value-add
-- Low-risk proposition
-- Timing: After positive experience
+- Small incremental increase
+- Demonstrates clear value-add
+- Low risk
+- Timing after positive experience
+
+**Performance:**
+- 15-20% upgrade rate
+- Increases LTV significantly
+- Low churn on upgrades
 
 ---
 
 ## 📊 60-DAY SUCCESS METRICS
 
-### Week-by-Week Targets
+### Overall Targets
 
-| Week | Trial Starts | Trial-to-Paid Rate | Paid Conversions | Cumulative Paid Users | Cumulative MRR |
-|------|-------------|-------------------|------------------|----------------------|----------------|
-| Week 1 | 2,000 | N/A | 0 | 0 | $0 |
-| Week 2 | 1,000 | N/A | 0 | 0 | $0 |
-| Week 3 | 800 | 35% | 700 | 700 | $8,000 |
-| Week 4 | 600 | 35% | 350 | 1,050 | $12,000 |
-| Week 5 | 1,500 | 35% | 280 | 1,330 | $14,500 |
-| Week 6 | 1,800 | 35% | 525 | 1,855 | $19,000 |
-| Week 7 | 2,000 | 38% | 630 | 2,485 | $25,000 |
-| Week 8 | 1,500 | 38% | 760 | 3,245 | $32,500 |
-| **Day 60 Total** | **11,200** | **36%** | **3,245** | **3,245** | **$32,500** |
+| Metric | Goal | Tracking |
+|--------|------|----------|
+| **Trial Starts** | 7,000 | Daily |
+| **Paid Conversions** | 2,450 (35%) | Daily |
+| **Total Paid Subscribers** | 5,500 | Daily |
+| **MRR** | $55,000 | Daily |
+| **Overall Conversion** | 4.9% of 112K | Weekly |
+| **Churn Rate** | <7%/month | Weekly |
+| **NPS Score** | 50+ | Weekly |
 
-**Revised 60-Day Goal: 3,245 paid subscribers** (conservative but realistic)
+---
+
+### Week-by-Week Breakdown
+
+| Week | Segment | Trial Starts | Paid Conversions | Cumulative Paid | Cumulative MRR |
+|------|---------|-------------|------------------|-----------------|----------------|
+| Week 0 | Beta | 100 | 0 | 0 | $0 |
+| Week 1 | High-Value | 1,400 | 0 | 0 | $0 |
+| Week 2 | High-Value | 600 | 0 | 0 | $0 |
+| Week 3 | High-Value | 400 | 490 (Week 1 converting) | 490 | $7,350 |
+| Week 4 | High-Value | 200 | 210 (Week 2 converting) | 700 | $10,500 |
+| Week 5 | Medium | 1,000 | 140 (Week 3 converting) | 840 | $12,600 |
+| Week 6 | Medium | 800 | 350 (Week 4 converting) | 1,190 | $15,000 |
+| Week 7 | Medium | 600 | 350 (Week 5 converting) | 1,540 | $18,500 |
+| Week 8 | Low-Value | 600 | 280 (Week 6 converting) | 1,820 | $21,000 |
+| Week 9 | All | 300 | 210 (Week 7 converting) | 2,030 | $23,500 |
+| **Total** | | **7,000** | **2,030** | **2,030** | **$23,500** |
+
+**Conservative 60-Day Result:** 2,030 paid subscribers, $23,500 MRR
+
+**Stretch Goal:** 5,500 paid subscribers, $55,000 MRR (if all channels perform above average)
 
 ---
 
 ### Channel Performance Targets
 
-| Channel | Budget | Trial Starts | Paid Conversions | CAC | Conversion Rate |
-|---------|--------|--------------|------------------|-----|----------------|
-| Email | $17,500 | 4,500 | 1,620 | $10.80 | 36% |
-| In-App | $12,500 | 3,200 | 1,150 | $10.87 | 36% |
-| SMS | $7,500 | 1,800 | 650 | $11.54 | 36% |
-| Social Media | $7,500 | 800 | 290 | $25.86 | 36% |
-| Personal Outreach | $5,000 | 900 | 535 | $9.35 | 59% |
-| **Total** | **$50,000** | **11,200** | **3,245** | **$12.62** | **36% avg** |
+| Channel | Trial Starts | Paid Conversions | Conversion Rate |
+|---------|-------------|------------------|-----------------|
+| **In-App Banner** | 2,100 (30%) | 735 | 35% |
+| **Post-Transaction** | 1,400 (20%) | 490 | 35% |
+| **Email** | 2,450 (35%) | 858 | 35% |
+| **SMS** | 700 (10%) | 245 | 35% |
+| **Personal Calls** | 350 (5%) | 175 | 50% |
+| **TOTAL** | **7,000** | **2,503** | **36%** |
 
 ---
 
 ### Daily Tracking Dashboard
 
-**Track Daily (Available in Real-Time):**
-- ⚡ Trial starts (goal: 150-200/day average)
-- 💳 Card adds (goal: 90% of trial starts)
-- ✅ Trial completions (7 days later)
-- 💰 Paid conversions (goal: 35%+ conversion rate)
-- 📧 Email metrics (open rate, click rate, conversion rate)
-- 📱 In-app metrics (banner CTR, interrupt conversion)
-- 📲 SMS metrics (delivery rate, click rate)
-- 💬 Chat engagement (chats started, conversion rate)
-- 📞 Call performance (calls made, conversion rate)
+**Track Daily:**
+- ⚡ Trial starts by segment
+- 💳 Trial activation rate (used benefit within 3 days)
+- ✅ Trial completion rate (full 7 days)
+- 💰 Trial-to-paid conversion rate
+- 📧 Email open rate, click rate
+- 📱 In-app banner CTR
+- 📲 Post-transaction view rate, conversion rate
+- 💬 Chat sessions started, conversion rate
+- 📞 Calls made, connection rate, conversion rate
+- 🔄 Churn rate (paid members canceling)
 
 ---
 
-## 📝 Daily Execution Checklist
+## 📝 DAILY EXECUTION CHECKLIST
 
 ### For Marketing Team Lead
 
 **Every Morning (8 AM):**
-- [ ] Review previous day performance (10 min)
-- [ ] Check trial starts vs. goal
-- [ ] Review channel performance
-- [ ] Identify any issues or wins
-- [ ] Adjust daily plan if needed
+- [ ] Review yesterday's performance (15 min)
+  - Trial starts vs goal
+  - Conversion rate
+  - Channel performance
+  - Any red flags?
+- [ ] Check email deliverability (inbox placement)
+- [ ] Review in-app banner CTR
+- [ ] Identify quick wins for today
+- [ ] Adjust campaigns if needed
 
 **Midday (12 PM):**
-- [ ] Review real-time dashboard
-- [ ] Monitor email/SMS delivery
-- [ ] Check in-app banner performance
-- [ ] Respond to urgent issues
+- [ ] Real-time dashboard check
+- [ ] Monitor trial user activation (are they using benefits?)
+- [ ] Check support ticket volume (any issues?)
+- [ ] Respond to urgent optimization needs
 
 **Afternoon (3 PM):**
-- [ ] Review chat transcripts (sample 10)
-- [ ] Check call performance
-- [ ] Monitor social media mentions
-- [ ] Update team on progress
+- [ ] Review live chat transcripts (sample 10)
+- [ ] Check call team performance
+- [ ] Monitor social media mentions/feedback
+- [ ] Update stakeholders on progress
 
 **End of Day (6 PM):**
 - [ ] Final performance review
-- [ ] Document learnings
-- [ ] Plan tomorrow's focus
-- [ ] Update stakeholders (weekly email)
+- [ ] Document learnings (what worked, what didn't)
+- [ ] Plan tomorrow's priorities
+- [ ] Set up any automated campaigns for next day
 
-**Weekly (Fridays):**
-- [ ] Full week performance analysis
-- [ ] A/B test results review
-- [ ] Team retrospective meeting
+**Weekly (Fridays at 4 PM):**
+- [ ] Full week performance deep-dive
+- [ ] A/B test results analysis
+- [ ] Team retrospective (30 min)
 - [ ] Plan next week campaigns
-- [ ] Budget pacing check
+- [ ] Check if on track for 60-day goal
+- [ ] Send stakeholder update email
 
 ---
 
 ## 🎯 LAUNCH READINESS CHECKLIST
 
-### Week -2: Final Prep
+### Week -2: Final Preparations
 
-**1. Creative Assets**
-- [ ] Finalize all 15 email templates
-- [ ] Design 10 in-app banner variations
-- [ ] Write 8 SMS messages
-- [ ] Produce 5 testimonial videos
-- [ ] Build 4 landing pages
+**Creative Assets:**
+- [ ] 12 email templates written & designed
+- [ ] 8 in-app banner variations designed
+- [ ] 6 SMS messages written
+- [ ] 3-5 video testimonials (if available)
+- [ ] In-app landing pages built & optimized
+- [ ] Post-transaction interrupt designed
+- [ ] Savings calculator built
 
-**2. Technical Setup**
-- [ ] Email platform configured & tested
-- [ ] In-app SDK integrated
-- [ ] SMS platform ready
-- [ ] Analytics tracking verified
-- [ ] A/B testing framework live
+**Technical Setup:**
+- [ ] Email platform configured (Iterable/Braze/SendGrid)
+- [ ] Email lists segmented correctly
+- [ ] In-app SDK integrated & tested
+- [ ] Banner placement rules configured
+- [ ] Post-transaction trigger logic tested
+- [ ] SMS platform ready (Twilio/Attentive)
+- [ ] Push notification service configured
+- [ ] Analytics tracking implemented (Mixpanel/Amplitude)
+- [ ] Conversion funnel tracking verified
+- [ ] A/B testing framework functional
 
-**3. Team Training**
-- [ ] Marketing team trained on campaigns
-- [ ] Support team trained on FAQs (50 agents)
-- [ ] Call scripts finalized
+**Team Preparation:**
+- [ ] Marketing team trained on campaign strategy
+- [ ] Customer support trained on FAQs (50+ questions)
+- [ ] Call scripts finalized & practiced
+- [ ] Chat scripts ready
 - [ ] Escalation procedures defined
+- [ ] Success metrics dashboard accessible to all
 
 ---
 
 ### Week -1: Beta Launch
 
-**1. Beta Group**
-- [ ] Select 500 beta users
-- [ ] Send personalized invites
-- [ ] Monitor first 48 hours
-- [ ] Gather feedback
-- [ ] Optimize based on learnings
+**Beta Group Selection:**
+- [ ] 500 beta users selected (high-value, engaged customers)
+- [ ] Beta invite emails prepared
+- [ ] Beta feedback survey created
+- [ ] Beta monitoring plan ready
 
-**2. Final Checks**
-- [ ] Segment lists validated (28,750 high-value, 46,000 medium)
+**Beta Launch (Day -4):**
+- [ ] Send beta invites
+- [ ] Activate in-app banner for beta only
+- [ ] Monitor first 4 hours intensely
+- [ ] Track: Open rate, CTR, trial starts
+
+**Beta Optimization (Day -3):**
+- [ ] Review beta performance
+- [ ] Call 20 beta users for feedback
+- [ ] Fix any issues immediately
+- [ ] Document learnings
+
+**Final Checks (Day -2 to -1):**
+- [ ] All segments validated (28K, 44.8K, 39.2K)
 - [ ] Email deliverability tested (inbox, not spam)
 - [ ] In-app messages QA'd on iOS & Android
-- [ ] Landing page load speed <2 sec
+- [ ] Landing page speed <2 seconds
 - [ ] Payment processing tested
-- [ ] Success metrics dashboard live
+- [ ] Support team ready
+- [ ] Success dashboard live
+- [ ] Crisis response plan documented
 
 ---
 
 ### Day 1: LAUNCH! 🚀
 
-- [ ] Wave 1 email deployed (6 AM)
-- [ ] In-app banners activated (12 PM)
-- [ ] Push notifications sent (3 PM)
-- [ ] Social media posts published
-- [ ] Monitoring dashboard active
-- [ ] Team on standby
-- [ ] Celebrate first trial! 🎉
+**Pre-Launch (5 AM):**
+- [ ] Final systems check
+- [ ] Team assembled and briefed
+- [ ] Coffee ready ☕
+
+**Launch Sequence:**
+- [ ] 6 AM: Wave 1 email deployed (5,000 high-value)
+- [ ] 9 AM: In-app banners activated (28,000 high-value)
+- [ ] 12 PM: Post-transaction interrupts live
+- [ ] 3 PM: Push notifications sent
+- [ ] 6 PM: First performance review
+- [ ] All Day: Personal calls to top 50
+- [ ] All Day: Live chat active
+
+**Evening (8 PM):**
+- [ ] Day 1 results reviewed
+- [ ] Quick optimizations implemented
+- [ ] Day 2 plan finalized
+- [ ] Celebrate first trials! 🎉
 
 ---
 
-## 💡 Key Success Factors
+## 💡 KEY SUCCESS FACTORS
 
-### 1. Speed & Agility
+### 1. In-App Optimization
+- Banner placement (above fold)
+- Post-transaction timing (immediately after)
+- Non-intrusive but visible
+- A/B test continuously
+
+### 2. Trial Activation
+- Get users to USE benefits within 48 hours
+- Proactive onboarding
+- Personal outreach to inactive trials
+- Trial extension for non-engaged
+
+### 3. Conversion Optimization
+- Email nurture sequences
+- SMS reminders
+- Personal calls to high-value
+- Address objections proactively
+- Make cancellation easy (builds trust)
+
+### 4. Retention From Day 1
+- Welcome sequence for paid members
+- Benefit utilization prompts
+- Proactive support
+- Regular check-ins
+- NPS surveys
+
+### 5. Data-Driven Decisions
+- Hourly monitoring Day 1
 - Daily performance reviews
-- Real-time optimization
-- Quick wins implementation
-- Rapid A/B testing
-
-### 2. Multi-Channel Coordination
-- Consistent messaging across all touchpoints
-- Timed campaigns for maximum impact
-- Cross-channel attribution tracking
-
-### 3. Conversion Focus
-- Trial activation within 48 hours
-- Proactive engagement with inactive users
-- Personal touch for high-value customers
-- Multiple conversion opportunities
-
-### 4. Data-Driven Decisions
-- Hourly monitoring on Day 1
-- Daily tracking dashboards
-- Weekly performance analysis
-- Channel performance optimization
-
-### 5. Customer Success
-- Immediate onboarding after trial start
-- Proactive support outreach
-- Benefit education and activation
-- Retention campaigns from Day 1
+- Weekly deep-dives
+- A/B test everything
+- Optimize based on data, not assumptions
 
 ---
 
-## 📞 Emergency Contact & Escalation
+## 📞 EMERGENCY ESCALATION
 
 ### Crisis Response Team
 
-**Marketing Lead:** [Name] - [Phone] - [Email]
-**Technical Lead:** [Name] - [Phone] - [Email]
-**Support Lead:** [Name] - [Phone] - [Email]
-**Executive Sponsor:** [Name] - [Phone] - [Email]
+**Marketing Lead:** [Name] - [Phone]
+**Product/Tech Lead:** [Name] - [Phone]
+**Customer Support Lead:** [Name] - [Phone]
+**Executive Sponsor:** [Name] - [Phone]
 
 ### Escalation Triggers
 
-**CRITICAL (Immediate Response):**
+**CRITICAL (Immediate - <15 min response):**
 - Payment processing failure
-- Email deliverability below 90%
-- Website/app downtime
-- Data breach or security issue
+- Email deliverability <80%
+- App crash/downtime
+- Data breach
+- Widespread customer complaints
 
-**HIGH (1-hour Response):**
-- Conversion rate below 50% of target
-- Support ticket spike (>2x normal)
+**HIGH (1-hour response):**
+- Conversion rate <50% of target
+- Support ticket spike (>3x normal)
 - Negative social media trend
-- Competitor launches similar product
+- Major competitor launch
 
-**MEDIUM (4-hour Response):**
-- A/B test winner identified
-- Budget pacing off by >20%
-- Creative asset underperforming
-- Channel performance anomaly
-
----
-
-## 🎉 Celebration Milestones
-
-**Day 1:** First 100 trial starts
-**Day 7:** 2,000 trial starts achieved
-**Day 15:** First paid conversion
-**Day 21:** 700 paid subscribers
-**Day 28:** 1,000 paid subscribers (Month 1 goal!)
-**Day 45:** 2,000 paid subscribers
-**Day 60:** 3,245 paid subscribers (60-day goal!)
-
-**Team Rewards:**
-- Day 28: Team lunch
-- Day 60: Team bonus + celebration dinner
+**MEDIUM (4-hour response):**
+- A/B test clear winner identified
+- Channel underperforming by >30%
+- Trial activation rate low
+- Email open rate dropping
 
 ---
 
-**Document Version**: 1.0
-**Last Updated**: January 2025
-**Owner**: My Bambu Marketing Team
-**Status**: Ready for Execution
+## 🎉 CELEBRATION MILESTONES
+
+### Day 1: First 100 trial starts
+**Reward:** Team lunch delivered
+
+### Day 7: 1,400 trial starts (Week 1 goal)
+**Reward:** Happy hour (virtual or in-person)
+
+### Day 21: First 500 paid subscribers
+**Reward:** Team bonus ($100/person)
+
+### Day 30: 1,000 paid subscribers
+**Reward:** Team celebration dinner
+
+### Day 60: 2,000+ paid subscribers, $23,500+ MRR
+**Reward:** Major team bonus + offsite celebration
+
+---
+
+## 📋 POST-60-DAY ROADMAP
+
+### Days 61-90 Focus
+
+**1. Inactive Customer Reactivation (548,000 customers)**
+- Email campaigns with stronger incentives
+- 30-day free trial (vs 7-day)
+- $25 credit (vs $10)
+- Win-back messaging
+
+**2. Retention Optimization**
+- Reduce churn from 7% to 5%
+- Benefit utilization campaigns
+- Proactive support outreach
+- Loyalty rewards
+
+**3. Upsell & Cross-Sell**
+- Upgrade campaigns (Basic → Intermediate → Advanced)
+- Annual plan promotions (2 months free)
+- Family plan options
+
+**4. Referral Program Scale**
+- Launch formal ambassador program
+- Increase incentives
+- Influencer partnerships
+
+**5. Creative Refresh**
+- New testimonials from paid members
+- Updated messaging based on 60-day learnings
+- Seasonal campaigns
+
+**Goal Days 61-90:**
+- +2,000 additional paid subscribers
+- 4,000+ total paid subscribers
+- $40,000+ MRR
+- <6% monthly churn
+
+---
+
+**Document Version:** 2.0 - Zero-Budget Launch
+**Last Updated:** January 2025
+**Customer Base:** 660K total, 112K active monthly
+**Budget:** $0 (owned channels only)
+**Status:** Ready for Execution
 
 ---
 
@@ -1412,8 +1758,12 @@ P.S. Cancel anytime if it's not right for you.
 
 ## 🚀 **Let's Launch!**
 
-**This 60-day plan will drive 3,245 paying subscribers and $32,500 MRR**
+**This 60-day plan will drive 2,000-5,500 paying subscribers**
 
-**Questions? Contact the marketing team**
+**Using only owned channels: In-App, Email, SMS, Push, Chat**
+
+**$0 acquisition cost. 100% organic conversion.**
+
+*Questions? Let's do this!*
 
 </div>
