@@ -156,7 +156,7 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 - 📧 **Wave 1 Email** deployed to 5,000 high-value customers
   - Subject: "You're invited: Exclusive family protection program"
   - From: MyBambu Leadership (personalized signature)
-  - Include: 7-day free trial + $10 credit bonus
+  - Include: 7-day free trial
   - No credit card required to start
 
 **Morning (9 AM):**
@@ -207,7 +207,7 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 
 **Afternoon (2 PM):**
 - 📲 **SMS #1** to high-value customers who didn't open email
-  - "Maria, your family deserves protection. Try free for 7 days + get $10: [link]"
+  - "Maria, your family deserves protection. Try free for 7 days: [link]"
   - Keep under 160 characters
 
 **Evening:**
@@ -269,7 +269,7 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 
 **Afternoon:**
 - 📲 **SMS #2** to engaged users who haven't converted
-  - "$10K coverage + telehealth for your family. Last 3 days for $10 bonus: [link]"
+  - "$10K coverage + telehealth for your family. Try free for 7 days: [link]"
 
 **Evening:**
 - 📞 **Call blitz** to top 100 customers who viewed but didn't enroll
@@ -318,18 +318,18 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 
 **Morning:**
 - 📧 **Email #6** to non-converters
-  - Subject: "Last 24 hours for $10 sign-up bonus"
+  - Subject: "Last 24 hours for launch pricing"
   - Create urgency around launch offer
   - Clear CTA
 
 **Midday:**
 - 📱 **In-app banner update** with countdown
-  - "$10 bonus ends in [X] hours"
+  - "Launch pricing ends in [X] hours"
   - Animated countdown timer
 
 **Afternoon:**
 - 📲 **SMS #3** to all engaged users
-  - "[Name], $10 bonus expires tomorrow. Start your free trial: [link]"
+  - "[Name], launch pricing expires tomorrow. Start your free trial: [link]"
 
 **Evening:**
 - 📞 **Final call push** to fence-sitters
@@ -348,18 +348,18 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 
 **Morning (8 AM):**
 - 📧 **Email #7** "Last chance" message
-  - Subject: "Final hours: $10 bonus ends at midnight"
+  - Subject: "Final hours: launch pricing ends at midnight"
   - Scarcity: "Only [X] spots left at launch pricing"
   - Large, clear CTA button
 
 **Midday (12 PM):**
 - 📲 **Push notification** final reminder
-  - "Final hours for $10 sign-up bonus"
+  - "Final hours for launch pricing"
 
 **Evening (6 PM):**
 - 📱 **In-app takeover** for active users
   - Full-screen (but dismissible) final chance message
-  - "Expires at midnight: $10 bonus"
+  - "Expires at midnight: launch pricing"
 
 **Night (11 PM):**
 - 📲 **Final SMS** (only to highly engaged users)
@@ -784,7 +784,7 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 
 **Collection Method:**
 - Email top 50 satisfied customers (Month 2)
-- Offer $50 credit for video testimonial
+- Offer 1 month free for video testimonial
 - Make it easy: 15-minute video call recording
 - Professional editing by your team
 
@@ -859,17 +859,17 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 - Day 2: Download digital voucher ✓
 - Day 3: Watch 2-min explainer ✓
 - Day 4: Share with family member ✓
-- Day 5: Complete quiz (earn $5 credit) ✓
+- Day 5: Complete quiz ✓
 
 **Week 2 Tasks:**
 - Day 8: Book first telehealth session ✓
 - Day 10: Use Rx discount ✓
 - Day 12: Schedule nutrition session (for recipient) ✓
-- Day 14: Complete NPS survey (earn $10 credit) ✓
+- Day 14: Complete NPS survey ✓
 
 **Rewards:**
-- Complete Week 1 → $5 credit
-- Complete Week 2 → $10 credit
+- Complete Week 1 → Priority support access
+- Complete Week 2 → VIP member status
 - Convert to paid → 1 month free on annual plan
 
 **Tracking:**
@@ -882,7 +882,7 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 - Demonstrates value through usage
 - Reduces trial churn significantly
 - Creates habit formation
-- Low cost (just credits)
+- Zero-cost incentives
 
 ---
 
@@ -891,17 +891,17 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 **Concept:** Referral program for customers
 
 **Tier 1: Friend Referrals**
-- Refer 1 friend → $5 credit (both parties)
-- Refer 3 friends → $20 credit + free month
-- Refer 5 friends → $50 credit + plan upgrade (3 months)
+- Refer 1 friend → 1 week free (both parties)
+- Refer 3 friends → 1 month free
+- Refer 5 friends → Plan upgrade for 3 months free
 
 **Tier 2: Community Champion**
 - Refer 10+ friends → "Ambassador" status
 - Perks:
   - Annual plan free (up to $180)
-  - VIP support
+  - VIP priority support
   - Early access to new benefits
-  - Quarterly $50 gift card
+  - Ambassador recognition badge
 
 **Implementation:**
 - 📱 In-app "Refer & Earn" section
@@ -910,7 +910,7 @@ This tactical 60-day plan focuses on converting **existing MyBambu customers** t
 - Track referrals automatically
 
 **Marketing:**
-- Email paid members monthly: "Earn $50 by referring friends"
+- Email paid members monthly: "Refer friends and earn free months"
 - In-app prompt after positive NPS score
 - Post-remittance: "Your friend could use this too"
 
@@ -978,12 +978,12 @@ What if something happened to you?"
 
 **Email Subject Lines (A/B test):**
 - "We miss you! Come back to a new benefit"
-- "Your account is waiting + $25 bonus"
+- "Your account is waiting - extended trial inside"
 - "Something new for returning customers"
 
 **Offer:**
 - 30 days free trial (vs 7 days for active)
-- $25 remittance credit (vs $10)
+- Extended trial period for inactive customers
 - No credit card required
 
 **Segmentation:**
@@ -1055,7 +1055,7 @@ one emergency doctor visit pays for the entire year."
 ```
 "Totally understand. Here's what I suggest: try it free for 7 days.
 No credit card required. If you don't see the value, cancel anytime.
-Plus, I'll add a $10 bonus to your account just for trying. Can I
+Plus, you'll get priority support access during your trial. Can I
 set that up for you right now?"
 ```
 
@@ -1714,7 +1714,7 @@ P.S. Cancel anytime if it's not right for you.
 **1. Inactive Customer Reactivation (548,000 customers)**
 - Email campaigns with stronger incentives
 - 30-day free trial (vs 7-day)
-- $25 credit (vs $10)
+- Extended trial periods
 - Win-back messaging
 
 **2. Retention Optimization**
