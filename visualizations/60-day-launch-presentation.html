@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Continental Assist x MyBambu - 60-Day Launch Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0D1752 0%, #050D30 100%);
+            overflow: hidden;
+        }
+
+        .presentation-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            padding: 60px;
+            overflow-y: auto;
+        }
+
+        .slide.active {
+            display: flex;
+            opacity: 1;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .slide-content {
+            background: white;
+            border-radius: 20px;
+            padding: 60px;
+            max-width: 1200px;
+            width: 100%;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: slideIn 0.6s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateY(30px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        h1 {
+            font-size: 48px;
+            color: #2d3748;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: 36px;
+            color: #70E242;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: 24px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 18px;
+            color: #4a5568;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #718096;
+            margin-bottom: 40px;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #70E242 0%, #1F4AC4 100%);
+            padding: 30px;
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stat-number {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .timeline {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 30px;
+            align-items: flex-start;
+        }
+
+        .timeline-dot {
+            width: 40px;
+            height: 40px;
+            background: #70E242;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0D1752;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .timeline-title {
+            font-size: 20px;
+            color: #2d3748;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .timeline-desc {
+            font-size: 16px;
+            color: #4a5568;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+
+        th, td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        th {
+            background: #70E242;
+            color: #0D1752;
+            font-weight: 600;
+        }
+
+        tr:hover {
+            background: #f7fafc;
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            color: #0D1752;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+
+        .nav-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            background: #70E242;
+            color: #0D1752;
+        }
+
+        .nav-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .slide-counter {
+            position: fixed;
+            top: 30px;
+            right: 40px;
+            background: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            color: #0D1752;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            z-index: 1000;
+        }
+
+        .bullet-list {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .bullet-list li {
+            padding: 12px 0 12px 40px;
+            position: relative;
+            font-size: 18px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        .bullet-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #70E242;
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        .highlight-box {
+            background: #edf2f7;
+            border-left: 5px solid #70E242;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+        }
+
+        .channel-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 30px 0;
+        }
+
+        .channel-card {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            border: 2px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .channel-card:hover {
+            border-color: #70E242;
+            transform: translateY(-3px);
+        }
+
+        .channel-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+
+        .channel-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #2d3748;
+        }
+
+        .badge {
+            display: inline-block;
+            background: #70E242;
+            color: #0D1752;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            margin: 5px;
+        }
+
+        .badge.green {
+            background: #48bb78;
+        }
+
+        .badge.yellow {
+            background: #ecc94b;
+        }
+
+        .badge.red {
+            background: #f56565;
+        }
+
+        .progress-bar {
+            background: #e2e8f0;
+            height: 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+
+        .progress-fill {
+            background: linear-gradient(90deg, #70E242 0%, #1F4AC4 100%);
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0D1752;
+            font-weight: 600;
+            transition: width 1s ease;
+        }
+
+        .title-slide {
+            text-align: center;
+        }
+
+        .title-slide h1 {
+            font-size: 64px;
+            margin-bottom: 20px;
+        }
+
+        .title-slide .subtitle {
+            font-size: 28px;
+        }
+
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .campaign-card {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 12px;
+            border-left: 4px solid #70E242;
+        }
+
+        .campaign-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 10px;
+        }
+
+        .campaign-desc {
+            font-size: 16px;
+            color: #4a5568;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .slide-content {
+                padding: 30px;
+            }
+            h1 {
+                font-size: 32px;
+            }
+            h2 {
+                font-size: 24px;
+            }
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+            .channel-grid {
+                grid-template-columns: 1fr;
+            }
+            .campaign-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slide-counter" id="slideCounter">1 / 12</div>
+
+    <div class="presentation-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active" data-slide="1">
+            <div class="slide-content title-slide">
+                <h1>Continental Assist x MyBambu</h1>
+                <p class="subtitle">60-Day Zero-Budget Launch Plan</p>
+                <div class="stat-grid" style="margin-top: 60px;">
+                    <div class="stat-card">
+                        <div class="stat-number">660K</div>
+                        <div class="stat-label">Total Customers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">112K</div>
+                        <div class="stat-label">Active Monthly</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$0</div>
+                        <div class="stat-label">Acquisition Budget</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Executive Summary -->
+        <div class="slide" data-slide="2">
+            <div class="slide-content">
+                <h2>📋 Executive Summary</h2>
+                <div class="highlight-box">
+                    <h3>Zero-Budget Strategy</h3>
+                    <p>Converting existing MyBambu customers through owned channels only—no paid advertising.</p>
+                </div>
+                <div class="stat-grid">
+                    <div class="stat-card">
+                        <div class="stat-number">5,500</div>
+                        <div class="stat-label">Target Paid Subscribers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$55K</div>
+                        <div class="stat-label">Monthly Recurring Revenue</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">35%+</div>
+                        <div class="stat-label">Trial-to-Paid Conversion</div>
+                    </div>
+                </div>
+                <div style="margin-top: 30px;">
+                    <h3>Conservative Goal: 2,030 subscribers = $23,500 MRR</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 37%;">37% of stretch goal</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3: Owned Channels -->
+        <div class="slide" data-slide="3">
+            <div class="slide-content">
+                <h2>📱 Owned Channels Only</h2>
+                <p>100% organic conversion using existing touchpoints</p>
+                <div class="channel-grid">
+                    <div class="channel-card">
+                        <div class="channel-icon">📱</div>
+                        <div class="channel-name">In-App Banners</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon">📧</div>
+                        <div class="channel-name">Email Marketing</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon">💬</div>
+                        <div class="channel-name">SMS Campaigns</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon">🔔</div>
+                        <div class="channel-name">Push Notifications</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon">💰</div>
+                        <div class="channel-name">Post-Transaction</div>
+                    </div>
+                    <div class="channel-card">
+                        <div class="channel-icon">📞</div>
+                        <div class="channel-name">Personal Calls</div>
+                    </div>
+                </div>
+                <div class="highlight-box" style="margin-top: 30px;">
+                    <p style="font-size: 20px; margin: 0;"><strong>Key Advantage:</strong> Post-transaction interrupts capture customers at high-intent moments—right after sending money to family.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Customer Segmentation -->
+        <div class="slide" data-slide="4">
+            <div class="slide-content">
+                <h2>🎯 Customer Segmentation</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Segment</th>
+                            <th>Customers</th>
+                            <th>Profile</th>
+                            <th>Target Plan</th>
+                            <th>Expected Conv.</th>
+                            <th>Expected MRR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><span class="badge green">High-Value</span></td>
+                            <td>28,000</td>
+                            <td>3+ remit/mo, $300+</td>
+                            <td>Advanced+ $14.99</td>
+                            <td>15%</td>
+                            <td>$62,958</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge yellow">Medium-Value</span></td>
+                            <td>44,800</td>
+                            <td>1-2 remit/mo, $150-300</td>
+                            <td>Intermediate $7.99</td>
+                            <td>5%</td>
+                            <td>$17,898</td>
+                        </tr>
+                        <tr>
+                            <td><span class="badge red">Low-Value</span></td>
+                            <td>39,200</td>
+                            <td>Occasional, <$150</td>
+                            <td>Basic $5.99</td>
+                            <td>2%</td>
+                            <td>$4,696</td>
+                        </tr>
+                        <tr style="background: #edf2f7; font-weight: 600;">
+                            <td>TOTAL</td>
+                            <td>112,000</td>
+                            <td>-</td>
+                            <td>Avg $11.78</td>
+                            <td>6.4%</td>
+                            <td>$85,552</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="highlight-box">
+                    <p><strong>Launch Strategy:</strong> Stagger by segment—High-Value first (Days 1-30), Medium (Days 31-49), Low (Days 50-60)</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Timeline Overview -->
+        <div class="slide" data-slide="5">
+            <div class="slide-content">
+                <h2>📅 60-Day Timeline</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot">1</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Week 0: Pre-Launch & Beta</div>
+                            <div class="timeline-desc">500 beta users, final QA, team training, creative prep</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">2</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Week 1-4: High-Value Launch</div>
+                            <div class="timeline-desc">28,000 customers | Target: 2,000 trials | Email, in-app, SMS, calls</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">3</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Week 5-7: Medium Segment</div>
+                            <div class="timeline-desc">44,800 customers | Healthcare-focused messaging | $7.99/mo plans</div>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div class="timeline-dot">4</div>
+                        <div class="timeline-content">
+                            <div class="timeline-title">Week 8-9: Low-Value & Final Push</div>
+                            <div class="timeline-desc">39,200 customers | Price-focused ($5.99/mo) | Re-engagement across all segments</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 6: Week 1 Launch Day -->
+        <div class="slide" data-slide="6">
+            <div class="slide-content">
+                <h2>🚀 Day 1: Launch Day Execution</h2>
+                <ul class="bullet-list">
+                    <li><strong>6 AM:</strong> Wave 1 email deployed (5,000 high-value customers)</li>
+                    <li><strong>9 AM:</strong> In-app banners activated (28,000 segment)</li>
+                    <li><strong>12 PM:</strong> Post-transaction interrupts go live</li>
+                    <li><strong>3 PM:</strong> Push notifications sent to opted-in users</li>
+                    <li><strong>6 PM:</strong> First performance review & optimization</li>
+                    <li><strong>All Day:</strong> Personal calls to top 50 customers + live chat support</li>
+                </ul>
+                <div class="highlight-box" style="margin-top: 30px;">
+                    <h3>Day 1 Goal: 150 trial starts</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 100%;">150 trials</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 7: Creative Campaigns -->
+        <div class="slide" data-slide="7">
+            <div class="slide-content">
+                <h2>🎨 Creative Campaign Highlights</h2>
+                <div class="campaign-grid">
+                    <div class="campaign-card">
+                        <div class="campaign-title">📹 Real Families, Real Protection</div>
+                        <div class="campaign-desc">Customer video testimonials shared via email, in-app stories, and SMS. Builds trust through social proof.</div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">🧮 True Cost Calculator</div>
+                        <div class="campaign-desc">Interactive widget showing $40K+ savings vs. $96-180/year cost. Shareable results drive viral growth.</div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">🎮 30-Day Trial Challenge</div>
+                        <div class="campaign-desc">Gamified onboarding with tasks, progress tracking, and rewards. Increases engagement and conversion.</div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">👥 Family Ambassador Program</div>
+                        <div class="campaign-desc">Referral incentives: free weeks, plan upgrades, VIP status. Word-of-mouth for Latino community.</div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">💰 Post-Transaction Momentum</div>
+                        <div class="campaign-desc">Interrupt immediately after remittance. High-intent moment with 5-8% conversion rate.</div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">🔄 Inactive Customer Win-Back</div>
+                        <div class="campaign-desc">Days 61-90: Target 548K inactive customers with 30-day trials and extended offers.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 8: Selling Tactics -->
+        <div class="slide" data-slide="8">
+            <div class="slide-content">
+                <h2>💼 Top Selling Tactics</h2>
+                <div style="display: grid; gap: 20px;">
+                    <div class="campaign-card">
+                        <div class="campaign-title">1️⃣ Consultative Phone Selling</div>
+                        <div class="campaign-desc">
+                            <strong>Target:</strong> Top 500 high-value customers<br>
+                            <strong>Approach:</strong> Discovery questions → Tailored solution → Objection handling → Soft close<br>
+                            <strong>Performance:</strong> 50% trial conversion on calls
+                        </div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">2️⃣ "Show Me the Money" ROI Email</div>
+                        <div class="campaign-desc">
+                            <strong>Hook:</strong> "You'll save $1,642 this year"<br>
+                            <strong>Strategy:</strong> Quantify avoided costs vs. plan investment<br>
+                            <strong>Performance:</strong> 3% conversion rate
+                        </div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">3️⃣ Social Proof Avalanche</div>
+                        <div class="campaign-desc">
+                            <strong>Message:</strong> "4,327 families protected. Are you?"<br>
+                            <strong>Channels:</strong> Email, in-app, SMS coordination<br>
+                            <strong>Effect:</strong> FOMO drives fence-sitters to convert
+                        </div>
+                    </div>
+                    <div class="campaign-card">
+                        <div class="campaign-title">4️⃣ Trial Rescue Mission</div>
+                        <div class="campaign-desc">
+                            <strong>Trigger:</strong> 3+ days trial inactivity<br>
+                            <strong>Action:</strong> SMS → Email → Phone call → Trial extension<br>
+                            <strong>Impact:</strong> 40% → 60% conversion (+20% boost)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 9: Success Metrics -->
+        <div class="slide" data-slide="9">
+            <div class="slide-content">
+                <h2>📊 Success Metrics & Tracking</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Target</th>
+                            <th>Tracking Frequency</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Trial Starts</td>
+                            <td>7,000</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>Paid Conversions</td>
+                            <td>2,450 (35%)</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>Total Paid Subscribers</td>
+                            <td>5,500</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>MRR</td>
+                            <td>$55,000</td>
+                            <td>Daily</td>
+                        </tr>
+                        <tr>
+                            <td>Overall Conversion</td>
+                            <td>4.9% of 112K</td>
+                            <td>Weekly</td>
+                        </tr>
+                        <tr>
+                            <td>Churn Rate</td>
+                            <td>&lt;7%/month</td>
+                            <td>Weekly</td>
+                        </tr>
+                        <tr>
+                            <td>NPS Score</td>
+                            <td>50+</td>
+                            <td>Weekly</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="highlight-box" style="margin-top: 20px;">
+                    <p><strong>Real-Time Dashboard:</strong> Track email open rates, in-app CTR, post-transaction views, trial activation, and conversions hourly on Day 1, then daily throughout campaign.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 10: Channel Performance -->
+        <div class="slide" data-slide="10">
+            <div class="slide-content">
+                <h2>📈 Channel Performance Targets</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Channel</th>
+                            <th>Trial Starts</th>
+                            <th>% of Total</th>
+                            <th>Paid Conversions</th>
+                            <th>Conversion Rate</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>📱 In-App Banner</td>
+                            <td>2,100</td>
+                            <td>30%</td>
+                            <td>735</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>💰 Post-Transaction</td>
+                            <td>1,400</td>
+                            <td>20%</td>
+                            <td>490</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>📧 Email</td>
+                            <td>2,450</td>
+                            <td>35%</td>
+                            <td>858</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>💬 SMS</td>
+                            <td>700</td>
+                            <td>10%</td>
+                            <td>245</td>
+                            <td>35%</td>
+                        </tr>
+                        <tr>
+                            <td>📞 Personal Calls</td>
+                            <td>350</td>
+                            <td>5%</td>
+                            <td>175</td>
+                            <td>50%</td>
+                        </tr>
+                        <tr style="background: #edf2f7; font-weight: 600;">
+                            <td>TOTAL</td>
+                            <td>7,000</td>
+                            <td>100%</td>
+                            <td>2,503</td>
+                            <td>36%</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div style="margin-top: 30px;">
+                    <h3>Top Performers</h3>
+                    <span class="badge green">Personal Calls: 50% conversion</span>
+                    <span class="badge green">Email: 35% of all trials</span>
+                    <span class="badge green">In-App: 30% of all trials</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 11: Post-60-Day Roadmap -->
+        <div class="slide" data-slide="11">
+            <div class="slide-content">
+                <h2>🗺️ Days 61-90: What's Next</h2>
+                <ul class="bullet-list">
+                    <li><strong>Inactive Customer Reactivation:</strong> Target 548,000 inactive customers with 30-day trials and win-back campaigns</li>
+                    <li><strong>Retention Optimization:</strong> Reduce churn from 7% to 5% through benefit utilization and proactive support</li>
+                    <li><strong>Upsell & Cross-Sell:</strong> Upgrade campaigns (Basic → Intermediate → Advanced) and annual plan promotions</li>
+                    <li><strong>Referral Program Scale:</strong> Launch formal ambassador program with enhanced incentives</li>
+                    <li><strong>Creative Refresh:</strong> New testimonials, updated messaging, seasonal campaigns based on learnings</li>
+                </ul>
+                <div class="stat-grid" style="margin-top: 40px;">
+                    <div class="stat-card">
+                        <div class="stat-number">+2,000</div>
+                        <div class="stat-label">Additional Subscribers</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">4,000+</div>
+                        <div class="stat-label">Total Paid (Day 90)</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$40K+</div>
+                        <div class="stat-label">MRR Target</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 12: Final Slide -->
+        <div class="slide" data-slide="12">
+            <div class="slide-content title-slide">
+                <h1>Ready to Launch! 🚀</h1>
+                <div class="highlight-box" style="margin-top: 40px; text-align: left;">
+                    <h3 style="margin-bottom: 20px;">Key Success Factors:</h3>
+                    <ul class="bullet-list">
+                        <li>In-App Optimization: Banner placement & post-transaction timing</li>
+                        <li>Trial Activation: Get users to USE benefits within 48 hours</li>
+                        <li>Conversion Optimization: Email nurture + SMS + personal calls</li>
+                        <li>Retention From Day 1: Welcome sequences + benefit prompts</li>
+                        <li>Data-Driven Decisions: Hourly monitoring, daily reviews, weekly deep-dives</li>
+                    </ul>
+                </div>
+                <div class="stat-grid" style="margin-top: 50px;">
+                    <div class="stat-card">
+                        <div class="stat-number">60</div>
+                        <div class="stat-label">Days to Launch</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$0</div>
+                        <div class="stat-label">Marketing Budget</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number">$55K</div>
+                        <div class="stat-label">MRR Potential</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button class="nav-btn" id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+
+    <script>
+        let currentSlide = 1;
+        const totalSlides = 12;
+
+        function showSlide(n) {
+            const slides = document.querySelectorAll('.slide');
+
+            if (n > totalSlides) {
+                currentSlide = totalSlides;
+            }
+            if (n < 1) {
+                currentSlide = 1;
+            }
+
+            slides.forEach(slide => {
+                slide.classList.remove('active');
+            });
+
+            slides[currentSlide - 1].classList.add('active');
+
+            document.getElementById('slideCounter').textContent = `${currentSlide} / ${totalSlides}`;
+
+            document.getElementById('prevBtn').disabled = currentSlide === 1;
+            document.getElementById('nextBtn').disabled = currentSlide === totalSlides;
+        }
+
+        function changeSlide(direction) {
+            currentSlide += direction;
+            showSlide(currentSlide);
+        }
+
+        // Keyboard navigation
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'ArrowLeft') {
+                changeSlide(-1);
+            } else if (event.key === 'ArrowRight' || event.key === ' ') {
+                changeSlide(1);
+            }
+        });
+
+        // Initialize
+        showSlide(currentSlide);
+    </script>
+</body>
+</html>
