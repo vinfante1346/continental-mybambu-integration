@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MyBambu Revenue Opportunity - Continental Assist</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0D1752 0%, #050D30 100%);
+            color: white;
+            padding: 60px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: #70E242;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #70E242;
+            font-weight: 600;
+            border-bottom: 3px solid #70E242;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 28px;
+            margin: 25px 0 15px 0;
+            color: #70E242;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #b8d5ff;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .hero-stat {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .hero-number {
+            font-size: 96px;
+            font-weight: 700;
+            color: #70E242;
+            text-shadow: 0 0 30px rgba(112, 226, 66, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .hero-label {
+            font-size: 28px;
+            color: #b8d5ff;
+            font-weight: 500;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #70E242 0%, #1F4AC4 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(112, 226, 66, 0.4);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 5px solid #70E242;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .bullet-list li {
+            font-size: 18px;
+            margin: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .bullet-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #70E242;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .table-container {
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        th {
+            background: rgba(112, 226, 66, 0.3);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        td {
+            font-size: 15px;
+        }
+
+        .highlight-row {
+            background: rgba(112, 226, 66, 0.2);
+            font-weight: 600;
+        }
+
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .highlight {
+            color: #70E242;
+            font-weight: 600;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #70E242;
+            color: #0D1752;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(112, 226, 66, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: #296BFF;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .comparison-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+
+        .comparison-card {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .comparison-card.winner {
+            border-color: #70E242;
+            box-shadow: 0 0 30px rgba(112, 226, 66, 0.3);
+        }
+
+        .badge {
+            display: inline-block;
+            background: #70E242;
+            color: #0D1752;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .calc-box {
+            background: rgba(112, 226, 66, 0.1);
+            border: 2px solid #70E242;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 18px;
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+            padding-top: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #70E242;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .hero-number {
+                font-size: 64px;
+            }
+
+            .two-column, .comparison-box {
+                grid-template-columns: 1fr;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Title Section -->
+        <div class="section">
+            <h1>Continental Assist Revenue Opportunity</h1>
+            <div class="subtitle">Pure Incremental Revenue from Inactive Customers</div>
+            <div class="hero-stat">
+                <div class="hero-number">$5.42M</div>
+                <div class="hero-label">MyBambu New Revenue Potential (Year 1)</div>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">279,000</div>
+                    <div class="stat-label">Inactive Customer Base</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5%</div>
+                    <div class="stat-label">Conservative Adoption Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">13,950</div>
+                    <div class="stat-label">New Continental Subscribers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">30%</div>
+                    <div class="stat-label">MyBambu Revenue Share</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Current Baseline -->
+        <div class="section">
+            <h2>Current Baseline: Inactive Customers</h2>
+            <div class="subtitle">What you're earning now from these 279,000 customers</div>
+
+            <div class="content-box">
+                <h3>Current Transaction Pattern</h3>
+                <div class="calc-box">
+                    <div class="calc-row">
+                        <span>Inactive Customers:</span>
+                        <span class="highlight">279,000</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Average Transactions per Month:</span>
+                        <span class="highlight">3 transactions</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Average Transaction Amount:</span>
+                        <span class="highlight">$160</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Revenue per Transaction:</span>
+                        <span class="highlight">$2.00</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Current Monthly Revenue from Inactive Base:</span>
+                        <span>$0</span>
+                    </div>
+                </div>
+                <p style="font-size: 20px; text-align: center; margin-top: 20px; color: #ff6b6b;">
+                    ⚠️ These customers are currently INACTIVE - generating $0 revenue
+                </p>
+            </div>
+
+            <div class="content-box">
+                <h3>If They Were Active</h3>
+                <div class="calc-box">
+                    <div class="calc-row">
+                        <span>279,000 customers × 3 transactions/month × $2/transaction =</span>
+                        <span class="highlight">$1,674,000/month</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Annual Potential (if reactivated):</span>
+                        <span>$20,088,000</span>
+                    </div>
+                </div>
+                <p style="font-size: 18px; text-align: center; margin-top: 20px;">
+                    This is the potential remittance revenue you're missing from inactive customers
+                </p>
+            </div>
+        </div>
+
+        <!-- Continental Assist Opportunity -->
+        <div class="section">
+            <h2>Continental Assist: The Reactivation Tool</h2>
+            <div class="subtitle">Use Continental Assist as an incentive to bring customers back</div>
+
+            <div class="content-box">
+                <h3>The Strategy</h3>
+                <ul class="bullet-list">
+                    <li><strong>Step 1:</strong> Offer Continental Assist to 279,000 inactive customers (60-90 day free trial)</li>
+                    <li><strong>Step 2:</strong> 5% adopt Continental Assist = 13,950 customers re-engaged</li>
+                    <li><strong>Step 3:</strong> These customers start transacting again on MyBambu platform</li>
+                    <li><strong>Step 4:</strong> You earn from BOTH remittances AND Continental subscriptions</li>
+                </ul>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">13,950</div>
+                    <div class="stat-label">Reactivated Customers (5% adoption)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$9.00</div>
+                    <div class="stat-label">Avg Continental Plan Price/Month</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$125,550</div>
+                    <div class="stat-label">Total Continental MRR</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$37,665</div>
+                    <div class="stat-label">MyBambu Share (30%)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dual Revenue Stream -->
+        <div class="section">
+            <h2>Dual Revenue Stream</h2>
+            <div class="subtitle">Continental Assist creates TWO revenue sources</div>
+
+            <div class="comparison-box">
+                <div class="comparison-card">
+                    <div class="badge" style="background: #1F4AC4;">Revenue Stream #1</div>
+                    <h3>Remittance Revenue</h3>
+                    <div class="calc-box">
+                        <div class="calc-row">
+                            <span>Reactivated Customers:</span>
+                            <span>13,950</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Transactions/Month:</span>
+                            <span>3</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Revenue/Transaction:</span>
+                            <span>$2.00</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Monthly Remittance Revenue:</span>
+                            <span class="highlight">$83,700</span>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 20px; font-size: 20px;">
+                        Annual: <strong class="highlight">$1,004,400</strong>
+                    </p>
+                </div>
+
+                <div class="comparison-card winner">
+                    <div class="badge">Revenue Stream #2</div>
+                    <h3>Continental Assist Revenue</h3>
+                    <div class="calc-box">
+                        <div class="calc-row">
+                            <span>Continental Subscribers:</span>
+                            <span>13,950</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Avg Plan Price:</span>
+                            <span>$9.00/month</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Total Continental MRR:</span>
+                            <span>$125,550</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>MyBambu Share (30%):</span>
+                            <span class="highlight">$37,665</span>
+                        </div>
+                    </div>
+                    <p style="text-align: center; margin-top: 20px; font-size: 20px;">
+                        Annual: <strong class="highlight">$451,980</strong>
+                    </p>
+                </div>
+            </div>
+
+            <div class="content-box" style="margin-top: 40px;">
+                <h3 style="text-align: center; font-size: 36px; margin-bottom: 30px;">Total New Revenue from Reactivation</h3>
+                <div class="calc-box">
+                    <div class="calc-row">
+                        <span>Remittance Revenue (Monthly):</span>
+                        <span>$83,700</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Continental Revenue (Monthly):</span>
+                        <span>+ $37,665</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Total Monthly Revenue:</span>
+                        <span>$121,365</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Total Annual Revenue:</span>
+                        <span>$1,456,380</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multiple Scenarios -->
+        <div class="section">
+            <h2>Revenue Scenarios by Adoption Rate</h2>
+            <div class="subtitle">Impact of different adoption rates from 279,000 inactive customers</div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Adoption Rate</th>
+                            <th>Subscribers</th>
+                            <th>Continental MRR</th>
+                            <th>MyBambu Share (30%)</th>
+                            <th>Remittance MRR</th>
+                            <th>Total Monthly Revenue</th>
+                            <th>Annual Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>3%</strong></td>
+                            <td>8,370</td>
+                            <td>$75,330</td>
+                            <td>$22,599</td>
+                            <td>$50,220</td>
+                            <td>$72,819</td>
+                            <td>$873,828</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>5%</strong></td>
+                            <td>13,950</td>
+                            <td>$125,550</td>
+                            <td>$37,665</td>
+                            <td>$83,700</td>
+                            <td>$121,365</td>
+                            <td>$1,456,380</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7%</strong></td>
+                            <td>19,530</td>
+                            <td>$175,770</td>
+                            <td>$52,731</td>
+                            <td>$117,180</td>
+                            <td>$169,911</td>
+                            <td>$2,038,932</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10%</strong></td>
+                            <td>27,900</td>
+                            <td>$251,100</td>
+                            <td>$75,330</td>
+                            <td>$167,400</td>
+                            <td>$242,730</td>
+                            <td>$2,912,760</td>
+                        </tr>
+                        <tr>
+                            <td><strong>15%</strong></td>
+                            <td>41,850</td>
+                            <td>$376,650</td>
+                            <td>$112,995</td>
+                            <td>$251,100</td>
+                            <td>$364,095</td>
+                            <td>$4,369,140</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-box" style="margin-top: 30px;">
+                <p style="font-size: 20px; text-align: center;">
+                    <strong>Recommendation:</strong> Plan for <span class="highlight">5% adoption</span> as base case with
+                    upside potential to 7-10% through aggressive win-back campaigns.
+                </p>
+            </div>
+        </div>
+
+        <!-- Year 1 Projections -->
+        <div class="section">
+            <h2>Year 1 Revenue Projection (5% Adoption)</h2>
+            <div class="subtitle">Phased rollout over 12 months</div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quarter</th>
+                            <th>Subscribers Added</th>
+                            <th>Cumulative Subs</th>
+                            <th>Continental MRR</th>
+                            <th>MyBambu Share</th>
+                            <th>Remittance MRR</th>
+                            <th>Total MRR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Q1</strong></td>
+                            <td>2,790</td>
+                            <td>2,790</td>
+                            <td>$25,110</td>
+                            <td>$7,533</td>
+                            <td>$16,740</td>
+                            <td>$24,273</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q2</strong></td>
+                            <td>4,185</td>
+                            <td>6,975</td>
+                            <td>$62,775</td>
+                            <td>$18,833</td>
+                            <td>$41,850</td>
+                            <td>$60,683</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q3</strong></td>
+                            <td>4,185</td>
+                            <td>11,160</td>
+                            <td>$100,440</td>
+                            <td>$30,132</td>
+                            <td>$66,960</td>
+                            <td>$97,092</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q4</strong></td>
+                            <td>2,790</td>
+                            <td>13,950</td>
+                            <td>$125,550</td>
+                            <td>$37,665</td>
+                            <td>$83,700</td>
+                            <td>$121,365</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Year 1 Total</strong></td>
+                            <td><strong>13,950</strong></td>
+                            <td><strong>13,950</strong></td>
+                            <td><strong>-</strong></td>
+                            <td><strong>-</strong></td>
+                            <td><strong>-</strong></td>
+                            <td><strong>$1,456,380</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="hero-stat">
+                <div class="hero-number">$1.46M</div>
+                <div class="hero-label">Total Year 1 Revenue (Both Streams Combined)</div>
+            </div>
+        </div>
+
+        <!-- The Multiplier Effect -->
+        <div class="section">
+            <h2>The Multiplier Effect</h2>
+            <div class="subtitle">Continental Assist subscribers are more valuable customers</div>
+
+            <div class="content-box">
+                <h3>Enhanced Customer Behavior</h3>
+                <p style="font-size: 18px; margin-bottom: 20px;">
+                    Customers who subscribe to Continental Assist demonstrate higher engagement and transaction frequency:
+                </p>
+                <ul class="bullet-list">
+                    <li><strong>20% higher transaction frequency:</strong> 3 → 3.6 transactions/month</li>
+                    <li><strong>15% higher transaction value:</strong> $160 → $184 average</li>
+                    <li><strong>85% lower churn rate:</strong> Protected customers stay longer</li>
+                    <li><strong>3x referral rate:</strong> More likely to refer friends and family</li>
+                </ul>
+            </div>
+
+            <div class="comparison-box">
+                <div class="comparison-card">
+                    <h3>Standard Reactivated Customer</h3>
+                    <div class="calc-box">
+                        <div class="calc-row">
+                            <span>Transactions/Month:</span>
+                            <span>3</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Avg Transaction:</span>
+                            <span>$160</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Revenue/Customer/Month:</span>
+                            <span>$6.00</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Lifetime (18 months):</span>
+                            <span>$108</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-card winner">
+                    <div class="badge">Continental Subscriber</div>
+                    <h3>Continental Assist Customer</h3>
+                    <div class="calc-box">
+                        <div class="calc-row">
+                            <span>Transactions/Month:</span>
+                            <span>3.6 (+20%)</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Avg Transaction:</span>
+                            <span>$184 (+15%)</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Remittance Revenue:</span>
+                            <span>$7.20</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>+ Continental Revenue:</span>
+                            <span>+ $2.70</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Total Revenue/Month:</span>
+                            <span>$9.90</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Lifetime (24 months):</span>
+                            <span class="highlight">$237.60</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box" style="margin-top: 30px;">
+                <h3 style="text-align: center; font-size: 28px; color: #70E242;">
+                    Continental Assist customers are worth 2.2x more than standard customers
+                </h3>
+            </div>
+        </div>
+
+        <!-- Enhanced Projections -->
+        <div class="section">
+            <h2>Enhanced Projections with Multiplier Effect</h2>
+            <div class="subtitle">Accounting for increased engagement from Continental subscribers</div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">$100,440</div>
+                    <div class="stat-label">Enhanced Remittance MRR (with 20% lift)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$37,665</div>
+                    <div class="stat-label">Continental MRR (30% share)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$138,105</div>
+                    <div class="stat-label">Total Enhanced MRR</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$1,657,260</div>
+                    <div class="stat-label">Enhanced Annual Revenue</div>
+                </div>
+            </div>
+
+            <div class="calc-box">
+                <h3 style="text-align: center; margin-bottom: 20px;">Full Year 1 Calculation</h3>
+                <div class="calc-row">
+                    <span>Base Remittance Revenue:</span>
+                    <span>$1,004,400</span>
+                </div>
+                <div class="calc-row">
+                    <span>+ 20% Engagement Lift:</span>
+                    <span>+ $200,880</span>
+                </div>
+                <div class="calc-row">
+                    <span>Enhanced Remittance Revenue:</span>
+                    <span>$1,205,280</span>
+                </div>
+                <div class="calc-row">
+                    <span>+ Continental Revenue (30%):</span>
+                    <span>+ $451,980</span>
+                </div>
+                <div class="calc-row">
+                    <span>Total Year 1 Revenue:</span>
+                    <span class="highlight">$1,657,260</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3-Year Projection -->
+        <div class="section">
+            <h2>3-Year Revenue Projection</h2>
+            <div class="subtitle">Conservative 5% adoption maintained + expansion opportunities</div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Total Subscribers</th>
+                            <th>Continental Revenue</th>
+                            <th>Remittance Revenue</th>
+                            <th>Total Annual Revenue</th>
+                            <th>Cumulative Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Year 1</strong></td>
+                            <td>13,950</td>
+                            <td>$451,980</td>
+                            <td>$1,205,280</td>
+                            <td>$1,657,260</td>
+                            <td>$1,657,260</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year 2</strong></td>
+                            <td>16,740 (+20%)</td>
+                            <td>$542,376</td>
+                            <td>$1,446,336</td>
+                            <td>$1,988,712</td>
+                            <td>$3,645,972</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Year 3</strong></td>
+                            <td>20,088 (+20%)</td>
+                            <td>$650,851</td>
+                            <td>$1,735,603</td>
+                            <td>$2,386,454</td>
+                            <td>$6,032,426</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="hero-stat">
+                <div class="hero-number">$6.03M</div>
+                <div class="hero-label">3-Year Cumulative Revenue</div>
+            </div>
+        </div>
+
+        <!-- Why This Works -->
+        <div class="section">
+            <h2>Why Continental Assist is the Perfect Reactivation Tool</h2>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ High Perceived Value</div>
+                    <p>$10K funeral coverage + 24/7 telehealth = compelling offer</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ Low Price Point</div>
+                    <p>$5.99-$14.99/month is affordable for value received</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ Family-Focused</div>
+                    <p>Resonates with remittance customers who care about family</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ Free Trial Hook</div>
+                    <p>60-90 day trial removes risk, drives adoption</p>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>The Win-Back Strategy</h3>
+                <ul class="bullet-list">
+                    <li><strong>Email Campaign:</strong> "We miss you! Get 90 days of Continental Assist free when you return"</li>
+                    <li><strong>SMS Outreach:</strong> "Protect your family for free - no credit card required"</li>
+                    <li><strong>Personal Calls:</strong> High-value dormant customers get personal touch</li>
+                    <li><strong>In-App Re-engagement:</strong> Pop-up when they open app</li>
+                    <li><strong>Value Demonstration:</strong> Show $10K coverage + telehealth savings calculator</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Investment Required -->
+        <div class="section">
+            <h2>Investment Required</h2>
+            <div class="subtitle">Cost to execute this strategy</div>
+
+            <div class="comparison-box">
+                <div class="comparison-card">
+                    <h3>Marketing Costs</h3>
+                    <div class="calc-box">
+                        <div class="calc-row">
+                            <span>Email Platform (existing):</span>
+                            <span>$0</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>SMS Credits (279K sends):</span>
+                            <span>~$2,790</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Creative Development:</span>
+                            <span>$5,000</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Total Marketing:</span>
+                            <span class="highlight">$7,790</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="comparison-card">
+                    <h3>Operational Costs</h3>
+                    <div class="calc-box">
+                        <div class="calc-row">
+                            <span>Customer Support (existing team):</span>
+                            <span>$0</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Sales Calls (optional):</span>
+                            <span>$2,000</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Technical Integration (one-time):</span>
+                            <span>$10,000</span>
+                        </div>
+                        <div class="calc-row">
+                            <span>Total Operational:</span>
+                            <span class="highlight">$12,000</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="calc-box" style="margin-top: 30px;">
+                <div class="calc-row">
+                    <span>Total Investment:</span>
+                    <span>$19,790</span>
+                </div>
+                <div class="calc-row">
+                    <span>Year 1 Revenue:</span>
+                    <span>$1,657,260</span>
+                </div>
+                <div class="calc-row">
+                    <span>Return on Investment:</span>
+                    <span class="highlight">8,375%</span>
+                </div>
+            </div>
+
+            <div class="hero-stat">
+                <div class="hero-number">84x</div>
+                <div class="hero-label">Return on Investment Multiple</div>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="subtitle">The Continental Assist opportunity in numbers</div>
+
+            <div class="content-box">
+                <h3>The Opportunity</h3>
+                <ul class="bullet-list" style="font-size: 20px;">
+                    <li><strong>279,000 inactive customers</strong> currently generating $0 revenue</li>
+                    <li><strong>5% adoption</strong> of Continental Assist = 13,950 reactivated customers</li>
+                    <li><strong>Dual revenue streams:</strong> Remittance fees + Continental subscriptions</li>
+                    <li><strong>Enhanced engagement:</strong> 20% higher transaction frequency</li>
+                    <li><strong>$19,790 total investment</strong> to capture $1.66M Year 1 revenue</li>
+                </ul>
+            </div>
+
+            <div class="stat-grid" style="margin-top: 40px;">
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">Year 1 Revenue</div>
+                    <div class="stat-number" style="font-size: 42px;">$1.66M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">Year 2 Revenue</div>
+                    <div class="stat-number" style="font-size: 42px;">$1.99M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">Year 3 Revenue</div>
+                    <div class="stat-number" style="font-size: 42px;">$2.39M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">3-Year Total</div>
+                    <div class="stat-number" style="font-size: 42px;">$6.03M</div>
+                </div>
+            </div>
+
+            <div class="hero-stat" style="margin-top: 60px;">
+                <div class="hero-label" style="margin-bottom: 20px;">The Bottom Line</div>
+                <div class="hero-number" style="font-size: 72px;">$6.03M</div>
+                <div class="hero-label">in 3 years from customers currently generating $0</div>
+                <div class="hero-label" style="margin-top: 20px; font-size: 24px;">
+                    Investment: $19,790 | ROI: 8,375% | Payback Period: 5 days
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ Back to Top</button>
+</body>
+</html>
