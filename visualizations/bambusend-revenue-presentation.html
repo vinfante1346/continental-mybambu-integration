@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bambu Send - Inactive Customer Reactivation Revenue Opportunity</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            background: linear-gradient(135deg, #0D1752 0%, #050D30 100%);
+            color: white;
+            padding: 60px 20px;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 60px;
+            margin-bottom: 40px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        h1 {
+            font-size: 56px;
+            margin-bottom: 20px;
+            color: #70E242;
+            font-weight: 700;
+            text-align: center;
+        }
+
+        h2 {
+            font-size: 42px;
+            margin-bottom: 30px;
+            color: #70E242;
+            font-weight: 600;
+            border-bottom: 3px solid #70E242;
+            padding-bottom: 15px;
+        }
+
+        h3 {
+            font-size: 28px;
+            margin: 25px 0 15px 0;
+            color: #70E242;
+        }
+
+        .subtitle {
+            font-size: 24px;
+            color: #b8d5ff;
+            margin-bottom: 30px;
+            text-align: center;
+            line-height: 1.5;
+        }
+
+        .hero-stat {
+            text-align: center;
+            margin: 50px 0;
+        }
+
+        .hero-number {
+            font-size: 96px;
+            font-weight: 700;
+            color: #70E242;
+            text-shadow: 0 0 30px rgba(112, 226, 66, 0.5);
+            margin-bottom: 20px;
+        }
+
+        .hero-label {
+            font-size: 28px;
+            color: #b8d5ff;
+            font-weight: 500;
+        }
+
+        .stat-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: linear-gradient(135deg, #70E242 0%, #1F4AC4 100%);
+            padding: 40px 30px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(112, 226, 66, 0.4);
+        }
+
+        .stat-number {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 18px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.1);
+            border-left: 5px solid #70E242;
+            padding: 25px 30px;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+
+        .bullet-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .bullet-list li {
+            font-size: 18px;
+            margin: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            line-height: 1.6;
+        }
+
+        .bullet-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #70E242;
+            font-weight: bold;
+            font-size: 24px;
+        }
+
+        .table-container {
+            margin: 30px 0;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        th {
+            background: rgba(112, 226, 66, 0.3);
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        td {
+            font-size: 15px;
+        }
+
+        .highlight-row {
+            background: rgba(112, 226, 66, 0.2);
+            font-weight: 600;
+        }
+
+        .highlight {
+            color: #70E242;
+            font-weight: 600;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #70E242;
+            color: #0D1752;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 5px 20px rgba(112, 226, 66, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .back-to-top:hover {
+            background: #296BFF;
+            color: white;
+            transform: translateY(-3px);
+        }
+
+        .calc-box {
+            background: rgba(112, 226, 66, 0.1);
+            border: 2px solid #70E242;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+
+        .calc-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+            font-size: 18px;
+        }
+
+        .calc-row:last-child {
+            border-bottom: none;
+            padding-top: 20px;
+            font-size: 24px;
+            font-weight: 700;
+            color: #70E242;
+        }
+
+        .alert-box {
+            background: rgba(255, 107, 107, 0.2);
+            border: 2px solid #ff6b6b;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+            text-align: center;
+        }
+
+        @media (max-width: 768px) {
+            .section {
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 36px;
+            }
+
+            h2 {
+                font-size: 28px;
+            }
+
+            .hero-number {
+                font-size: 64px;
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Title Section -->
+        <div class="section">
+            <h1>Bambu Send Revenue Opportunity</h1>
+            <div class="subtitle">Unlock $1M+ Annual Revenue from Inactive Customers</div>
+            <div class="hero-stat">
+                <div class="hero-number">$1.00M</div>
+                <div class="hero-label">Annual Revenue from 5% Reactivation</div>
+            </div>
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">279,000</div>
+                    <div class="stat-label">Inactive Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">5%</div>
+                    <div class="stat-label">Target Reactivation Rate</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">13,950</div>
+                    <div class="stat-label">Reactivated Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$83,700</div>
+                    <div class="stat-label">Monthly Revenue Target</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Problem -->
+        <div class="section">
+            <h2>The Problem: Dormant Customers = Lost Revenue</h2>
+            <div class="subtitle">279,000 customers generating zero revenue</div>
+
+            <div class="alert-box">
+                <div class="hero-number" style="font-size: 72px; color: #ff6b6b;">$0</div>
+                <div class="hero-label" style="color: #ff6b6b;">Current Monthly Revenue from Inactive Base</div>
+            </div>
+
+            <div class="content-box">
+                <h3>If These Customers Were Active</h3>
+                <div class="calc-box">
+                    <div class="calc-row">
+                        <span>Inactive Customers:</span>
+                        <span class="highlight">279,000</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Avg Transactions per Month:</span>
+                        <span class="highlight">3</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Avg Transaction Amount:</span>
+                        <span class="highlight">$160</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Revenue per Transaction:</span>
+                        <span class="highlight">$2.00</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Potential Monthly Revenue (if all active):</span>
+                        <span>$1,674,000</span>
+                    </div>
+                    <div class="calc-row">
+                        <span>Potential Annual Revenue:</span>
+                        <span class="highlight">$20,088,000</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="content-box">
+                <h3>💡 The Opportunity</h3>
+                <p style="font-size: 20px; text-align: center;">
+                    Even reactivating just <strong class="highlight">5% of these customers</strong>
+                    would generate <strong class="highlight">$1M+ in annual revenue</strong>
+                    with minimal investment.
+                </p>
+            </div>
+        </div>
+
+        <!-- 5% Reactivation Scenario -->
+        <div class="section">
+            <h2>Conservative Scenario: 5% Reactivation</h2>
+            <div class="subtitle">Realistic base case with proven reactivation tactics</div>
+
+            <div class="calc-box">
+                <h3 style="text-align: center; margin-bottom: 20px;">Revenue Calculation</h3>
+                <div class="calc-row">
+                    <span>Inactive Customers:</span>
+                    <span>279,000</span>
+                </div>
+                <div class="calc-row">
+                    <span>× 5% Reactivation Rate:</span>
+                    <span>= 13,950 reactivated</span>
+                </div>
+                <div class="calc-row">
+                    <span>× 3 Transactions/Month:</span>
+                    <span>= 41,850 transactions</span>
+                </div>
+                <div class="calc-row">
+                    <span>× $2.00 Revenue per Transaction:</span>
+                    <span>= $83,700/month</span>
+                </div>
+                <div class="calc-row">
+                    <span>Annual Revenue (Year 1):</span>
+                    <span class="highlight">$1,004,400</span>
+                </div>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-number">13,950</div>
+                    <div class="stat-label">Reactivated Customers</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$83,700</div>
+                    <div class="stat-label">Monthly Revenue (MRR)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$1.00M</div>
+                    <div class="stat-label">Annual Revenue (ARR)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">41,850</div>
+                    <div class="stat-label">Monthly Transactions</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Multiple Scenarios -->
+        <div class="section">
+            <h2>Revenue Scenarios by Reactivation Rate</h2>
+            <div class="subtitle">What happens at different success levels</div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Reactivation Rate</th>
+                            <th>Customers Reactivated</th>
+                            <th>Monthly Transactions</th>
+                            <th>Monthly Revenue</th>
+                            <th>Annual Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>3%</strong></td>
+                            <td>8,370</td>
+                            <td>25,110</td>
+                            <td>$50,220</td>
+                            <td>$602,640</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>5%</strong></td>
+                            <td>13,950</td>
+                            <td>41,850</td>
+                            <td>$83,700</td>
+                            <td>$1,004,400</td>
+                        </tr>
+                        <tr>
+                            <td><strong>7%</strong></td>
+                            <td>19,530</td>
+                            <td>58,590</td>
+                            <td>$117,180</td>
+                            <td>$1,406,160</td>
+                        </tr>
+                        <tr>
+                            <td><strong>10%</strong></td>
+                            <td>27,900</td>
+                            <td>83,700</td>
+                            <td>$167,400</td>
+                            <td>$2,008,800</td>
+                        </tr>
+                        <tr>
+                            <td><strong>15%</strong></td>
+                            <td>41,850</td>
+                            <td>125,550</td>
+                            <td>$251,100</td>
+                            <td>$3,013,200</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="content-box" style="margin-top: 30px;">
+                <p style="font-size: 20px; text-align: center;">
+                    <strong>Recommendation:</strong> Plan for <span class="highlight">5% reactivation</span> as baseline,
+                    with aggressive campaign tactics targeting <span class="highlight">7-10%</span> for upside.
+                </p>
+            </div>
+        </div>
+
+        <!-- Year 1 Projection -->
+        <div class="section">
+            <h2>Year 1 Phased Rollout (5% Target)</h2>
+            <div class="subtitle">Quarterly ramp-up to 13,950 reactivated customers</div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Quarter</th>
+                            <th>New Reactivations</th>
+                            <th>Cumulative Active</th>
+                            <th>Monthly Revenue</th>
+                            <th>Quarterly Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Q1</strong></td>
+                            <td>2,790</td>
+                            <td>2,790</td>
+                            <td>$16,740</td>
+                            <td>$50,220</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q2</strong></td>
+                            <td>4,185</td>
+                            <td>6,975</td>
+                            <td>$41,850</td>
+                            <td>$125,550</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q3</strong></td>
+                            <td>4,185</td>
+                            <td>11,160</td>
+                            <td>$66,960</td>
+                            <td>$200,880</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Q4</strong></td>
+                            <td>2,790</td>
+                            <td>13,950</td>
+                            <td>$83,700</td>
+                            <td>$251,100</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Year 1 Total</strong></td>
+                            <td><strong>13,950</strong></td>
+                            <td><strong>13,950</strong></td>
+                            <td><strong>$83,700</strong></td>
+                            <td><strong>$1,004,400</strong></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="hero-stat">
+                <div class="hero-number">$1.00M</div>
+                <div class="hero-label">Year 1 Total Revenue</div>
+            </div>
+        </div>
+
+        <!-- 3-Year Projection -->
+        <div class="section">
+            <h2>3-Year Revenue Projection</h2>
+            <div class="subtitle">Sustained growth through ongoing reactivation + retention</div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Year</th>
+                            <th>Active Customers</th>
+                            <th>Monthly Revenue</th>
+                            <th>Annual Revenue</th>
+                            <th>Cumulative Revenue</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Year 1</strong></td>
+                            <td>13,950</td>
+                            <td>$83,700</td>
+                            <td>$1,004,400</td>
+                            <td>$1,004,400</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Year 2</strong></td>
+                            <td>16,740 (+20%)</td>
+                            <td>$100,440</td>
+                            <td>$1,205,280</td>
+                            <td>$2,209,680</td>
+                        </tr>
+                        <tr class="highlight-row">
+                            <td><strong>Year 3</strong></td>
+                            <td>20,088 (+20%)</td>
+                            <td>$120,528</td>
+                            <td>$1,446,336</td>
+                            <td>$3,656,016</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="hero-stat">
+                <div class="hero-number">$3.66M</div>
+                <div class="hero-label">3-Year Cumulative Revenue</div>
+            </div>
+
+            <div class="content-box">
+                <h3>Growth Assumptions</h3>
+                <ul class="bullet-list">
+                    <li>20% year-over-year growth from continuous reactivation campaigns</li>
+                    <li>Additional inactive customers targeted each year</li>
+                    <li>85% customer retention (15% natural churn replaced)</li>
+                    <li>Steady transaction patterns maintained (3/month, $160 avg)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Reactivation Strategy -->
+        <div class="section">
+            <h2>Reactivation Strategy</h2>
+            <div class="subtitle">How to bring back 13,950 dormant customers</div>
+
+            <div class="content-box">
+                <h3>🎯 Multi-Channel Win-Back Campaign</h3>
+                <ul class="bullet-list" style="font-size: 20px;">
+                    <li><strong>Email Campaign:</strong> "We miss you!" series with special reactivation offers</li>
+                    <li><strong>SMS Outreach:</strong> Direct, personal messages highlighting account benefits</li>
+                    <li><strong>Push Notifications:</strong> Re-engage users who still have app installed</li>
+                    <li><strong>Personal Calls:</strong> High-value dormant customers get phone outreach</li>
+                    <li><strong>Special Offers:</strong> Fee waivers, bonus credits, preferential exchange rates</li>
+                </ul>
+            </div>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">📧 Email Series</div>
+                    <p>5-email sequence over 30 days<br>Target: 25% open, 8% click</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">💬 SMS Campaign</div>
+                    <p>3 targeted SMS messages<br>Target: 90% delivery, 15% response</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">📞 Personal Calls</div>
+                    <p>Top 1,000 high-value customers<br>Target: 50% connection, 30% conversion</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">🎁 Special Offer</div>
+                    <p>First 3 transactions fee-free<br>+ $10 bonus on first $100+ send</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Investment Required -->
+        <div class="section">
+            <h2>Investment Required</h2>
+            <div class="subtitle">Cost to execute reactivation campaign</div>
+
+            <div class="calc-box">
+                <h3 style="text-align: center; margin-bottom: 20px;">Campaign Costs</h3>
+                <div class="calc-row">
+                    <span>Email Platform (existing):</span>
+                    <span>$0</span>
+                </div>
+                <div class="calc-row">
+                    <span>SMS Credits (279K sends × $0.01):</span>
+                    <span>$2,790</span>
+                </div>
+                <div class="calc-row">
+                    <span>Creative Development (emails, SMS, landing pages):</span>
+                    <span>$5,000</span>
+                </div>
+                <div class="calc-row">
+                    <span>Personal Calling Campaign (1,000 customers):</span>
+                    <span>$3,000</span>
+                </div>
+                <div class="calc-row">
+                    <span>Special Offers & Incentives (fee waivers + bonuses):</span>
+                    <span>$20,000</span>
+                </div>
+                <div class="calc-row">
+                    <span>Campaign Management & Analytics:</span>
+                    <span>$5,000</span>
+                </div>
+                <div class="calc-row">
+                    <span>Total Investment:</span>
+                    <span class="highlight">$35,790</span>
+                </div>
+            </div>
+
+            <div class="stat-grid" style="margin-top: 40px;">
+                <div class="stat-card">
+                    <div class="stat-number">$35,790</div>
+                    <div class="stat-label">Total Campaign Investment</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">$1.00M</div>
+                    <div class="stat-label">Year 1 Revenue Generated</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">2,806%</div>
+                    <div class="stat-label">Return on Investment</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">28x</div>
+                    <div class="stat-label">ROI Multiple</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Why Now -->
+        <div class="section">
+            <h2>Why This Strategy Works</h2>
+
+            <div class="stat-grid">
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ Known Customers</div>
+                    <p>Already verified, KYC complete, familiar with platform</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ Lower CAC</div>
+                    <p>Reactivation costs 5-10x less than new acquisition</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ Faster Conversion</div>
+                    <p>No onboarding friction - customers know how to use platform</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">✅ High Lifetime Value</div>
+                    <p>Reactivated customers often become loyal, repeat users</p>
+                </div>
+            </div>
+
+            <div class="content-box" style="margin-top: 30px;">
+                <h3>Key Success Factors</h3>
+                <ul class="bullet-list">
+                    <li><strong>Compelling Offer:</strong> Fee waivers + bonus credits remove friction</li>
+                    <li><strong>Personal Touch:</strong> Direct calls to high-value customers show we care</li>
+                    <li><strong>Multi-Channel:</strong> Email + SMS + Push ensures we reach them</li>
+                    <li><strong>Time-Limited:</strong> Urgency drives immediate action</li>
+                    <li><strong>Easy Re-entry:</strong> One-click reactivation, no new KYC needed</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Executive Summary -->
+        <div class="section">
+            <h2>Executive Summary</h2>
+            <div class="subtitle">The Bambu Send reactivation opportunity</div>
+
+            <div class="content-box">
+                <h3>The Opportunity</h3>
+                <ul class="bullet-list" style="font-size: 20px;">
+                    <li><strong>279,000 inactive customers</strong> currently generating $0 revenue</li>
+                    <li><strong>5% reactivation</strong> = 13,950 active transacting customers</li>
+                    <li><strong>$1M+ annual revenue</strong> from remittance transaction fees</li>
+                    <li><strong>$35,790 investment</strong> generates 2,806% ROI (28x return)</li>
+                    <li><strong>Quick payback:</strong> Investment recovered in 1 month</li>
+                </ul>
+            </div>
+
+            <div class="stat-grid" style="margin-top: 40px;">
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">Year 1 Revenue</div>
+                    <div class="stat-number" style="font-size: 42px;">$1.00M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">Year 2 Revenue</div>
+                    <div class="stat-number" style="font-size: 42px;">$1.21M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">Year 3 Revenue</div>
+                    <div class="stat-number" style="font-size: 42px;">$1.45M</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-label" style="font-size: 20px; margin-bottom: 15px;">3-Year Total</div>
+                    <div class="stat-number" style="font-size: 42px;">$3.66M</div>
+                </div>
+            </div>
+
+            <div class="hero-stat" style="margin-top: 60px;">
+                <div class="hero-label" style="margin-bottom: 20px;">The Bottom Line</div>
+                <div class="hero-number" style="font-size: 72px;">$3.66M</div>
+                <div class="hero-label">in 3 years from customers currently generating $0</div>
+                <div class="hero-label" style="margin-top: 20px; font-size: 24px;">
+                    Investment: $35,790 | ROI: 2,806% | Payback: 30 days
+                </div>
+            </div>
+        </div>
+
+        <!-- Next Steps -->
+        <div class="section">
+            <h2>Recommended Next Steps</h2>
+
+            <div class="content-box">
+                <h3>Phase 1: Campaign Setup (Weeks 1-2)</h3>
+                <ul class="bullet-list">
+                    <li>Segment 279,000 inactive customers by recency, value, transaction history</li>
+                    <li>Create 5-email nurture sequence + 3 SMS templates</li>
+                    <li>Design landing page with reactivation offer</li>
+                    <li>Set up tracking and analytics</li>
+                    <li>Train customer support team on objection handling</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>Phase 2: Pilot Launch (Week 3)</h3>
+                <ul class="bullet-list">
+                    <li>Test campaign on 10,000 recently inactive customers</li>
+                    <li>Monitor response rates, conversion rates, engagement</li>
+                    <li>Optimize messaging based on early results</li>
+                    <li>Refine offer if needed</li>
+                </ul>
+            </div>
+
+            <div class="content-box">
+                <h3>Phase 3: Full Rollout (Weeks 4-12)</h3>
+                <ul class="bullet-list">
+                    <li>Deploy to all 279,000 inactive customers in batches</li>
+                    <li>Start personal calling campaign to high-value segment</li>
+                    <li>Track progress weekly against 5% reactivation goal</li>
+                    <li>Adjust tactics based on performance</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <button class="back-to-top" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑ Back to Top</button>
+</body>
+</html>
