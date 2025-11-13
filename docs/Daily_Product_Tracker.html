@@ -994,8 +994,41 @@
         }
 
         // Auto-load today's data if it exists
-        window.addEventListener('load', function() {
-            loadFromLocalStorage();
+        window.addEventListener('load', async function() {
+            // Auto-load data for today's date
+            const today = document.getElementById('trackingDate').value;
+
+            // Try Firebase first
+            const firebaseData = await window.loadFromFirebase(today);
+
+            if (firebaseData) {
+                Object.keys(firebaseData).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.value = firebaseData[key];
+                    }
+                });
+                calculateMetrics();
+                console.log('Auto-loaded today\'s data from Firebase');
+            } else {
+                // Try localStorage
+                const dateKey = 'tracker_' + today;
+                const saved = localStorage.getItem(dateKey);
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    Object.keys(data).forEach(key => {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            element.value = data[key];
+                        }
+                    });
+                    calculateMetrics();
+                    console.log('Auto-loaded today\'s data from localStorage');
+                } else {
+                    // No saved data, just calculate metrics to show targets
+                    calculateMetrics();
+                }
+            }
 
             // Attach autosave to all input fields
             document.querySelectorAll('input[type="number"], textarea').forEach(input => {
