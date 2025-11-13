@@ -605,6 +605,8 @@
             <button class="button secondary" onclick="window.print()">🖨️ Print Report</button>
             <div style="margin-top: 15px;">
                 <span id="firebase-status" style="color: #666; font-size: 0.9em;">⚪ Firebase: Not Connected</span>
+                <span style="margin-left: 20px; color: #666; font-size: 0.9em;">|</span>
+                <span id="autosave-status" style="margin-left: 20px; color: #666; font-size: 0.9em;">💾 Autosave: Enabled</span>
             </div>
         </div>
     </div>
@@ -810,7 +812,7 @@
             return '🔴 Critical';
         }
 
-        async function saveData() {
+        async function saveData(silent = false) {
             const date = document.getElementById('trackingDate').value;
             const data = {
                 date: date,
@@ -853,11 +855,16 @@
 
             // Save to Firebase
             const success = await window.saveToFirebase(data, date);
-            if (success) {
-                alert('✅ Data saved to Firebase for ' + date);
-            } else {
-                alert('⚠️ Saved locally, but Firebase save failed. Check connection.');
+
+            if (!silent) {
+                if (success) {
+                    alert('✅ Data saved to Firebase for ' + date);
+                } else {
+                    alert('⚠️ Saved locally, but Firebase save failed. Check connection.');
+                }
             }
+
+            return success;
         }
 
         async function loadData() {
@@ -906,9 +913,96 @@
             }
         }
 
+        // Autosave functionality
+        let autosaveTimer = null;
+        let autosaveEnabled = true;
+
+        async function autoSaveData() {
+            if (!autosaveEnabled) return;
+
+            const statusEl = document.getElementById('autosave-status');
+            statusEl.textContent = '💾 Saving...';
+            statusEl.style.color = '#ff9800';
+
+            const success = await saveData(true); // Silent save
+
+            if (success) {
+                statusEl.textContent = '✅ Saved';
+                statusEl.style.color = '#228B22';
+            } else {
+                statusEl.textContent = '⚠️ Save Failed';
+                statusEl.style.color = '#c41e3a';
+            }
+
+            // Reset status after 2 seconds
+            setTimeout(() => {
+                statusEl.textContent = '💾 Autosave: Enabled';
+                statusEl.style.color = '#666';
+            }, 2000);
+        }
+
+        function triggerAutosave() {
+            if (!autosaveEnabled) return;
+
+            // Clear existing timer
+            if (autosaveTimer) {
+                clearTimeout(autosaveTimer);
+            }
+
+            // Set new timer - save 2 seconds after user stops typing
+            autosaveTimer = setTimeout(autoSaveData, 2000);
+        }
+
+        // Auto-load when date changes
+        async function onDateChange() {
+            const date = document.getElementById('trackingDate').value;
+
+            // Update day number
+            const dayNum = new Date(date).getDate();
+            document.getElementById('dayNumber').textContent = dayNum;
+
+            // Try to load data for this date
+            const firebaseData = await window.loadFromFirebase(date);
+
+            if (firebaseData) {
+                // Load from Firebase
+                Object.keys(firebaseData).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) {
+                        element.value = firebaseData[key];
+                    }
+                });
+                calculateMetrics();
+                console.log('Auto-loaded data from Firebase for ' + date);
+            } else {
+                // Try localStorage
+                const dateKey = 'tracker_' + date;
+                const saved = localStorage.getItem(dateKey);
+                if (saved) {
+                    const data = JSON.parse(saved);
+                    Object.keys(data).forEach(key => {
+                        const element = document.getElementById(key);
+                        if (element) {
+                            element.value = data[key];
+                        }
+                    });
+                    calculateMetrics();
+                    console.log('Auto-loaded data from localStorage for ' + date);
+                }
+            }
+        }
+
         // Auto-load today's data if it exists
         window.addEventListener('load', function() {
             loadFromLocalStorage();
+
+            // Attach autosave to all input fields
+            document.querySelectorAll('input[type="number"], textarea').forEach(input => {
+                input.addEventListener('input', triggerAutosave);
+            });
+
+            // Attach date change handler
+            document.getElementById('trackingDate').addEventListener('change', onDateChange);
         });
     </script>
 </body>
