@@ -261,6 +261,53 @@
             <span style="margin-left: 20px; color: #666;">Day: <strong id="dayNumber">1</strong> of 30</span>
         </div>
 
+        <!-- Platform Metrics -->
+        <div class="product-card" style="border-left: 5px solid #1a472a;">
+            <h2>Platform Metrics <span class="status-indicator status-green">🟢 Core KPIs</span></h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Daily Active Users (DAU)</label>
+                    <input type="number" id="platform_dau" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 25,000/day</div>
+                    <div id="platform_dau_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Monthly Active Uniques (MAU)</label>
+                    <input type="number" id="platform_mau" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 25,000 (cumulative)</div>
+                    <div id="platform_mau_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Daily Opt-Ins</label>
+                    <input type="number" id="platform_optins" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Track new consents</div>
+                    <div id="platform_optins_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Cumulative Opt-Ins (MTD)</label>
+                    <input type="number" id="platform_optins_mtd" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Month-to-date total</div>
+                </div>
+
+                <div class="metric">
+                    <label>Platform Engagement Rate %</label>
+                    <input type="number" id="platform_engagement" placeholder="0" step="0.1" oninput="calculateMetrics()">
+                    <div class="target">DAU / Total Customers</div>
+                    <div id="platform_engagement_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>New User Registrations</label>
+                    <input type="number" id="platform_new_users" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Daily new accounts</div>
+                </div>
+            </div>
+        </div>
+
         <!-- Continental Assist -->
         <div class="product-card">
             <h2>Continental Assist <span class="status-indicator status-yellow">🟡 Launch</span></h2>
@@ -501,6 +548,12 @@
                         </tr>
                     </thead>
                     <tbody>
+                        <tr style="border-bottom: 1px solid #ddd; background-color: #f0f8f0;">
+                            <td style="padding: 10px;"><strong>Daily Active Users</strong></td>
+                            <td style="padding: 10px; text-align: center;"><strong>25,000</strong></td>
+                            <td style="padding: 10px; text-align: center;" id="dau_actual"><strong>0</strong></td>
+                            <td style="padding: 10px; text-align: center;" id="dau_status">-</td>
+                        </tr>
                         <tr style="border-bottom: 1px solid #ddd;">
                             <td style="padding: 10px;">Total Daily Revenue</td>
                             <td style="padding: 10px; text-align: center;">$16,428</td>
@@ -571,6 +624,11 @@
             document.getElementById('pay_total_rev').value = payTotalRev.toFixed(2);
 
             // Calculate variances
+            // Platform Metrics
+            calculateVariance('platform_dau', 25000);
+            calculateVariance('platform_mau', 25000);
+
+            // Continental Assist
             calculateVariance('cont_trials', 600);
             calculateVariance('cont_subs', 465);
             calculateVariance('cont_sub_rev', 1255);
@@ -611,6 +669,10 @@
             document.getElementById('summary_total').textContent = '$' + totalDaily.toLocaleString();
 
             // Update summary table
+            const dau = parseInt(document.getElementById('platform_dau').value) || 0;
+            document.getElementById('dau_actual').textContent = dau.toLocaleString();
+            document.getElementById('dau_status').innerHTML = getStatusEmoji(dau, 25000);
+
             document.getElementById('total_actual').textContent = '$' + totalDaily.toLocaleString();
             document.getElementById('total_status').innerHTML = getStatusEmoji(totalDaily, 16428);
 
@@ -658,6 +720,12 @@
         function saveToLocalStorage() {
             const data = {
                 date: document.getElementById('trackingDate').value,
+                platform_dau: document.getElementById('platform_dau').value,
+                platform_mau: document.getElementById('platform_mau').value,
+                platform_optins: document.getElementById('platform_optins').value,
+                platform_optins_mtd: document.getElementById('platform_optins_mtd').value,
+                platform_engagement: document.getElementById('platform_engagement').value,
+                platform_new_users: document.getElementById('platform_new_users').value,
                 cont_trials: document.getElementById('cont_trials').value,
                 cont_subs: document.getElementById('cont_subs').value,
                 cont_sub_rev: document.getElementById('cont_sub_rev').value,
