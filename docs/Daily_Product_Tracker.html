@@ -599,12 +599,89 @@
 
         <!-- Actions -->
         <div class="actions">
-            <button class="button" onclick="saveToLocalStorage()">💾 Save Progress</button>
-            <button class="button secondary" onclick="loadFromLocalStorage()">📥 Load Saved</button>
+            <button class="button" onclick="saveData()">💾 Save to Firebase</button>
+            <button class="button secondary" onclick="loadData()">📥 Load from Firebase</button>
             <button class="button secondary" onclick="clearAll()">🔄 Clear All</button>
             <button class="button secondary" onclick="window.print()">🖨️ Print Report</button>
+            <div style="margin-top: 15px;">
+                <span id="firebase-status" style="color: #666; font-size: 0.9em;">⚪ Firebase: Not Connected</span>
+            </div>
         </div>
     </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase, ref, set, get, child } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+
+        // Firebase configuration - REPLACE WITH YOUR FIREBASE CONFIG
+        const firebaseConfig = {
+            apiKey: "YOUR_API_KEY",
+            authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
+            databaseURL: "https://YOUR_PROJECT_ID-default-rtdb.firebaseio.com",
+            projectId: "YOUR_PROJECT_ID",
+            storageBucket: "YOUR_PROJECT_ID.appspot.com",
+            messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+            appId: "YOUR_APP_ID"
+        };
+
+        // Initialize Firebase
+        let app, database;
+        try {
+            app = initializeApp(firebaseConfig);
+            database = getDatabase(app);
+            document.getElementById('firebase-status').innerHTML = '🟢 Firebase: Connected';
+            document.getElementById('firebase-status').style.color = '#228B22';
+            window.firebaseDB = database;
+            console.log('Firebase initialized successfully');
+        } catch (error) {
+            console.error('Firebase initialization error:', error);
+            document.getElementById('firebase-status').innerHTML = '🔴 Firebase: Error - Check Console';
+            document.getElementById('firebase-status').style.color = '#c41e3a';
+        }
+
+        // Make Firebase functions available globally
+        window.saveToFirebase = async function(data, date) {
+            if (!database) {
+                alert('⚠️ Firebase not connected. Please check configuration.');
+                return false;
+            }
+
+            try {
+                const dbRef = ref(database, 'daily-tracker/' + date);
+                await set(dbRef, {
+                    ...data,
+                    lastUpdated: new Date().toISOString()
+                });
+                return true;
+            } catch (error) {
+                console.error('Error saving to Firebase:', error);
+                alert('❌ Error saving to Firebase: ' + error.message);
+                return false;
+            }
+        };
+
+        window.loadFromFirebase = async function(date) {
+            if (!database) {
+                alert('⚠️ Firebase not connected. Please check configuration.');
+                return null;
+            }
+
+            try {
+                const dbRef = ref(database);
+                const snapshot = await get(child(dbRef, 'daily-tracker/' + date));
+                if (snapshot.exists()) {
+                    return snapshot.val();
+                } else {
+                    return null;
+                }
+            } catch (error) {
+                console.error('Error loading from Firebase:', error);
+                alert('❌ Error loading from Firebase: ' + error.message);
+                return null;
+            }
+        };
+    </script>
 
     <script>
         // Set today's date
@@ -733,9 +810,10 @@
             return '🔴 Critical';
         }
 
-        function saveToLocalStorage() {
+        async function saveData() {
+            const date = document.getElementById('trackingDate').value;
             const data = {
-                date: document.getElementById('trackingDate').value,
+                date: date,
                 platform_total_active: document.getElementById('platform_total_active').value,
                 platform_dau: document.getElementById('platform_dau').value,
                 platform_mau: document.getElementById('platform_mau').value,
@@ -769,22 +847,43 @@
                 daily_notes: document.getElementById('daily_notes').value
             };
 
-            const dateKey = 'tracker_' + data.date;
+            // Save to localStorage as backup
+            const dateKey = 'tracker_' + date;
             localStorage.setItem(dateKey, JSON.stringify(data));
-            alert('✅ Progress saved for ' + data.date);
+
+            // Save to Firebase
+            const success = await window.saveToFirebase(data, date);
+            if (success) {
+                alert('✅ Data saved to Firebase for ' + date);
+            } else {
+                alert('⚠️ Saved locally, but Firebase save failed. Check connection.');
+            }
         }
 
-        function loadFromLocalStorage() {
+        async function loadData() {
             const date = document.getElementById('trackingDate').value;
-            const dateKey = 'tracker_' + date;
-            const saved = localStorage.getItem(dateKey);
 
-            if (!saved) {
-                alert('No saved data found for ' + date);
-                return;
+            // Try to load from Firebase first
+            const firebaseData = await window.loadFromFirebase(date);
+
+            let data = null;
+            if (firebaseData) {
+                data = firebaseData;
+                console.log('Loaded from Firebase');
+            } else {
+                // Fallback to localStorage
+                const dateKey = 'tracker_' + date;
+                const saved = localStorage.getItem(dateKey);
+                if (saved) {
+                    data = JSON.parse(saved);
+                    console.log('Loaded from localStorage');
+                }
             }
 
-            const data = JSON.parse(saved);
+            if (!data) {
+                alert('📭 No saved data found for ' + date);
+                return;
+            }
 
             // Load all fields
             Object.keys(data).forEach(key => {
