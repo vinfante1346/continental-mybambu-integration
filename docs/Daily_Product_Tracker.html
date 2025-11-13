@@ -267,38 +267,31 @@
 
             <div class="metrics-grid">
                 <div class="metric">
+                    <label>Total Active Users</label>
+                    <input type="number" id="platform_total_active" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 112,000</div>
+                    <div id="platform_total_active_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
                     <label>Daily Active Users (DAU)</label>
                     <input type="number" id="platform_dau" placeholder="0" oninput="calculateMetrics()">
-                    <div class="target">Target: 25,000/day</div>
+                    <div class="target">Target: 35,000/day</div>
                     <div id="platform_dau_var" class="variance"></div>
-                </div>
-
-                <div class="metric">
-                    <label>Monthly Active Uniques (MAU)</label>
-                    <input type="number" id="platform_mau" placeholder="0" oninput="calculateMetrics()">
-                    <div class="target">Target: 25,000 (cumulative)</div>
-                    <div id="platform_mau_var" class="variance"></div>
-                </div>
-
-                <div class="metric">
-                    <label>Daily Opt-Ins</label>
-                    <input type="number" id="platform_optins" placeholder="0" oninput="calculateMetrics()">
-                    <div class="target">Target: 1,667/day (50k monthly)</div>
-                    <div id="platform_optins_var" class="variance"></div>
-                </div>
-
-                <div class="metric">
-                    <label>Cumulative Opt-Ins (MTD)</label>
-                    <input type="number" id="platform_optins_mtd" placeholder="0" oninput="calculateMetrics()">
-                    <div class="target">Target: 50,000/month</div>
-                    <div id="platform_optins_mtd_var" class="variance"></div>
                 </div>
 
                 <div class="metric">
                     <label>Platform Engagement Rate %</label>
                     <input type="number" id="platform_engagement" placeholder="0" step="0.1" oninput="calculateMetrics()">
-                    <div class="target">DAU / Total Customers</div>
+                    <div class="target">Target: 40%</div>
                     <div id="platform_engagement_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Monthly Active Uniques (MAU)</label>
+                    <input type="number" id="platform_mau" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Cumulative tracking</div>
+                    <div id="platform_mau_var" class="variance"></div>
                 </div>
 
                 <div class="metric">
@@ -460,6 +453,20 @@
                     <div class="target">Target: $7,487</div>
                     <div id="pay_total_rev_var" class="variance"></div>
                 </div>
+
+                <div class="metric">
+                    <label>Daily Opt-Ins</label>
+                    <input type="number" id="pay_optins" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 1,667/day (50k monthly)</div>
+                    <div id="pay_optins_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Cumulative Opt-Ins (MTD)</label>
+                    <input type="number" id="pay_optins_mtd" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 50,000/month</div>
+                    <div id="pay_optins_mtd_var" class="variance"></div>
+                </div>
             </div>
         </div>
 
@@ -551,7 +558,7 @@
                     <tbody>
                         <tr style="border-bottom: 1px solid #ddd; background-color: #f0f8f0;">
                             <td style="padding: 10px;"><strong>Daily Active Users</strong></td>
-                            <td style="padding: 10px; text-align: center;"><strong>25,000</strong></td>
+                            <td style="padding: 10px; text-align: center;"><strong>35,000</strong></td>
                             <td style="padding: 10px; text-align: center;" id="dau_actual"><strong>0</strong></td>
                             <td style="padding: 10px; text-align: center;" id="dau_status">-</td>
                         </tr>
@@ -627,10 +634,9 @@
 
             // Calculate variances
             // Platform Metrics
-            calculateVariance('platform_dau', 25000);
-            calculateVariance('platform_mau', 25000);
-            calculateVariance('platform_optins', 1667);
-            calculateVariance('platform_optins_mtd', 50000);
+            calculateVariance('platform_total_active', 112000);
+            calculateVariance('platform_dau', 35000);
+            calculateVariance('platform_engagement', 40, '%');
 
             // Continental Assist
             calculateVariance('cont_trials', 600);
@@ -654,6 +660,8 @@
             calculateVariance('pay_card_vol', 116987);
             calculateVariance('pay_card_rev', 1170);
             calculateVariance('pay_total_rev', 7487);
+            calculateVariance('pay_optins', 1667);
+            calculateVariance('pay_optins_mtd', 50000);
 
             calculateVariance('health_signups', 83);
             calculateVariance('health_revenue', 208);
@@ -675,9 +683,9 @@
             // Update summary table
             const dau = parseInt(document.getElementById('platform_dau').value) || 0;
             document.getElementById('dau_actual').textContent = dau.toLocaleString();
-            document.getElementById('dau_status').innerHTML = getStatusEmoji(dau, 25000);
+            document.getElementById('dau_status').innerHTML = getStatusEmoji(dau, 35000);
 
-            const optins = parseInt(document.getElementById('platform_optins').value) || 0;
+            const optins = parseInt(document.getElementById('pay_optins').value) || 0;
             document.getElementById('optins_actual').textContent = optins.toLocaleString();
             document.getElementById('optins_status').innerHTML = getStatusEmoji(optins, 1667);
 
@@ -728,10 +736,9 @@
         function saveToLocalStorage() {
             const data = {
                 date: document.getElementById('trackingDate').value,
+                platform_total_active: document.getElementById('platform_total_active').value,
                 platform_dau: document.getElementById('platform_dau').value,
                 platform_mau: document.getElementById('platform_mau').value,
-                platform_optins: document.getElementById('platform_optins').value,
-                platform_optins_mtd: document.getElementById('platform_optins_mtd').value,
                 platform_engagement: document.getElementById('platform_engagement').value,
                 platform_new_users: document.getElementById('platform_new_users').value,
                 cont_trials: document.getElementById('cont_trials').value,
@@ -751,6 +758,8 @@
                 pay_imt_rev: document.getElementById('pay_imt_rev').value,
                 pay_card_vol: document.getElementById('pay_card_vol').value,
                 pay_card_rev: document.getElementById('pay_card_rev').value,
+                pay_optins: document.getElementById('pay_optins').value,
+                pay_optins_mtd: document.getElementById('pay_optins_mtd').value,
                 health_signups: document.getElementById('health_signups').value,
                 health_active: document.getElementById('health_active').value,
                 health_revenue: document.getElementById('health_revenue').value,
