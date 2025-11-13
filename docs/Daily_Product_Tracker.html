@@ -943,6 +943,9 @@
         }
 
         function triggerAutosave() {
+            // Always calculate metrics first to update summaries
+            calculateMetrics();
+
             if (!autosaveEnabled) return;
 
             // Clear existing timer
