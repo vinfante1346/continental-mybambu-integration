@@ -372,6 +372,13 @@
                 </div>
 
                 <div class="metric">
+                    <label>Total Transaction Volume</label>
+                    <input type="number" id="pay_total_vol" placeholder="0" step="0.01" readonly style="background: #e9ecef;">
+                    <div class="target">Target: $500,000</div>
+                    <div id="pay_total_vol_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
                     <label>IMT Volume</label>
                     <input type="number" id="pay_imt_vol" placeholder="0" step="0.01" oninput="calculateMetrics()">
                     <div class="target">Target: $63,173</div>
@@ -553,6 +560,11 @@
             document.getElementById('cont_total_rev').value = contTotalRev.toFixed(2);
 
             // Bambu Pay 2.0
+            const payImtVol = parseFloat(document.getElementById('pay_imt_vol').value) || 0;
+            const payCardVol = parseFloat(document.getElementById('pay_card_vol').value) || 0;
+            const payTotalVol = payImtVol + payCardVol;
+            document.getElementById('pay_total_vol').value = payTotalVol.toFixed(2);
+
             const payImtRev = parseFloat(document.getElementById('pay_imt_rev').value) || 0;
             const payCardRev = parseFloat(document.getElementById('pay_card_rev').value) || 0;
             const payTotalRev = payImtRev + payCardRev;
@@ -574,6 +586,7 @@
             calculateVariance('send_sms', 15, '%');
 
             calculateVariance('pay_txns', 1915);
+            calculateVariance('pay_total_vol', 500000);
             calculateVariance('pay_imt_vol', 63173);
             calculateVariance('pay_imt_rev', 6317);
             calculateVariance('pay_card_vol', 116987);
