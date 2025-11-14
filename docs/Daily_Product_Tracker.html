@@ -666,6 +666,7 @@
 
         <!-- Actions -->
         <div class="actions">
+            <button class="button" onclick="loadNov12Baseline()" style="background: #0050b3;">📊 Load Nov 12 Baseline Data</button>
             <button class="button" onclick="saveData()">💾 Save to Firebase</button>
             <button class="button secondary" onclick="loadData()">📥 Load from Firebase</button>
             <button class="button secondary" onclick="clearAll()">🔄 Clear All</button>
@@ -985,6 +986,61 @@
                 });
                 calculateMetrics();
             }
+        }
+
+        function loadNov12Baseline() {
+            // Set date to November 12, 2025
+            document.getElementById('trackingDate').value = '2025-11-12';
+            updateDayNumber();
+
+            // Bambu Pay 2.0 - November 12 actual data
+            document.getElementById('pay_txns').value = '1782';
+            document.getElementById('pay_successful_txns').value = '1466';
+            document.getElementById('pay_success_rate').value = '82.27';
+            document.getElementById('pay_total_vol').value = '168415';
+            document.getElementById('pay_avg_txn').value = '114.88';
+            document.getElementById('pay_platform_rev').value = '146.60';
+            document.getElementById('pay_purchases').value = '1021';
+            document.getElementById('pay_disbursements').value = '761';
+            document.getElementById('pay_errors').value = '309';
+            document.getElementById('pay_visa').value = '1458';
+            document.getElementById('pay_mastercard').value = '316';
+            document.getElementById('pay_debit_success').value = '85.7';
+            document.getElementById('pay_credit_success').value = '46.15';
+            document.getElementById('pay_prepaid_success').value = '63.74';
+            document.getElementById('pay_nsf_errors').value = '153';
+            document.getElementById('pay_fraud_errors').value = '43';
+
+            // Add notes
+            document.getElementById('daily_notes').value = 'November 12, 2025 - TabaPay Baseline Performance\n\n' +
+                'KEY ACHIEVEMENTS:\n' +
+                '✅ Processed 1,782 transactions totaling $168,415\n' +
+                '✅ 82.27% success rate (1,466 successful transactions)\n' +
+                '✅ Debit cards performing well at 85.7% success\n' +
+                '✅ Strong geographic coverage across FL, TX, NY, CA\n\n' +
+                'AREAS FOR IMPROVEMENT:\n' +
+                '⚠️ 153 insufficient funds errors (49.5% of all errors) - Deploy balance verification\n' +
+                '⚠️ 43 fraud flags (13.9% of errors) - Optimize fraud detection rules\n' +
+                '⚠️ Credit card success at 46.15% - Target: 70%+ improvement needed\n' +
+                '⚠️ Prepaid card success at 63.74% - Target: 80%+ improvement needed\n\n' +
+                'NETWORK DISTRIBUTION:\n' +
+                '• Visa: 1,458 (81.8%)\n' +
+                '• Mastercard: 316 (17.7%)\n' +
+                '• Discover: 8 (0.4%)\n\n' +
+                'TRANSACTION MIX:\n' +
+                '• Purchases: 1,021 (57.3%)\n' +
+                '• Disbursements: 761 (42.7%)\n\n' +
+                'PEAK TRAFFIC:\n' +
+                '• Peak hour: 11 PM with 444 transactions (24.9% of daily volume)\n' +
+                '• Evening traffic: Heavy usage 7 PM - midnight\n\n' +
+                'ACTION ITEMS:\n' +
+                '1. Deploy real-time balance verification to eliminate NSF errors\n' +
+                '2. Review and optimize fraud detection parameters\n' +
+                '3. Investigate credit card decline patterns\n' +
+                '4. Target 90%+ overall success rate within 30 days';
+
+            calculateMetrics();
+            alert('✅ November 12 baseline data loaded!\n\nThis represents actual TabaPay performance from Nov 12, 2025.\n\nReview the metrics and notes, then save to Firebase if needed.');
         }
 
         // Autosave functionality
