@@ -670,44 +670,90 @@
 
         <!-- Geographic Performance -->
         <div class="section">
-            <h2>🗺️ Geographic Performance - Top States</h2>
+            <h2>🗺️ Geographic Performance - Top 10 States</h2>
 
             <div class="metrics-grid">
                 <div class="metric">
-                    <label>Florida (FL) Transactions</label>
+                    <label>1. Florida (FL)</label>
                     <input type="number" id="fl_txns" placeholder="0" oninput="calculateMetrics()">
                     <div class="target">Nov 12: 295 (17.5%) - 78.98% success</div>
                 </div>
 
                 <div class="metric">
-                    <label>Texas (TX) Transactions</label>
+                    <label>2. Texas (TX)</label>
                     <input type="number" id="tx_txns" placeholder="0" oninput="calculateMetrics()">
                     <div class="target">Nov 12: 252 (14.9%) - 81.75% success</div>
                 </div>
 
                 <div class="metric">
-                    <label>New York (NY) Transactions</label>
+                    <label>3. New York (NY)</label>
                     <input type="number" id="ny_txns" placeholder="0" oninput="calculateMetrics()">
                     <div class="target">Nov 12: 163 (9.7%) - 77.30% success</div>
                 </div>
 
                 <div class="metric">
-                    <label>California (CA) Transactions</label>
+                    <label>4. California (CA)</label>
                     <input type="number" id="ca_txns" placeholder="0" oninput="calculateMetrics()">
                     <div class="target">Nov 12: 158 (9.4%) - 87.97% success</div>
                 </div>
 
                 <div class="metric">
-                    <label>Georgia (GA) Transactions</label>
+                    <label>5. North Carolina (NC)</label>
+                    <input type="number" id="nc_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 79 (4.7%) - 89.87% success</div>
+                </div>
+
+                <div class="metric">
+                    <label>6. New Jersey (NJ)</label>
+                    <input type="number" id="nj_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 72 (4.3%) - 83.33% success</div>
+                </div>
+
+                <div class="metric">
+                    <label>7. Georgia (GA)</label>
                     <input type="number" id="ga_txns" placeholder="0" oninput="calculateMetrics()">
                     <div class="target">Nov 12: 72 (4.3%) - 98.61% success ⭐</div>
                 </div>
 
                 <div class="metric">
-                    <label>Top 5 States Total</label>
-                    <input type="number" id="top5_states" placeholder="0" readonly>
-                    <div class="target">Nov 12: 940 (55.8% of geo-tagged txns)</div>
+                    <label>8. Illinois (IL)</label>
+                    <input type="number" id="il_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 67 (4.0%) - 73.13% success ⚠️</div>
                 </div>
+
+                <div class="metric">
+                    <label>9. Ohio (OH)</label>
+                    <input type="number" id="oh_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 54 (3.2%) - 83.33% success</div>
+                </div>
+
+                <div class="metric">
+                    <label>10. Tennessee (TN)</label>
+                    <input type="number" id="tn_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 41 (2.4%) - 97.56% success ⭐</div>
+                </div>
+
+                <div class="metric">
+                    <label>Top 10 States Total</label>
+                    <input type="number" id="top10_states" placeholder="0" readonly>
+                    <div class="target">Nov 12: 1,253 (74.2% of geo-tagged txns)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Top 10 States %</label>
+                    <input type="number" id="top10_percent" placeholder="0" step="0.1" readonly>
+                    <div class="target">Nov 12: 74.2% of all geo-tagged</div>
+                </div>
+            </div>
+
+            <div class="insights-box">
+                <h3>📍 Geographic Insights</h3>
+                <ul>
+                    <li><strong>Best Performers:</strong> Georgia (98.61%) & Tennessee (97.56%) - study for best practices</li>
+                    <li><strong>Sunbelt Dominance:</strong> FL + TX = 547 txns (30.7% of total volume)</li>
+                    <li><strong>Improvement Needed:</strong> Illinois at 73.13% - investigate routing/issuer issues</li>
+                    <li><strong>Coverage:</strong> Top 10 states represent 74.2% of all geo-tagged transactions</li>
+                </ul>
             </div>
         </div>
 
@@ -750,9 +796,40 @@
 
         <!-- Traffic Patterns -->
         <div class="section">
-            <h2>⏰ Traffic Patterns</h2>
+            <h2>⏰ Traffic Patterns & Sources</h2>
 
+            <h3 style="color: #667eea; margin: 20px 0 15px 0; font-size: 1.3em;">📅 Day Part Analysis</h3>
             <div class="metrics-grid">
+                <div class="metric">
+                    <label>Early Morning (12 AM - 6 AM)</label>
+                    <input type="number" id="early_morning" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Overnight transactions</div>
+                </div>
+
+                <div class="metric">
+                    <label>Morning (6 AM - 12 PM)</label>
+                    <input type="number" id="morning" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Morning rush period</div>
+                </div>
+
+                <div class="metric">
+                    <label>Afternoon (12 PM - 5 PM)</label>
+                    <input type="number" id="afternoon" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Business hours</div>
+                </div>
+
+                <div class="metric">
+                    <label>Evening (5 PM - 9 PM)</label>
+                    <input type="number" id="evening" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">After work period</div>
+                </div>
+
+                <div class="metric">
+                    <label>Night (9 PM - 12 AM)</label>
+                    <input type="number" id="night" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: Highest activity (11 PM peak)</div>
+                </div>
+
                 <div class="metric">
                     <label>Peak Hour</label>
                     <input type="text" id="peak_hour" placeholder="e.g., 11 PM" oninput="calculateMetrics()">
@@ -766,16 +843,98 @@
                 </div>
 
                 <div class="metric">
-                    <label>Business Hours (9 AM - 5 PM)</label>
-                    <input type="number" id="business_hours" placeholder="0" oninput="calculateMetrics()">
-                    <div class="target">Nov 12: Low activity period</div>
+                    <label>Peak Hour % of Total</label>
+                    <input type="number" id="peak_percent" placeholder="0" step="0.1" readonly>
+                    <div class="target">Nov 12: 24.9%</div>
+                </div>
+            </div>
+
+            <h3 style="color: #667eea; margin: 30px 0 15px 0; font-size: 1.3em;">📱 Channel & Source</h3>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Mobile App Transactions</label>
+                    <input type="number" id="mobile_app" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Track mobile app volume</div>
                 </div>
 
                 <div class="metric">
-                    <label>Evening/Night (7 PM - 12 AM)</label>
-                    <input type="number" id="evening_hours" placeholder="0" oninput="calculateMetrics()">
-                    <div class="target">Nov 12: Heavy usage period</div>
+                    <label>Mobile App %</label>
+                    <input type="number" id="mobile_app_percent" placeholder="0" step="0.1" readonly>
+                    <div class="target">% of total transactions</div>
                 </div>
+
+                <div class="metric">
+                    <label>Web Portal Transactions</label>
+                    <input type="number" id="web_portal" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Track web portal volume</div>
+                </div>
+
+                <div class="metric">
+                    <label>Web Portal %</label>
+                    <input type="number" id="web_portal_percent" placeholder="0" step="0.1" readonly>
+                    <div class="target">% of total transactions</div>
+                </div>
+
+                <div class="metric">
+                    <label>API/Direct Integration</label>
+                    <input type="number" id="api_direct" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Track API volume</div>
+                </div>
+
+                <div class="metric">
+                    <label>API %</label>
+                    <input type="number" id="api_percent" placeholder="0" step="0.1" readonly>
+                    <div class="target">% of total transactions</div>
+                </div>
+            </div>
+
+            <h3 style="color: #667eea; margin: 30px 0 15px 0; font-size: 1.3em;">📲 Device Type</h3>
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>iOS Transactions</label>
+                    <input type="number" id="ios_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">iPhone/iPad transactions</div>
+                </div>
+
+                <div class="metric">
+                    <label>iOS Success Rate %</label>
+                    <input type="number" id="ios_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track iOS performance</div>
+                </div>
+
+                <div class="metric">
+                    <label>Android Transactions</label>
+                    <input type="number" id="android_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Android device transactions</div>
+                </div>
+
+                <div class="metric">
+                    <label>Android Success Rate %</label>
+                    <input type="number" id="android_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track Android performance</div>
+                </div>
+
+                <div class="metric">
+                    <label>Desktop/Web Transactions</label>
+                    <input type="number" id="desktop_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Desktop/browser transactions</div>
+                </div>
+
+                <div class="metric">
+                    <label>Desktop Success Rate %</label>
+                    <input type="number" id="desktop_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track desktop performance</div>
+                </div>
+            </div>
+
+            <div class="insights-box">
+                <h3>🔍 Traffic Insights</h3>
+                <ul>
+                    <li><strong>Nov 12 Peak:</strong> 11 PM with 444 transactions (24.9% of daily volume) - optimize for night traffic</li>
+                    <li><strong>Pattern:</strong> Heavy evening/night usage (7 PM - midnight) - minimal business hours activity</li>
+                    <li><strong>Channel Mix:</strong> Track which channels drive the most successful transactions</li>
+                    <li><strong>Device Performance:</strong> Monitor success rates by device type to identify platform issues</li>
+                </ul>
             </div>
         </div>
 
@@ -1026,8 +1185,36 @@
             const tx = parseFloat(document.getElementById('tx_txns').value) || 0;
             const ny = parseFloat(document.getElementById('ny_txns').value) || 0;
             const ca = parseFloat(document.getElementById('ca_txns').value) || 0;
+            const nc = parseFloat(document.getElementById('nc_txns').value) || 0;
+            const nj = parseFloat(document.getElementById('nj_txns').value) || 0;
             const ga = parseFloat(document.getElementById('ga_txns').value) || 0;
-            document.getElementById('top5_states').value = fl + tx + ny + ca + ga;
+            const il = parseFloat(document.getElementById('il_txns').value) || 0;
+            const oh = parseFloat(document.getElementById('oh_txns').value) || 0;
+            const tn = parseFloat(document.getElementById('tn_txns').value) || 0;
+
+            const top10Total = fl + tx + ny + ca + nc + nj + ga + il + oh + tn;
+            document.getElementById('top10_states').value = top10Total;
+
+            if (totalTxns > 0) {
+                document.getElementById('top10_percent').value = (top10Total / totalTxns * 100).toFixed(1);
+            }
+
+            // Traffic pattern percentages
+            const peakVolume = parseFloat(document.getElementById('peak_volume').value) || 0;
+            if (totalTxns > 0 && peakVolume > 0) {
+                document.getElementById('peak_percent').value = (peakVolume / totalTxns * 100).toFixed(1);
+            }
+
+            // Channel percentages
+            const mobileApp = parseFloat(document.getElementById('mobile_app').value) || 0;
+            const webPortal = parseFloat(document.getElementById('web_portal').value) || 0;
+            const apiDirect = parseFloat(document.getElementById('api_direct').value) || 0;
+
+            if (totalTxns > 0) {
+                document.getElementById('mobile_app_percent').value = (mobileApp / totalTxns * 100).toFixed(1);
+                document.getElementById('web_portal_percent').value = (webPortal / totalTxns * 100).toFixed(1);
+                document.getElementById('api_percent').value = (apiDirect / totalTxns * 100).toFixed(1);
+            }
 
             // User metrics
             const uniqueUsers = parseFloat(document.getElementById('unique_users').value) || 0;
@@ -1128,12 +1315,17 @@
             document.getElementById('avs_mismatch').value = '22';
             document.getElementById('security_violation').value = '13';
 
-            // Geographic
+            // Geographic - Top 10 states
             document.getElementById('fl_txns').value = '295';
             document.getElementById('tx_txns').value = '252';
             document.getElementById('ny_txns').value = '163';
             document.getElementById('ca_txns').value = '158';
+            document.getElementById('nc_txns').value = '79';
+            document.getElementById('nj_txns').value = '72';
             document.getElementById('ga_txns').value = '72';
+            document.getElementById('il_txns').value = '67';
+            document.getElementById('oh_txns').value = '54';
+            document.getElementById('tn_txns').value = '41';
 
             // Traffic
             document.getElementById('peak_hour').value = '11 PM';
@@ -1305,18 +1497,37 @@
                 tx_txns: document.getElementById('tx_txns').value,
                 ny_txns: document.getElementById('ny_txns').value,
                 ca_txns: document.getElementById('ca_txns').value,
+                nc_txns: document.getElementById('nc_txns').value,
+                nj_txns: document.getElementById('nj_txns').value,
                 ga_txns: document.getElementById('ga_txns').value,
+                il_txns: document.getElementById('il_txns').value,
+                oh_txns: document.getElementById('oh_txns').value,
+                tn_txns: document.getElementById('tn_txns').value,
                 // Transaction sizes
                 size_under_10: document.getElementById('size_under_10').value,
                 size_10_50: document.getElementById('size_10_50').value,
                 size_50_100: document.getElementById('size_50_100').value,
                 size_100_500: document.getElementById('size_100_500').value,
                 size_500_plus: document.getElementById('size_500_plus').value,
-                // Traffic
+                // Traffic - Day parts
+                early_morning: document.getElementById('early_morning').value,
+                morning: document.getElementById('morning').value,
+                afternoon: document.getElementById('afternoon').value,
+                evening: document.getElementById('evening').value,
+                night: document.getElementById('night').value,
                 peak_hour: document.getElementById('peak_hour').value,
                 peak_volume: document.getElementById('peak_volume').value,
-                business_hours: document.getElementById('business_hours').value,
-                evening_hours: document.getElementById('evening_hours').value,
+                // Traffic - Channels
+                mobile_app: document.getElementById('mobile_app').value,
+                web_portal: document.getElementById('web_portal').value,
+                api_direct: document.getElementById('api_direct').value,
+                // Traffic - Devices
+                ios_txns: document.getElementById('ios_txns').value,
+                ios_success: document.getElementById('ios_success').value,
+                android_txns: document.getElementById('android_txns').value,
+                android_success: document.getElementById('android_success').value,
+                desktop_txns: document.getElementById('desktop_txns').value,
+                desktop_success: document.getElementById('desktop_success').value,
                 // Growth
                 daily_optins: document.getElementById('daily_optins').value,
                 mtd_optins: document.getElementById('mtd_optins').value,
