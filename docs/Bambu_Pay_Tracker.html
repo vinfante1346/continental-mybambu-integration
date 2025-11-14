@@ -1742,9 +1742,113 @@
             }
         }
 
+        // Auto-save Nov 12 baseline to Firebase
+        async function ensureNov12BaselineInFirebase() {
+            const nov12Date = '2025-11-12';
+
+            // Check if Nov 12 data already exists in Firebase
+            const existing = await window.loadFromFirebase(nov12Date);
+
+            if (!existing) {
+                console.log('Nov 12 baseline not found in Firebase, saving now...');
+
+                // Temporarily set date to Nov 12
+                const currentDate = document.getElementById('trackingDate').value;
+                document.getElementById('trackingDate').value = nov12Date;
+
+                // Load all the baseline data
+                document.getElementById('total_txns').value = '1782';
+                document.getElementById('successful_txns').value = '1466';
+                document.getElementById('total_volume').value = '168415';
+                document.getElementById('platform_revenue').value = '146.60';
+                document.getElementById('purchases').value = '1021';
+                document.getElementById('disbursements').value = '761';
+                document.getElementById('visa_txns').value = '1458';
+                document.getElementById('mastercard_txns').value = '316';
+                document.getElementById('discover_txns').value = '8';
+                document.getElementById('debit_txns').value = '1587';
+                document.getElementById('debit_success').value = '85.7';
+                document.getElementById('credit_txns').value = '104';
+                document.getElementById('credit_success').value = '46.15';
+                document.getElementById('prepaid_txns').value = '91';
+                document.getElementById('prepaid_success').value = '63.74';
+                document.getElementById('nsf_errors').value = '153';
+                document.getElementById('fraud_errors').value = '43';
+                document.getElementById('do_not_honor').value = '27';
+                document.getElementById('avs_mismatch').value = '22';
+                document.getElementById('security_violation').value = '13';
+                document.getElementById('fl_txns').value = '295';
+                document.getElementById('tx_txns').value = '252';
+                document.getElementById('ny_txns').value = '163';
+                document.getElementById('ca_txns').value = '158';
+                document.getElementById('nc_txns').value = '79';
+                document.getElementById('nj_txns').value = '72';
+                document.getElementById('ga_txns').value = '72';
+                document.getElementById('il_txns').value = '67';
+                document.getElementById('oh_txns').value = '54';
+                document.getElementById('tn_txns').value = '41';
+                document.getElementById('peak_hour').value = '11 PM';
+                document.getElementById('peak_volume').value = '444';
+                document.getElementById('size_under_10').value = '383';
+                document.getElementById('size_10_50').value = '506';
+                document.getElementById('size_50_100').value = '173';
+                document.getElementById('size_100_500').value = '277';
+                document.getElementById('size_500_plus').value = '127';
+
+                document.getElementById('key_wins').value = '✅ Processed 1,782 transactions totaling $168,415\n' +
+                    '✅ Strong debit card performance: 85.7% success rate (1,587 cards)\n' +
+                    '✅ Georgia state excellence: 98.61% success rate (72 transactions)\n' +
+                    '✅ California performance: 87.97% success rate (158 transactions)\n' +
+                    '✅ Visa network dominance: 81.8% market share (1,458 transactions)\n' +
+                    '✅ Peak efficiency: 11 PM with 444 transactions (24.9% of daily volume)\n' +
+                    '✅ Transaction volume sweet spot: $10-$50 range (506 txns - 34.5%)';
+
+                document.getElementById('blockers').value = '⚠️ Overall success rate at 82.27% vs 90% target (-7.73pp gap)\n' +
+                    '⚠️ Credit card success critically low: 46.15% vs 70% target (-23.85pp)\n' +
+                    '⚠️ Prepaid card success below target: 63.74% vs 80% target (-16.26pp)\n' +
+                    '⚠️ High NSF error rate: 153 errors (49.5% of all failures)\n' +
+                    '⚠️ Fraud detection false positives: 43 legitimate transactions flagged\n' +
+                    '⚠️ Geographic performance gaps: IL (73.13%), NY (77.30%), FL (78.98%)';
+
+                document.getElementById('observations').value = '📊 TRANSACTION MIX: Purchase-heavy day with 1,021 purchases vs 761 disbursements (+260 net)\n' +
+                    '📊 NETWORK DISTRIBUTION: Visa 81.8%, Mastercard 17.7%, Discover 0.4%\n' +
+                    '📊 CARD TYPE BREAKDOWN: Debit 89.1% of volume, Credit 5.8%, Prepaid 5.1%\n' +
+                    '📊 GEOGRAPHIC CONCENTRATION: Top 5 states represent 55.8% of all transactions\n' +
+                    '📊 SUNBELT DOMINANCE: FL + TX = 547 transactions (30.7% of total)\n' +
+                    '📊 TRAFFIC PATTERN: Heavy evening/night usage (7 PM - midnight), minimal business hours\n' +
+                    '📊 ERROR CONCENTRATION: Top 2 error types (NSF + Fraud) = 63.4% of all failures\n' +
+                    '📊 AVERAGE TRANSACTION: $114.88 across all successful transactions';
+
+                document.getElementById('additional_notes').value = '📝 November 12, 2025 - TabaPay Baseline Performance\n\n' +
+                    'This baseline has been automatically saved to Firebase for future reference and comparison.';
+
+                // Calculate metrics
+                calculateMetrics();
+
+                // Save to Firebase
+                const saved = await saveData(true);
+
+                if (saved) {
+                    console.log('✅ Nov 12 baseline successfully saved to Firebase');
+                } else {
+                    console.error('❌ Failed to save Nov 12 baseline to Firebase');
+                }
+
+                // Restore original date
+                document.getElementById('trackingDate').value = currentDate;
+                await onDateChange();
+            } else {
+                console.log('✅ Nov 12 baseline already exists in Firebase');
+            }
+        }
+
         // Auto-load on page load
-        window.addEventListener('load', function() {
-            onDateChange();
+        window.addEventListener('load', async function() {
+            // First, ensure Nov 12 baseline is in Firebase
+            await ensureNov12BaselineInFirebase();
+
+            // Then load current date data
+            await onDateChange();
 
             // Load temp action items if they exist
             const tempItems = localStorage.getItem('action_items_temp');
