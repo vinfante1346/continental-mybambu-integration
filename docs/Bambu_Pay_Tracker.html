@@ -1,0 +1,1282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bambu Pay 2.0 Daily Tracker - November 2025</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .header {
+            background: white;
+            color: #667eea;
+            padding: 40px;
+            border-radius: 12px;
+            text-align: center;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .date-selector {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .date-selector input {
+            padding: 10px;
+            font-size: 1.1em;
+            border: 2px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .summary-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .summary-card {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border-left: 5px solid #667eea;
+        }
+
+        .summary-card.success {
+            border-left-color: #10b981;
+        }
+
+        .summary-card.warning {
+            border-left-color: #f59e0b;
+        }
+
+        .summary-card.error {
+            border-left-color: #ef4444;
+        }
+
+        .summary-card .label {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .summary-card .value {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .summary-card.success .value {
+            color: #10b981;
+        }
+
+        .summary-card.warning .value {
+            color: #f59e0b;
+        }
+
+        .summary-card.error .value {
+            color: #ef4444;
+        }
+
+        .section {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .metric {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border: 2px solid #e9ecef;
+            transition: all 0.3s;
+        }
+
+        .metric:hover {
+            border-color: #667eea;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.2);
+        }
+
+        .metric label {
+            display: block;
+            font-weight: 600;
+            color: #555;
+            margin-bottom: 8px;
+            font-size: 0.95em;
+        }
+
+        .metric input {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.1em;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .metric input:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        .metric input:read-only {
+            background: #e9ecef;
+            cursor: not-allowed;
+        }
+
+        .metric .target {
+            font-size: 0.85em;
+            color: #666;
+            margin-top: 5px;
+            font-style: italic;
+        }
+
+        .metric .variance {
+            font-weight: bold;
+            margin-top: 8px;
+            padding: 8px;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        .variance.positive {
+            color: #10b981;
+            background-color: #d1fae5;
+        }
+
+        .variance.negative {
+            color: #ef4444;
+            background-color: #fee2e2;
+        }
+
+        .button {
+            background: #667eea;
+            color: white;
+            padding: 12px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+
+        .button:hover {
+            background: #5568d3;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .button.secondary {
+            background: #6b7280;
+        }
+
+        .button.secondary:hover {
+            background: #4b5563;
+        }
+
+        .button.success {
+            background: #10b981;
+        }
+
+        .button.success:hover {
+            background: #059669;
+        }
+
+        .actions {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 30px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .insights-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 20px;
+            border-left: 5px solid #f59e0b;
+        }
+
+        .insights-box h3 {
+            color: #92400e;
+            margin-bottom: 15px;
+        }
+
+        .insights-box ul {
+            margin-left: 20px;
+            line-height: 1.8;
+            color: #78350f;
+        }
+
+        .chart-container {
+            margin-top: 20px;
+            padding: 20px;
+            background: #f9fafb;
+            border-radius: 8px;
+        }
+
+        .progress-bar {
+            width: 100%;
+            height: 30px;
+            background: #e5e7eb;
+            border-radius: 15px;
+            overflow: hidden;
+            margin-top: 10px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            transition: width 0.5s ease;
+        }
+
+        .progress-fill.success {
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+        }
+
+        .progress-fill.warning {
+            background: linear-gradient(90deg, #f59e0b 0%, #d97706 100%);
+        }
+
+        .progress-fill.danger {
+            background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+        }
+
+        textarea {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 1em;
+            min-height: 120px;
+            transition: border-color 0.3s;
+        }
+
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+
+        @media (max-width: 768px) {
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .summary-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media print {
+            body {
+                background: white;
+            }
+            .actions {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💳 Bambu Pay 2.0 Daily Tracker</h1>
+            <p style="font-size: 1.2em; color: #666; margin-top: 10px;">TabaPay Payment Processing Analytics</p>
+        </div>
+
+        <div class="date-selector">
+            <div>
+                <label for="trackingDate"><strong>Tracking Date:</strong></label>
+                <input type="date" id="trackingDate" value="">
+            </div>
+            <div style="color: #666;">
+                Day <strong id="dayNumber">1</strong> of 30 | <span id="dayOfWeek">Monday</span>
+            </div>
+        </div>
+
+        <!-- Summary Cards -->
+        <div class="summary-cards">
+            <div class="summary-card">
+                <div class="label">Total Transactions</div>
+                <div class="value" id="summary_txns">0</div>
+            </div>
+            <div class="summary-card success">
+                <div class="label">Success Rate</div>
+                <div class="value" id="summary_success">0%</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Transaction Volume</div>
+                <div class="value" id="summary_volume">$0</div>
+            </div>
+            <div class="summary-card warning">
+                <div class="label">Platform Revenue</div>
+                <div class="value" id="summary_revenue">$0</div>
+            </div>
+            <div class="summary-card error">
+                <div class="label">Error Count</div>
+                <div class="value" id="summary_errors">0</div>
+            </div>
+            <div class="summary-card">
+                <div class="label">Avg Transaction</div>
+                <div class="value" id="summary_avg">$0</div>
+            </div>
+        </div>
+
+        <!-- Core Performance Metrics -->
+        <div class="section">
+            <h2>📊 Core Performance Metrics</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Total Daily Transactions</label>
+                    <input type="number" id="total_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 1,915 | Nov 12 Baseline: 1,782</div>
+                    <div id="total_txns_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Successful Transactions</label>
+                    <input type="number" id="successful_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12 Baseline: 1,466 (82.27%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Failed Transactions</label>
+                    <input type="number" id="failed_txns" placeholder="0" readonly>
+                    <div class="target">Nov 12 Baseline: 309 (17.73%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Success Rate %</label>
+                    <input type="number" id="success_rate" placeholder="0" step="0.01" readonly>
+                    <div class="target">Target: 90%+ | Nov 12: 82.27%</div>
+                    <div id="success_rate_var" class="variance"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="success_progress" style="width: 0%;">0%</div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <label>Total Transaction Volume</label>
+                    <input type="number" id="total_volume" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Target: $500,000 | Nov 12: $168,415</div>
+                    <div id="total_volume_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Average Transaction Size</label>
+                    <input type="number" id="avg_txn" placeholder="0" step="0.01" readonly>
+                    <div class="target">Nov 12 Baseline: $114.88</div>
+                </div>
+
+                <div class="metric">
+                    <label>Platform Revenue (Fees)</label>
+                    <input type="number" id="platform_revenue" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: $146.60 (0.087% effective fee rate)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Effective Fee Rate %</label>
+                    <input type="number" id="fee_rate" placeholder="0" step="0.001" readonly>
+                    <div class="target">Nov 12 Baseline: 0.087%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaction Mix -->
+        <div class="section">
+            <h2>🔄 Transaction Mix</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Purchase Transactions</label>
+                    <input type="number" id="purchases" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 1,021 (57.3%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Purchase Success Rate %</label>
+                    <input type="number" id="purchase_success_rate" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track purchase-specific success</div>
+                </div>
+
+                <div class="metric">
+                    <label>Disbursement Transactions</label>
+                    <input type="number" id="disbursements" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 761 (42.7%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Disbursement Success Rate %</label>
+                    <input type="number" id="disbursement_success_rate" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track disbursement-specific success</div>
+                </div>
+
+                <div class="metric">
+                    <label>Purchase/Disbursement Ratio</label>
+                    <input type="text" id="mix_ratio" placeholder="0:0" readonly>
+                    <div class="target">Nov 12 Baseline: 57.3% / 42.7%</div>
+                </div>
+
+                <div class="metric">
+                    <label>Net Position</label>
+                    <input type="number" id="net_position" placeholder="0" readonly>
+                    <div class="target">Nov 12: +260 (purchase-heavy)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Network Distribution -->
+        <div class="section">
+            <h2>🌐 Network Distribution</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Visa Transactions</label>
+                    <input type="number" id="visa_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 1,458 (81.8%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Visa Success Rate %</label>
+                    <input type="number" id="visa_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track Visa-specific performance</div>
+                </div>
+
+                <div class="metric">
+                    <label>Mastercard Transactions</label>
+                    <input type="number" id="mastercard_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 316 (17.7%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Mastercard Success Rate %</label>
+                    <input type="number" id="mastercard_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track Mastercard-specific performance</div>
+                </div>
+
+                <div class="metric">
+                    <label>Discover Transactions</label>
+                    <input type="number" id="discover_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 8 (0.4%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Discover Success Rate %</label>
+                    <input type="number" id="discover_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track Discover-specific performance</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Card Type Performance -->
+        <div class="section">
+            <h2>💳 Card Type Performance</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Debit Card Transactions</label>
+                    <input type="number" id="debit_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 1,587 (89.1% of volume)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Debit Card Success Rate %</label>
+                    <input type="number" id="debit_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Target: 85%+ | Nov 12: 85.7%</div>
+                    <div id="debit_success_var" class="variance"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill success" id="debit_progress" style="width: 0%;">0%</div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <label>Credit Card Transactions</label>
+                    <input type="number" id="credit_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 104 (5.8% of volume)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Credit Card Success Rate %</label>
+                    <input type="number" id="credit_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Target: 70%+ | Nov 12: 46.15%</div>
+                    <div id="credit_success_var" class="variance"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill danger" id="credit_progress" style="width: 0%;">0%</div>
+                    </div>
+                </div>
+
+                <div class="metric">
+                    <label>Prepaid Card Transactions</label>
+                    <input type="number" id="prepaid_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 91 (5.1% of volume)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Prepaid Card Success Rate %</label>
+                    <input type="number" id="prepaid_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Target: 80%+ | Nov 12: 63.74%</div>
+                    <div id="prepaid_success_var" class="variance"></div>
+                    <div class="progress-bar">
+                        <div class="progress-fill warning" id="prepaid_progress" style="width: 0%;">0%</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Error Analysis -->
+        <div class="section">
+            <h2>⚠️ Error Analysis</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Total Errors</label>
+                    <input type="number" id="total_errors" placeholder="0" readonly>
+                    <div class="target">Target: <200 | Nov 12: 309 (17.3%)</div>
+                    <div id="total_errors_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Error Rate %</label>
+                    <input type="number" id="error_rate" placeholder="0" step="0.01" readonly>
+                    <div class="target">Target: <10% | Nov 12: 17.3%</div>
+                </div>
+
+                <div class="metric">
+                    <label>Insufficient Funds (Code 51)</label>
+                    <input type="number" id="nsf_errors" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 153 (49.5% of errors)</div>
+                </div>
+
+                <div class="metric">
+                    <label>NSF % of Total Errors</label>
+                    <input type="number" id="nsf_percent" placeholder="0" step="0.01" readonly>
+                    <div class="target">Nov 12 Baseline: 49.5%</div>
+                </div>
+
+                <div class="metric">
+                    <label>Suspected Fraud (Code 59)</label>
+                    <input type="number" id="fraud_errors" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 43 (13.9% of errors)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Fraud % of Total Errors</label>
+                    <input type="number" id="fraud_percent" placeholder="0" step="0.01" readonly>
+                    <div class="target">Nov 12 Baseline: 13.9%</div>
+                </div>
+
+                <div class="metric">
+                    <label>Do Not Honor (Code 05)</label>
+                    <input type="number" id="do_not_honor" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 27 (8.7% of errors)</div>
+                </div>
+
+                <div class="metric">
+                    <label>AVS Mismatch (Code 5C)</label>
+                    <input type="number" id="avs_mismatch" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 22 (7.1% of errors)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Security Violation (Code 63)</label>
+                    <input type="number" id="security_violation" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 13 (4.2% of errors)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Other Errors</label>
+                    <input type="number" id="other_errors" placeholder="0" readonly>
+                    <div class="target">Calculated automatically</div>
+                </div>
+            </div>
+
+            <div class="insights-box">
+                <h3>💡 Error Reduction Strategies</h3>
+                <ul>
+                    <li><strong>NSF Errors:</strong> Deploy real-time balance verification before processing</li>
+                    <li><strong>Fraud Flags:</strong> Optimize fraud detection rules to reduce false positives</li>
+                    <li><strong>AVS Mismatch:</strong> Improve address verification UI and data quality</li>
+                    <li><strong>Target:</strong> Reduce total errors to <200/day (currently 309 on Nov 12)</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Geographic Performance -->
+        <div class="section">
+            <h2>🗺️ Geographic Performance - Top States</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Florida (FL) Transactions</label>
+                    <input type="number" id="fl_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 295 (17.5%) - 78.98% success</div>
+                </div>
+
+                <div class="metric">
+                    <label>Texas (TX) Transactions</label>
+                    <input type="number" id="tx_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 252 (14.9%) - 81.75% success</div>
+                </div>
+
+                <div class="metric">
+                    <label>New York (NY) Transactions</label>
+                    <input type="number" id="ny_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 163 (9.7%) - 77.30% success</div>
+                </div>
+
+                <div class="metric">
+                    <label>California (CA) Transactions</label>
+                    <input type="number" id="ca_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 158 (9.4%) - 87.97% success</div>
+                </div>
+
+                <div class="metric">
+                    <label>Georgia (GA) Transactions</label>
+                    <input type="number" id="ga_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 72 (4.3%) - 98.61% success ⭐</div>
+                </div>
+
+                <div class="metric">
+                    <label>Top 5 States Total</label>
+                    <input type="number" id="top5_states" placeholder="0" readonly>
+                    <div class="target">Nov 12: 940 (55.8% of geo-tagged txns)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Transaction Size Distribution -->
+        <div class="section">
+            <h2>💰 Transaction Size Distribution</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Under $10</label>
+                    <input type="number" id="size_under_10" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 383 (26.1%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>$10 - $50 (Sweet Spot)</label>
+                    <input type="number" id="size_10_50" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 506 (34.5%) ⭐</div>
+                </div>
+
+                <div class="metric">
+                    <label>$50 - $100</label>
+                    <input type="number" id="size_50_100" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 173 (11.8%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>$100 - $500</label>
+                    <input type="number" id="size_100_500" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 277 (18.9%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>$500+</label>
+                    <input type="number" id="size_500_plus" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 127 (8.7%)</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Traffic Patterns -->
+        <div class="section">
+            <h2>⏰ Traffic Patterns</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Peak Hour</label>
+                    <input type="text" id="peak_hour" placeholder="e.g., 11 PM" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 11 PM</div>
+                </div>
+
+                <div class="metric">
+                    <label>Peak Hour Volume</label>
+                    <input type="number" id="peak_volume" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 444 (24.9% of daily volume)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Business Hours (9 AM - 5 PM)</label>
+                    <input type="number" id="business_hours" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: Low activity period</div>
+                </div>
+
+                <div class="metric">
+                    <label>Evening/Night (7 PM - 12 AM)</label>
+                    <input type="number" id="evening_hours" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: Heavy usage period</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Growth Metrics -->
+        <div class="section">
+            <h2>📈 Growth & Engagement</h2>
+
+            <div class="metrics-grid">
+                <div class="metric">
+                    <label>Daily Opt-Ins</label>
+                    <input type="number" id="daily_optins" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 1,667/day (50k monthly)</div>
+                    <div id="daily_optins_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Cumulative MTD Opt-Ins</label>
+                    <input type="number" id="mtd_optins" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: 50,000/month</div>
+                    <div id="mtd_optins_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>New Active Users (DAU)</label>
+                    <input type="number" id="new_users" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Track daily activation</div>
+                </div>
+
+                <div class="metric">
+                    <label>Unique Transacting Users</label>
+                    <input type="number" id="unique_users" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Track unique customer count</div>
+                </div>
+
+                <div class="metric">
+                    <label>Transactions per User</label>
+                    <input type="number" id="txns_per_user" placeholder="0" step="0.1" readonly>
+                    <div class="target">Track engagement depth</div>
+                </div>
+
+                <div class="metric">
+                    <label>Repeat Transaction Rate %</label>
+                    <input type="number" id="repeat_rate" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Track customer retention</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Daily Notes -->
+        <div class="section">
+            <h2>📝 Daily Notes & Action Items</h2>
+            <textarea id="daily_notes" placeholder="Record key observations, wins, blockers, and action items for the day..."></textarea>
+        </div>
+
+        <!-- Actions -->
+        <div class="actions">
+            <button class="button success" onclick="loadNov12Baseline()">📊 Load Nov 12 Baseline</button>
+            <button class="button" onclick="saveData()">💾 Save to Firebase</button>
+            <button class="button secondary" onclick="loadData()">📥 Load from Firebase</button>
+            <button class="button secondary" onclick="exportToCSV()">📤 Export CSV</button>
+            <button class="button secondary" onclick="clearAll()">🔄 Clear All</button>
+            <button class="button secondary" onclick="window.print()">🖨️ Print Report</button>
+
+            <div style="margin-top: 20px;">
+                <span id="firebase-status" style="color: #666; font-size: 0.9em;">⚪ Firebase: Not Connected</span>
+                <span style="margin-left: 20px; color: #666;">|</span>
+                <span id="autosave-status" style="margin-left: 20px; color: #666; font-size: 0.9em;">💾 Autosave: Enabled</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Firebase SDK -->
+    <script type="module">
+        import { initializeApp } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js';
+        import { getDatabase, ref, set, get, child } from 'https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js';
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDgmYEkv6lqN9FjUOtzEt2SvSPCKCbg66M",
+            authDomain: "tracker-mybambu.firebaseapp.com",
+            databaseURL: "https://tracker-mybambu-default-rtdb.firebaseio.com",
+            projectId: "tracker-mybambu",
+            storageBucket: "tracker-mybambu.firebasestorage.app",
+            messagingSenderId: "352310570720",
+            appId: "1:352310570720:web:33cdb90dce0da36c91ea85",
+            measurementId: "G-MR4DWKWG9F"
+        };
+
+        let app, database;
+        try {
+            app = initializeApp(firebaseConfig);
+            database = getDatabase(app);
+            document.getElementById('firebase-status').innerHTML = '🟢 Firebase: Connected';
+            document.getElementById('firebase-status').style.color = '#10b981';
+            window.firebaseDB = database;
+        } catch (error) {
+            console.error('Firebase error:', error);
+            document.getElementById('firebase-status').innerHTML = '🔴 Firebase: Error';
+            document.getElementById('firebase-status').style.color = '#ef4444';
+        }
+
+        window.saveToFirebase = async function(data, date) {
+            if (!database) return false;
+            try {
+                const dbRef = ref(database, 'bambu-pay-tracker/' + date);
+                await set(dbRef, { ...data, lastUpdated: new Date().toISOString() });
+                return true;
+            } catch (error) {
+                console.error('Save error:', error);
+                return false;
+            }
+        };
+
+        window.loadFromFirebase = async function(date) {
+            if (!database) return null;
+            try {
+                const dbRef = ref(database);
+                const snapshot = await get(child(dbRef, 'bambu-pay-tracker/' + date));
+                return snapshot.exists() ? snapshot.val() : null;
+            } catch (error) {
+                console.error('Load error:', error);
+                return null;
+            }
+        };
+    </script>
+
+    <script>
+        // Initialize date
+        document.getElementById('trackingDate').valueAsDate = new Date();
+        updateDayInfo();
+
+        function updateDayInfo() {
+            const date = new Date(document.getElementById('trackingDate').value);
+            document.getElementById('dayNumber').textContent = date.getDate();
+
+            const days = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+            document.getElementById('dayOfWeek').textContent = days[date.getDay()];
+        }
+
+        document.getElementById('trackingDate').addEventListener('change', function() {
+            updateDayInfo();
+            onDateChange();
+        });
+
+        function calculateMetrics() {
+            // Core metrics
+            const totalTxns = parseFloat(document.getElementById('total_txns').value) || 0;
+            const successfulTxns = parseFloat(document.getElementById('successful_txns').value) || 0;
+            const totalVolume = parseFloat(document.getElementById('total_volume').value) || 0;
+            const platformRevenue = parseFloat(document.getElementById('platform_revenue').value) || 0;
+
+            // Calculate derived metrics
+            const failedTxns = totalTxns - successfulTxns;
+            document.getElementById('failed_txns').value = failedTxns;
+
+            const successRate = totalTxns > 0 ? (successfulTxns / totalTxns * 100) : 0;
+            document.getElementById('success_rate').value = successRate.toFixed(2);
+
+            const avgTxn = successfulTxns > 0 ? (totalVolume / successfulTxns) : 0;
+            document.getElementById('avg_txn').value = avgTxn.toFixed(2);
+
+            const feeRate = totalVolume > 0 ? (platformRevenue / totalVolume * 100) : 0;
+            document.getElementById('fee_rate').value = feeRate.toFixed(3);
+
+            // Transaction mix
+            const purchases = parseFloat(document.getElementById('purchases').value) || 0;
+            const disbursements = parseFloat(document.getElementById('disbursements').value) || 0;
+            const netPosition = purchases - disbursements;
+            document.getElementById('net_position').value = netPosition;
+
+            if (totalTxns > 0) {
+                const purchasePct = (purchases / totalTxns * 100).toFixed(1);
+                const disbursePct = (disbursements / totalTxns * 100).toFixed(1);
+                document.getElementById('mix_ratio').value = `${purchasePct}% / ${disbursePct}%`;
+            }
+
+            // Error calculations
+            const nsfErrors = parseFloat(document.getElementById('nsf_errors').value) || 0;
+            const fraudErrors = parseFloat(document.getElementById('fraud_errors').value) || 0;
+            const doNotHonor = parseFloat(document.getElementById('do_not_honor').value) || 0;
+            const avsMismatch = parseFloat(document.getElementById('avs_mismatch').value) || 0;
+            const securityViolation = parseFloat(document.getElementById('security_violation').value) || 0;
+
+            const knownErrors = nsfErrors + fraudErrors + doNotHonor + avsMismatch + securityViolation;
+            const totalErrors = failedTxns;
+            const otherErrors = Math.max(0, totalErrors - knownErrors);
+
+            document.getElementById('total_errors').value = totalErrors;
+            document.getElementById('other_errors').value = otherErrors;
+
+            const errorRate = totalTxns > 0 ? (totalErrors / totalTxns * 100) : 0;
+            document.getElementById('error_rate').value = errorRate.toFixed(2);
+
+            if (totalErrors > 0) {
+                document.getElementById('nsf_percent').value = (nsfErrors / totalErrors * 100).toFixed(2);
+                document.getElementById('fraud_percent').value = (fraudErrors / totalErrors * 100).toFixed(2);
+            }
+
+            // Geographic totals
+            const fl = parseFloat(document.getElementById('fl_txns').value) || 0;
+            const tx = parseFloat(document.getElementById('tx_txns').value) || 0;
+            const ny = parseFloat(document.getElementById('ny_txns').value) || 0;
+            const ca = parseFloat(document.getElementById('ca_txns').value) || 0;
+            const ga = parseFloat(document.getElementById('ga_txns').value) || 0;
+            document.getElementById('top5_states').value = fl + tx + ny + ca + ga;
+
+            // User metrics
+            const uniqueUsers = parseFloat(document.getElementById('unique_users').value) || 0;
+            const txnsPerUser = uniqueUsers > 0 ? (totalTxns / uniqueUsers) : 0;
+            document.getElementById('txns_per_user').value = txnsPerUser.toFixed(1);
+
+            // Update summary cards
+            document.getElementById('summary_txns').textContent = totalTxns.toLocaleString();
+            document.getElementById('summary_success').textContent = successRate.toFixed(1) + '%';
+            document.getElementById('summary_volume').textContent = '$' + totalVolume.toLocaleString();
+            document.getElementById('summary_revenue').textContent = '$' + platformRevenue.toLocaleString();
+            document.getElementById('summary_errors').textContent = totalErrors.toLocaleString();
+            document.getElementById('summary_avg').textContent = '$' + avgTxn.toFixed(2);
+
+            // Update progress bars
+            updateProgressBar('success_progress', successRate, 90);
+
+            const debitSuccess = parseFloat(document.getElementById('debit_success').value) || 0;
+            updateProgressBar('debit_progress', debitSuccess, 85);
+
+            const creditSuccess = parseFloat(document.getElementById('credit_success').value) || 0;
+            updateProgressBar('credit_progress', creditSuccess, 70);
+
+            const prepaidSuccess = parseFloat(document.getElementById('prepaid_success').value) || 0;
+            updateProgressBar('prepaid_progress', prepaidSuccess, 80);
+
+            // Calculate variances
+            calculateVariance('total_txns', 1915);
+            calculateVariance('success_rate', 90, '%');
+            calculateVariance('total_volume', 500000);
+            calculateVariance('debit_success', 85, '%');
+            calculateVariance('credit_success', 70, '%');
+            calculateVariance('prepaid_success', 80, '%');
+            calculateVariance('total_errors', 200);
+            calculateVariance('daily_optins', 1667);
+            calculateVariance('mtd_optins', 50000);
+        }
+
+        function updateProgressBar(id, value, target) {
+            const element = document.getElementById(id);
+            const percentage = Math.min(100, (value / target) * 100);
+            element.style.width = percentage + '%';
+            element.textContent = value.toFixed(1) + '%';
+
+            // Update color based on performance
+            element.className = 'progress-fill';
+            if (percentage >= 100) element.classList.add('success');
+            else if (percentage >= 80) element.classList.add('warning');
+            else element.classList.add('danger');
+        }
+
+        function calculateVariance(inputId, target, suffix = '') {
+            const actual = parseFloat(document.getElementById(inputId).value) || 0;
+            const variance = actual - target;
+            const percentVariance = target > 0 ? ((variance / target) * 100).toFixed(1) : 0;
+
+            const varElement = document.getElementById(inputId + '_var');
+            if (!varElement || actual === 0) return;
+
+            const sign = variance >= 0 ? '+' : '';
+            const formattedValue = Math.abs(variance).toLocaleString();
+
+            varElement.textContent = `${sign}${formattedValue} (${sign}${percentVariance}%)`;
+            varElement.className = variance >= 0 ? 'variance positive' : 'variance negative';
+        }
+
+        function loadNov12Baseline() {
+            document.getElementById('trackingDate').value = '2025-11-12';
+            updateDayInfo();
+
+            // Core metrics
+            document.getElementById('total_txns').value = '1782';
+            document.getElementById('successful_txns').value = '1466';
+            document.getElementById('total_volume').value = '168415';
+            document.getElementById('platform_revenue').value = '146.60';
+
+            // Transaction mix
+            document.getElementById('purchases').value = '1021';
+            document.getElementById('disbursements').value = '761';
+
+            // Network
+            document.getElementById('visa_txns').value = '1458';
+            document.getElementById('mastercard_txns').value = '316';
+            document.getElementById('discover_txns').value = '8';
+
+            // Card types
+            document.getElementById('debit_txns').value = '1587';
+            document.getElementById('debit_success').value = '85.7';
+            document.getElementById('credit_txns').value = '104';
+            document.getElementById('credit_success').value = '46.15';
+            document.getElementById('prepaid_txns').value = '91';
+            document.getElementById('prepaid_success').value = '63.74';
+
+            // Errors
+            document.getElementById('nsf_errors').value = '153';
+            document.getElementById('fraud_errors').value = '43';
+            document.getElementById('do_not_honor').value = '27';
+            document.getElementById('avs_mismatch').value = '22';
+            document.getElementById('security_violation').value = '13';
+
+            // Geographic
+            document.getElementById('fl_txns').value = '295';
+            document.getElementById('tx_txns').value = '252';
+            document.getElementById('ny_txns').value = '163';
+            document.getElementById('ca_txns').value = '158';
+            document.getElementById('ga_txns').value = '72';
+
+            // Traffic
+            document.getElementById('peak_hour').value = '11 PM';
+            document.getElementById('peak_volume').value = '444';
+
+            // Transaction sizes
+            document.getElementById('size_under_10').value = '383';
+            document.getElementById('size_10_50').value = '506';
+            document.getElementById('size_50_100').value = '173';
+            document.getElementById('size_100_500').value = '277';
+            document.getElementById('size_500_plus').value = '127';
+
+            document.getElementById('daily_notes').value = 'November 12, 2025 - TabaPay Baseline Performance\n\n' +
+                '🎯 KEY METRICS:\n' +
+                '• 1,782 transactions processed\n' +
+                '• $168,415 total volume\n' +
+                '• 82.27% success rate (1,466 successful)\n' +
+                '• $146.60 platform revenue (0.087% effective fee)\n' +
+                '• $114.88 average transaction size\n\n' +
+                '✅ STRENGTHS:\n' +
+                '• Debit cards: 85.7% success (1,587 txns - 89.1% of volume)\n' +
+                '• Georgia: 98.61% success rate (best state)\n' +
+                '• California: 87.97% success rate\n' +
+                '• Visa dominant: 81.8% market share (1,458 txns)\n' +
+                '• Peak efficiency: 11 PM with 444 txns (24.9% of volume)\n\n' +
+                '⚠️ IMPROVEMENT AREAS:\n' +
+                '• Overall success: 82.27% vs 90% target (-7.73pp gap)\n' +
+                '• Credit cards: 46.15% vs 70% target (-23.85pp gap)\n' +
+                '• Prepaid cards: 63.74% vs 80% target (-16.26pp gap)\n' +
+                '• NSF errors: 153 (49.5% of all errors) - PREVENTABLE\n' +
+                '• Fraud flags: 43 (13.9% of errors) - optimize rules\n\n' +
+                '🗺️ GEOGRAPHIC INSIGHTS:\n' +
+                '• Top 5 states: 940 txns (55.8% of geo-tagged)\n' +
+                '• Sunbelt concentration: FL + TX = 547 txns (30.7%)\n' +
+                '• High performers: GA (98.61%), TN (97.56%), CA (87.97%)\n' +
+                '• Need attention: IL (73.13%), NY (77.30%), FL (78.98%)\n\n' +
+                '💳 TRANSACTION MIX:\n' +
+                '• Purchases: 1,021 (57.3%)\n' +
+                '• Disbursements: 761 (42.7%)\n' +
+                '• Net position: +260 (purchase-heavy)\n\n' +
+                '💰 SIZE DISTRIBUTION:\n' +
+                '• Sweet spot: $10-$50 (506 txns - 34.5%)\n' +
+                '• Small txns: <$10 (383 txns - 26.1%)\n' +
+                '• Large txns: $100+ (404 txns - 27.6%)\n\n' +
+                '🎯 30-DAY ACTION PLAN:\n' +
+                '1. Deploy real-time balance verification → eliminate 153 NSF errors\n' +
+                '2. Optimize fraud detection parameters → reduce 43 false positives\n' +
+                '3. Investigate credit card decline patterns → target 70%+ success\n' +
+                '4. Improve prepaid card handling → target 80%+ success\n' +
+                '5. Analyze IL/NY/FL performance → replicate GA success (98.61%)\n' +
+                '6. Overall target: 90%+ success rate within 30 days\n\n' +
+                '📊 BENCHMARKS ESTABLISHED:\n' +
+                'This November 12 baseline will be used to measure daily improvements.';
+
+            calculateMetrics();
+            alert('✅ November 12 baseline data loaded!\n\n' +
+                  '• 1,782 transactions\n' +
+                  '• 82.27% success rate\n' +
+                  '• $168,415 volume\n' +
+                  '• All metrics populated\n\n' +
+                  'Review and save to Firebase if needed.');
+        }
+
+        async function saveData(silent = false) {
+            const date = document.getElementById('trackingDate').value;
+            const data = {
+                date: date,
+                // Core metrics
+                total_txns: document.getElementById('total_txns').value,
+                successful_txns: document.getElementById('successful_txns').value,
+                total_volume: document.getElementById('total_volume').value,
+                platform_revenue: document.getElementById('platform_revenue').value,
+                // Transaction mix
+                purchases: document.getElementById('purchases').value,
+                purchase_success_rate: document.getElementById('purchase_success_rate').value,
+                disbursements: document.getElementById('disbursements').value,
+                disbursement_success_rate: document.getElementById('disbursement_success_rate').value,
+                // Network
+                visa_txns: document.getElementById('visa_txns').value,
+                visa_success: document.getElementById('visa_success').value,
+                mastercard_txns: document.getElementById('mastercard_txns').value,
+                mastercard_success: document.getElementById('mastercard_success').value,
+                discover_txns: document.getElementById('discover_txns').value,
+                discover_success: document.getElementById('discover_success').value,
+                // Card types
+                debit_txns: document.getElementById('debit_txns').value,
+                debit_success: document.getElementById('debit_success').value,
+                credit_txns: document.getElementById('credit_txns').value,
+                credit_success: document.getElementById('credit_success').value,
+                prepaid_txns: document.getElementById('prepaid_txns').value,
+                prepaid_success: document.getElementById('prepaid_success').value,
+                // Errors
+                nsf_errors: document.getElementById('nsf_errors').value,
+                fraud_errors: document.getElementById('fraud_errors').value,
+                do_not_honor: document.getElementById('do_not_honor').value,
+                avs_mismatch: document.getElementById('avs_mismatch').value,
+                security_violation: document.getElementById('security_violation').value,
+                // Geographic
+                fl_txns: document.getElementById('fl_txns').value,
+                tx_txns: document.getElementById('tx_txns').value,
+                ny_txns: document.getElementById('ny_txns').value,
+                ca_txns: document.getElementById('ca_txns').value,
+                ga_txns: document.getElementById('ga_txns').value,
+                // Transaction sizes
+                size_under_10: document.getElementById('size_under_10').value,
+                size_10_50: document.getElementById('size_10_50').value,
+                size_50_100: document.getElementById('size_50_100').value,
+                size_100_500: document.getElementById('size_100_500').value,
+                size_500_plus: document.getElementById('size_500_plus').value,
+                // Traffic
+                peak_hour: document.getElementById('peak_hour').value,
+                peak_volume: document.getElementById('peak_volume').value,
+                business_hours: document.getElementById('business_hours').value,
+                evening_hours: document.getElementById('evening_hours').value,
+                // Growth
+                daily_optins: document.getElementById('daily_optins').value,
+                mtd_optins: document.getElementById('mtd_optins').value,
+                new_users: document.getElementById('new_users').value,
+                unique_users: document.getElementById('unique_users').value,
+                repeat_rate: document.getElementById('repeat_rate').value,
+                // Notes
+                daily_notes: document.getElementById('daily_notes').value
+            };
+
+            localStorage.setItem('bambu_pay_tracker_' + date, JSON.stringify(data));
+            const success = await window.saveToFirebase(data, date);
+
+            if (!silent) {
+                alert(success ? '✅ Data saved successfully!' : '⚠️ Saved locally only');
+            }
+            return success;
+        }
+
+        async function loadData() {
+            const date = document.getElementById('trackingDate').value;
+            const firebaseData = await window.loadFromFirebase(date);
+
+            let data = firebaseData || JSON.parse(localStorage.getItem('bambu_pay_tracker_' + date) || 'null');
+
+            if (!data) {
+                alert('📭 No saved data found for ' + date);
+                return;
+            }
+
+            Object.keys(data).forEach(key => {
+                const element = document.getElementById(key);
+                if (element) element.value = data[key];
+            });
+
+            calculateMetrics();
+            alert('✅ Data loaded for ' + date);
+        }
+
+        async function onDateChange() {
+            const date = document.getElementById('trackingDate').value;
+            const data = await window.loadFromFirebase(date) ||
+                         JSON.parse(localStorage.getItem('bambu_pay_tracker_' + date) || 'null');
+
+            if (data) {
+                Object.keys(data).forEach(key => {
+                    const element = document.getElementById(key);
+                    if (element) element.value = data[key];
+                });
+                calculateMetrics();
+            }
+        }
+
+        function clearAll() {
+            if (confirm('Clear all fields?')) {
+                document.querySelectorAll('input[type="number"], input[type="text"], textarea').forEach(el => {
+                    if (!el.readOnly) el.value = '';
+                });
+                calculateMetrics();
+            }
+        }
+
+        function exportToCSV() {
+            alert('CSV export feature coming soon!');
+        }
+
+        // Autosave
+        let autosaveTimer;
+        document.querySelectorAll('input, textarea').forEach(input => {
+            input.addEventListener('input', () => {
+                clearTimeout(autosaveTimer);
+                autosaveTimer = setTimeout(() => saveData(true), 2000);
+            });
+        });
+
+        // Auto-load on page load
+        window.addEventListener('load', onDateChange);
+    </script>
+</body>
+</html>
