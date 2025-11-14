@@ -333,6 +333,19 @@
             }
         }
 
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        .saving-pulse {
+            animation: pulse 1s ease-in-out infinite;
+        }
+
         @media print {
             body {
                 background: white;
@@ -1049,7 +1062,7 @@
             <div style="margin-top: 20px;">
                 <span id="firebase-status" style="color: #666; font-size: 0.9em;">⚪ Firebase: Not Connected</span>
                 <span style="margin-left: 20px; color: #666;">|</span>
-                <span id="autosave-status" style="margin-left: 20px; color: #666; font-size: 0.9em;">💾 Autosave: Enabled</span>
+                <span id="autosave-status" style="margin-left: 20px; color: #667eea; font-size: 0.9em; font-weight: 600;">🔄 Real-time sync enabled</span>
             </div>
         </div>
     </div>
@@ -1624,12 +1637,52 @@
             alert('CSV export feature coming soon!');
         }
 
-        // Autosave
+        // Real-time autosave with visual feedback
         let autosaveTimer;
+        let isSaving = false;
+
+        async function triggerRealtimeSave() {
+            if (isSaving) return; // Prevent overlapping saves
+
+            const statusEl = document.getElementById('autosave-status');
+            statusEl.textContent = '💾 Saving...';
+            statusEl.style.color = '#667eea';
+            statusEl.classList.add('saving-pulse');
+
+            isSaving = true;
+            const success = await saveData(true);
+            isSaving = false;
+
+            statusEl.classList.remove('saving-pulse');
+
+            if (success) {
+                statusEl.textContent = '✅ Saved to Firebase';
+                statusEl.style.color = '#10b981';
+                statusEl.style.fontWeight = '700';
+            } else {
+                statusEl.textContent = '⚠️ Save Failed';
+                statusEl.style.color = '#ef4444';
+                statusEl.style.fontWeight = '700';
+            }
+
+            // Reset status after 2 seconds
+            setTimeout(() => {
+                statusEl.textContent = '🔄 Real-time sync enabled';
+                statusEl.style.color = '#667eea';
+                statusEl.style.fontWeight = '600';
+            }, 2000);
+        }
+
+        // Attach real-time autosave to all inputs
         document.querySelectorAll('input, textarea').forEach(input => {
             input.addEventListener('input', () => {
+                // Clear existing timer
                 clearTimeout(autosaveTimer);
-                autosaveTimer = setTimeout(() => saveData(true), 2000);
+
+                // Save after 500ms of no typing (real-time feel)
+                autosaveTimer = setTimeout(() => {
+                    triggerRealtimeSave();
+                }, 500);
             });
         });
 
@@ -1721,9 +1774,11 @@
 
             localStorage.setItem('action_items_temp', JSON.stringify(items));
 
-            // Trigger autosave
+            // Trigger real-time save
             clearTimeout(autosaveTimer);
-            autosaveTimer = setTimeout(() => saveData(true), 2000);
+            autosaveTimer = setTimeout(() => {
+                triggerRealtimeSave();
+            }, 500);
         }
 
         function loadActionItems(items) {
