@@ -413,45 +413,98 @@
                 </div>
 
                 <div class="metric">
+                    <label>Successful Transactions</label>
+                    <input type="number" id="pay_successful_txns" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 1,466 (82.27%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Success Rate %</label>
+                    <input type="number" id="pay_success_rate" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Target: 90%+ | Nov 12: 82.27%</div>
+                    <div id="pay_success_rate_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
                     <label>Total Transaction Volume</label>
                     <input type="number" id="pay_total_vol" placeholder="0" step="0.01" oninput="calculateMetrics()">
-                    <div class="target">Target: $500,000</div>
+                    <div class="target">Target: $500,000 | Nov 12: $168,415</div>
                     <div id="pay_total_vol_var" class="variance"></div>
                 </div>
 
                 <div class="metric">
-                    <label>IMT Volume</label>
-                    <input type="number" id="pay_imt_vol" placeholder="0" step="0.01" oninput="calculateMetrics()">
-                    <div class="target">Target: $63,173</div>
-                    <div id="pay_imt_vol_var" class="variance"></div>
+                    <label>Average Transaction Size</label>
+                    <input type="number" id="pay_avg_txn" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: $114.88</div>
                 </div>
 
                 <div class="metric">
-                    <label>IMT Revenue</label>
-                    <input type="number" id="pay_imt_rev" placeholder="0" step="0.01" oninput="calculateMetrics()">
-                    <div class="target">Target: $6,317</div>
-                    <div id="pay_imt_rev_var" class="variance"></div>
+                    <label>Platform Revenue (Fees)</label>
+                    <input type="number" id="pay_platform_rev" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: $146.60 (0.087% fee)</div>
                 </div>
 
                 <div class="metric">
-                    <label>Card Volume</label>
-                    <input type="number" id="pay_card_vol" placeholder="0" step="0.01" oninput="calculateMetrics()">
-                    <div class="target">Target: $116,987</div>
-                    <div id="pay_card_vol_var" class="variance"></div>
+                    <label>Purchases Volume</label>
+                    <input type="number" id="pay_purchases" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 1,021 (57.3%)</div>
                 </div>
 
                 <div class="metric">
-                    <label>Card Revenue</label>
-                    <input type="number" id="pay_card_rev" placeholder="0" step="0.01" oninput="calculateMetrics()">
-                    <div class="target">Target: $1,170</div>
-                    <div id="pay_card_rev_var" class="variance"></div>
+                    <label>Disbursements Volume</label>
+                    <input type="number" id="pay_disbursements" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 761 (42.7%)</div>
                 </div>
 
                 <div class="metric">
-                    <label>Total Daily Revenue</label>
-                    <input type="number" id="pay_total_rev" placeholder="0" step="0.01" readonly style="background: #e9ecef;">
-                    <div class="target">Target: $7,487</div>
-                    <div id="pay_total_rev_var" class="variance"></div>
+                    <label>Error Count</label>
+                    <input type="number" id="pay_errors" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Target: <200 | Nov 12: 309 (17.3%)</div>
+                    <div id="pay_errors_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Visa Transactions</label>
+                    <input type="number" id="pay_visa" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 1,458 (81.8%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Mastercard Transactions</label>
+                    <input type="number" id="pay_mastercard" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 316 (17.7%)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Debit Card Success Rate %</label>
+                    <input type="number" id="pay_debit_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 85.7% (1,587 cards)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Credit Card Success Rate %</label>
+                    <input type="number" id="pay_credit_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 46.15% | Target: 70%+</div>
+                    <div id="pay_credit_success_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Prepaid Card Success Rate %</label>
+                    <input type="number" id="pay_prepaid_success" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 63.74% | Target: 80%+</div>
+                    <div id="pay_prepaid_success_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Insufficient Funds Errors</label>
+                    <input type="number" id="pay_nsf_errors" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 153 (49.5% of errors)</div>
+                </div>
+
+                <div class="metric">
+                    <label>Fraud Flags</label>
+                    <input type="number" id="pay_fraud_errors" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Nov 12: 43 (13.9% of errors)</div>
                 </div>
 
                 <div class="metric">
@@ -467,6 +520,20 @@
                     <div class="target">Target: 50,000/month</div>
                     <div id="pay_optins_mtd_var" class="variance"></div>
                 </div>
+            </div>
+
+            <div class="notes-section" style="margin-top: 20px; background: #e6f7ff; border: 1px solid #91d5ff;">
+                <h4 style="margin-bottom: 10px; color: #0050b3;">📊 Nov 12 Key Insights</h4>
+                <ul style="margin-left: 20px; line-height: 1.8;">
+                    <li><strong>Volume:</strong> 1,782 transactions, $168.4K processed</li>
+                    <li><strong>Success Rate:</strong> 82.27% (target: 90%+)</li>
+                    <li><strong>Top Error:</strong> Insufficient funds (153 errors - preventable with balance checks)</li>
+                    <li><strong>Card Types:</strong> Debit strong at 85.7%, Credit needs improvement at 46.15%</li>
+                    <li><strong>Network Mix:</strong> Visa 81.8%, Mastercard 17.7%, Discover 0.4%</li>
+                    <li><strong>Geographic:</strong> FL (295), TX (252), NY (163) - top 3 states</li>
+                    <li><strong>Peak Hour:</strong> 11 PM with 444 transactions (24.9% of volume)</li>
+                    <li><strong>Action Items:</strong> Deploy balance verification, optimize fraud rules, improve credit card handling</li>
+                </ul>
             </div>
         </div>
 
@@ -706,11 +773,8 @@
             const contTotalRev = contSubRev + contRemRev;
             document.getElementById('cont_total_rev').value = contTotalRev.toFixed(2);
 
-            // Bambu Pay 2.0
-            const payImtRev = parseFloat(document.getElementById('pay_imt_rev').value) || 0;
-            const payCardRev = parseFloat(document.getElementById('pay_card_rev').value) || 0;
-            const payTotalRev = payImtRev + payCardRev;
-            document.getElementById('pay_total_rev').value = payTotalRev.toFixed(2);
+            // Bambu Pay 2.0 - use platform revenue directly
+            const payPlatformRev = parseFloat(document.getElementById('pay_platform_rev').value) || 0;
 
             // Calculate variances
             // Platform Metrics
@@ -734,12 +798,11 @@
             calculateVariance('send_sms', 15, '%');
 
             calculateVariance('pay_txns', 1915);
+            calculateVariance('pay_success_rate', 90, '%');
             calculateVariance('pay_total_vol', 500000);
-            calculateVariance('pay_imt_vol', 63173);
-            calculateVariance('pay_imt_rev', 6317);
-            calculateVariance('pay_card_vol', 116987);
-            calculateVariance('pay_card_rev', 1170);
-            calculateVariance('pay_total_rev', 7487);
+            calculateVariance('pay_credit_success', 70, '%');
+            calculateVariance('pay_prepaid_success', 80, '%');
+            calculateVariance('pay_errors', 200);
             calculateVariance('pay_optins', 1667);
             calculateVariance('pay_optins_mtd', 50000);
 
@@ -754,10 +817,10 @@
 
             document.getElementById('summary_cont').textContent = '$' + contTotalRev.toLocaleString();
             document.getElementById('summary_send').textContent = '$' + sendRev.toLocaleString();
-            document.getElementById('summary_pay').textContent = '$' + payTotalRev.toLocaleString();
+            document.getElementById('summary_pay').textContent = '$' + payPlatformRev.toLocaleString();
             document.getElementById('summary_health').textContent = '$' + healthRev.toLocaleString();
 
-            const totalDaily = contTotalRev + sendRev + payTotalRev + healthRev;
+            const totalDaily = contTotalRev + sendRev + payPlatformRev + healthRev;
             document.getElementById('summary_total').textContent = '$' + totalDaily.toLocaleString();
 
             // Update summary table
@@ -834,11 +897,21 @@
                 send_open: document.getElementById('send_open').value,
                 send_sms: document.getElementById('send_sms').value,
                 pay_txns: document.getElementById('pay_txns').value,
+                pay_successful_txns: document.getElementById('pay_successful_txns').value,
+                pay_success_rate: document.getElementById('pay_success_rate').value,
                 pay_total_vol: document.getElementById('pay_total_vol').value,
-                pay_imt_vol: document.getElementById('pay_imt_vol').value,
-                pay_imt_rev: document.getElementById('pay_imt_rev').value,
-                pay_card_vol: document.getElementById('pay_card_vol').value,
-                pay_card_rev: document.getElementById('pay_card_rev').value,
+                pay_avg_txn: document.getElementById('pay_avg_txn').value,
+                pay_platform_rev: document.getElementById('pay_platform_rev').value,
+                pay_purchases: document.getElementById('pay_purchases').value,
+                pay_disbursements: document.getElementById('pay_disbursements').value,
+                pay_errors: document.getElementById('pay_errors').value,
+                pay_visa: document.getElementById('pay_visa').value,
+                pay_mastercard: document.getElementById('pay_mastercard').value,
+                pay_debit_success: document.getElementById('pay_debit_success').value,
+                pay_credit_success: document.getElementById('pay_credit_success').value,
+                pay_prepaid_success: document.getElementById('pay_prepaid_success').value,
+                pay_nsf_errors: document.getElementById('pay_nsf_errors').value,
+                pay_fraud_errors: document.getElementById('pay_fraud_errors').value,
                 pay_optins: document.getElementById('pay_optins').value,
                 pay_optins_mtd: document.getElementById('pay_optins_mtd').value,
                 health_signups: document.getElementById('health_signups').value,
