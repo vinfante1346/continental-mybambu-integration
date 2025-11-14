@@ -955,12 +955,37 @@
         <div class="section">
             <h2>📈 Growth & Engagement</h2>
 
+            <h3 style="color: #667eea; margin: 20px 0 15px 0; font-size: 1.3em;">📊 Opt-In Sources</h3>
             <div class="metrics-grid">
                 <div class="metric">
-                    <label>Daily Opt-Ins</label>
-                    <input type="number" id="daily_optins" placeholder="0" oninput="calculateMetrics()">
+                    <label>External Portal Opt-Ins</label>
+                    <input type="number" id="external_portal_optins" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Opt-ins from external portal</div>
+                </div>
+
+                <div class="metric">
+                    <label>Bambu Pay User Opt-Ins</label>
+                    <input type="number" id="bambupay_user_optins" placeholder="0" oninput="calculateMetrics()">
+                    <div class="target">Existing Bambu Pay users opting in</div>
+                </div>
+
+                <div class="metric">
+                    <label>Total Daily Opt-Ins</label>
+                    <input type="number" id="daily_optins" placeholder="0" readonly>
                     <div class="target">Target: 1,667/day (50k monthly)</div>
                     <div id="daily_optins_var" class="variance"></div>
+                </div>
+
+                <div class="metric">
+                    <label>Portal Opt-In %</label>
+                    <input type="number" id="portal_optin_percent" placeholder="0" step="0.1" readonly>
+                    <div class="target">% from external portal</div>
+                </div>
+
+                <div class="metric">
+                    <label>Bambu Pay Opt-In %</label>
+                    <input type="number" id="bambupay_optin_percent" placeholder="0" step="0.1" readonly>
+                    <div class="target">% from Bambu Pay users</div>
                 </div>
 
                 <div class="metric">
@@ -969,7 +994,10 @@
                     <div class="target">Target: 50,000/month</div>
                     <div id="mtd_optins_var" class="variance"></div>
                 </div>
+            </div>
 
+            <h3 style="color: #667eea; margin: 30px 0 15px 0; font-size: 1.3em;">👥 User Engagement</h3>
+            <div class="metrics-grid">
                 <div class="metric">
                     <label>New Active Users (DAU)</label>
                     <input type="number" id="new_users" placeholder="0" oninput="calculateMetrics()">
@@ -993,6 +1021,28 @@
                     <input type="number" id="repeat_rate" placeholder="0" step="0.01" oninput="calculateMetrics()">
                     <div class="target">Track customer retention</div>
                 </div>
+
+                <div class="metric">
+                    <label>Portal Conversion to Transaction %</label>
+                    <input type="number" id="portal_conversion" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Portal opt-ins who transacted</div>
+                </div>
+
+                <div class="metric">
+                    <label>Bambu Pay Conversion to Transaction %</label>
+                    <input type="number" id="bambupay_conversion" placeholder="0" step="0.01" oninput="calculateMetrics()">
+                    <div class="target">Bambu Pay opt-ins who transacted</div>
+                </div>
+            </div>
+
+            <div class="insights-box">
+                <h3>💡 Opt-In Source Insights</h3>
+                <ul>
+                    <li><strong>Track acquisition sources:</strong> Understand where your opt-ins are coming from</li>
+                    <li><strong>Portal effectiveness:</strong> Monitor external portal performance and conversion rates</li>
+                    <li><strong>Bambu Pay cross-sell:</strong> Measure success of converting existing users to TabaPay</li>
+                    <li><strong>Conversion tracking:</strong> Monitor which source drives better transaction rates</li>
+                </ul>
             </div>
         </div>
 
@@ -1229,6 +1279,21 @@
                 document.getElementById('api_percent').value = (apiDirect / totalTxns * 100).toFixed(1);
             }
 
+            // Opt-in source calculations
+            const externalPortalOptins = parseFloat(document.getElementById('external_portal_optins').value) || 0;
+            const bambuPayUserOptins = parseFloat(document.getElementById('bambupay_user_optins').value) || 0;
+            const totalDailyOptins = externalPortalOptins + bambuPayUserOptins;
+
+            document.getElementById('daily_optins').value = totalDailyOptins;
+
+            if (totalDailyOptins > 0) {
+                document.getElementById('portal_optin_percent').value = (externalPortalOptins / totalDailyOptins * 100).toFixed(1);
+                document.getElementById('bambupay_optin_percent').value = (bambuPayUserOptins / totalDailyOptins * 100).toFixed(1);
+            } else {
+                document.getElementById('portal_optin_percent').value = '0';
+                document.getElementById('bambupay_optin_percent').value = '0';
+            }
+
             // User metrics
             const uniqueUsers = parseFloat(document.getElementById('unique_users').value) || 0;
             const txnsPerUser = uniqueUsers > 0 ? (totalTxns / uniqueUsers) : 0;
@@ -1262,7 +1327,18 @@
             calculateVariance('credit_success', 70, '%');
             calculateVariance('prepaid_success', 80, '%');
             calculateVariance('total_errors', 200);
-            calculateVariance('daily_optins', 1667);
+
+            // Calculate variance for total daily opt-ins (which is now calculated from sources)
+            const dailyOptins = parseFloat(document.getElementById('daily_optins').value) || 0;
+            if (dailyOptins > 0) {
+                const variance = dailyOptins - 1667;
+                const percentVariance = (variance / 1667 * 100).toFixed(1);
+                const varElement = document.getElementById('daily_optins_var');
+                const sign = variance >= 0 ? '+' : '';
+                varElement.textContent = `${sign}${variance.toLocaleString()} (${sign}${percentVariance}%)`;
+                varElement.className = variance >= 0 ? 'variance positive' : 'variance negative';
+            }
+
             calculateVariance('mtd_optins', 50000);
         }
 
@@ -1541,12 +1617,16 @@
                 android_success: document.getElementById('android_success').value,
                 desktop_txns: document.getElementById('desktop_txns').value,
                 desktop_success: document.getElementById('desktop_success').value,
-                // Growth
-                daily_optins: document.getElementById('daily_optins').value,
+                // Growth - Opt-in sources
+                external_portal_optins: document.getElementById('external_portal_optins').value,
+                bambupay_user_optins: document.getElementById('bambupay_user_optins').value,
                 mtd_optins: document.getElementById('mtd_optins').value,
+                // Growth - User engagement
                 new_users: document.getElementById('new_users').value,
                 unique_users: document.getElementById('unique_users').value,
                 repeat_rate: document.getElementById('repeat_rate').value,
+                portal_conversion: document.getElementById('portal_conversion').value,
+                bambupay_conversion: document.getElementById('bambupay_conversion').value,
                 // Notes
                 key_wins: document.getElementById('key_wins').value,
                 blockers: document.getElementById('blockers').value,
